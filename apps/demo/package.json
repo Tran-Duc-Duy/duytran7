@@ -8,9 +8,9 @@
     "start": "next start"
   },
   "dependencies": {
-    "@duytran7/landing-core": "workspace:*",
-    "@duytran7/landing-components": "workspace:*",
-    "@duytran7/landing-next": "workspace:*",
+    "@duytran7/landing-core": "^0.1.0",
+    "@duytran7/landing-components": "^0.1.0",
+    "@duytran7/landing-next": "^0.1.0",
     "next": "^16.0.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
