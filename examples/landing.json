@@ -1,0 +1,111 @@
+{
+  "seo": {
+    "title": "Landing — Build nhanh với JSON",
+    "description": "Bộ thư viện npm để build landing page Next.js từ config JSON. SEO, shadcn-style, TypeScript.",
+    "canonical": "https://example.com",
+    "og": {
+      "title": "Landing — Build nhanh với JSON",
+      "description": "Bộ thư viện npm để build landing page Next.js từ config JSON.",
+      "image": "https://example.com/og.png",
+      "type": "website"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "Landing — Build nhanh với JSON",
+      "description": "Bộ thư viện npm để build landing page Next.js từ config JSON."
+    },
+    "jsonLd": [
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Landing",
+        "url": "https://example.com",
+        "description": "Bộ thư viện npm để build landing page Next.js từ config JSON."
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "nav",
+      "type": "nav",
+      "logo": {
+        "src": "/logo.svg",
+        "alt": "Logo",
+        "href": "/"
+      },
+      "links": [
+        { "label": "Tính năng", "href": "#features" },
+        { "label": "Giá", "href": "#pricing" },
+        { "label": "FAQ", "href": "#faq" }
+      ],
+      "cta": { "label": "Bắt đầu", "href": "/signup" }
+    },
+    {
+      "id": "hero",
+      "type": "hero",
+      "headline": "Landing page từ JSON, vài dòng code.",
+      "subheadline": "Config một lần, render mọi section. SEO sẵn, component shadcn-style, TypeScript + tsup.",
+      "primaryCta": { "label": "Xem docs", "href": "#" },
+      "secondaryCta": { "label": "GitHub", "href": "https://github.com" },
+      "variant": "centered"
+    },
+    {
+      "id": "features",
+      "type": "features",
+      "title": "Tính năng",
+      "subtitle": "Mọi thứ cần cho một landing chuẩn.",
+      "items": [
+        {
+          "title": "JSON-driven",
+          "description": "Chỉ cần file config, không cần viết JSX cho từng section."
+        },
+        {
+          "title": "SEO",
+          "description": "Metadata, Open Graph, Twitter Card, JSON-LD. Next.js generateMetadata."
+        },
+        {
+          "title": "Shadcn-style",
+          "description": "Component tối ưu, dễ override bằng Tailwind."
+        }
+      ],
+      "columns": 3,
+      "variant": "cards"
+    },
+    {
+      "id": "cta",
+      "type": "cta",
+      "title": "Sẵn sàng bắt đầu?",
+      "subtitle": "Cài đặt và config trong vài phút.",
+      "primaryCta": { "label": "Cài đặt", "href": "#" },
+      "variant": "banner"
+    },
+    {
+      "id": "footer",
+      "type": "footer",
+      "brand": { "name": "Landing", "href": "/" },
+      "linkGroups": [
+        {
+          "title": "Sản phẩm",
+          "links": [
+            { "label": "Tính năng", "href": "#features" },
+            { "label": "Giá", "href": "#pricing" }
+          ]
+        },
+        {
+          "title": "Công ty",
+          "links": [
+            { "label": "Liên hệ", "href": "/contact" },
+            { "label": "Blog", "href": "/blog" }
+          ]
+        }
+      ],
+      "bottom": {
+        "text": "© 2025 Landing. MIT.",
+        "links": [
+          { "label": "Privacy", "href": "/privacy" },
+          { "label": "Terms", "href": "/terms" }
+        ]
+      }
+    }
+  ]
+}

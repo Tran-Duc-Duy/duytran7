@@ -1,0 +1,79 @@
+{
+  "seo": {
+    "title": "Custom Tailwind demo — Landing UI",
+    "description": "Demo page showing classes (đa tầng Tailwind) in JSON config."
+  },
+  "sections": [
+    {
+      "id": "banner",
+      "type": "banner",
+      "message": "This page uses custom Tailwind via the \"classes\" field in JSON.",
+      "cta": { "label": "See docs", "href": "#" },
+      "variant": "default",
+      "classes": {
+        "root": "bg-gradient-to-r from-violet-600 to-indigo-600 py-4",
+        "message": "font-bold text-white",
+        "cta": "text-white font-semibold underline underline-offset-4 hover:no-underline"
+      }
+    },
+    {
+      "id": "hero",
+      "type": "hero",
+      "headline": "Custom Tailwind in JSON",
+      "subheadline": "Use the \"classes\" object on any section to override root, title, subtitle, buttons, image. AI or no-code can inject Tailwind classes without touching React.",
+      "primaryCta": { "label": "Get started", "href": "#" },
+      "secondaryCta": { "label": "Export JSON", "href": "/builder" },
+      "variant": "centered",
+      "classes": {
+        "root": "bg-gradient-to-b from-amber-50 to-background py-20",
+        "title": "text-5xl font-extrabold tracking-tight text-amber-900 sm:text-6xl",
+        "subtitle": "text-xl text-amber-800/90 max-w-2xl mx-auto",
+        "primaryButton": "rounded-full bg-amber-500 text-white px-8 shadow-lg hover:bg-amber-600",
+        "secondaryButton": "rounded-full border-2 border-amber-600 text-amber-800 hover:bg-amber-100"
+      }
+    },
+    {
+      "id": "features",
+      "type": "features",
+      "title": "Per-element overrides",
+      "subtitle": "classes.title, classes.subtitle, classes.card, classes.grid…",
+      "items": [
+        { "title": "root", "description": "Section wrapper. e.g. bg-muted/30, rounded-2xl." },
+        { "title": "title", "description": "Heading. e.g. text-4xl font-black, text-primary." },
+        { "title": "card", "description": "Feature card. e.g. rounded-xl shadow-lg hover:shadow-xl." }
+      ],
+      "columns": 3,
+      "variant": "cards",
+      "classes": {
+        "root": "bg-slate-100/80 py-16",
+        "title": "text-3xl font-bold text-slate-800",
+        "subtitle": "text-slate-600",
+        "card": "rounded-2xl border border-slate-200 bg-white shadow-md hover:shadow-xl transition-shadow duration-200"
+      }
+    },
+    {
+      "id": "cta",
+      "type": "cta",
+      "title": "Ready to customize?",
+      "subtitle": "Add \"classes\" to your section config and pass any Tailwind classes.",
+      "primaryCta": { "label": "Copy JSON", "href": "#" },
+      "variant": "default",
+      "classes": {
+        "root": "bg-slate-900 text-white py-20",
+        "container": "max-w-4xl",
+        "title": "text-4xl font-bold text-white",
+        "subtitle": "text-slate-300",
+        "primaryButton": "rounded-lg bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-8"
+      }
+    },
+    {
+      "id": "footer",
+      "type": "footer",
+      "brand": { "name": "Landing UI", "href": "/" },
+      "bottom": { "text": "© 2025. Custom classes demo." },
+      "classes": {
+        "root": "border-t border-slate-200 bg-slate-50"
+      }
+    }
+  ]
+}

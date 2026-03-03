@@ -1,0 +1,63 @@
+name: Bug report
+description: Report a bug when using @landing/core, @landing/components, or @landing/next
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting. Filling the fields below helps maintainers address it faster.
+  - type: input
+    id: packages
+    attributes:
+      label: Affected package(s)
+      description: One or more
+      placeholder: "@landing/core, @landing/components, @landing/next"
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      placeholder: "0.1.0 or commit hash"
+    validations:
+      required: false
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug description
+      placeholder: Clear description of what went wrong.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Install ...
+        2. Create config ...
+        3. Run ...
+        4. See error ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      placeholder: What did you expect to happen?
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior / error message
+      placeholder: Log, stack trace, or screenshot if applicable.
+    validations:
+      required: false
+  - type: input
+    id: env
+    attributes:
+      label: Environment
+      placeholder: "Node 20, pnpm 9, Next.js 15, OS ..."
+    validations:
+      required: false

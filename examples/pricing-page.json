@@ -1,0 +1,91 @@
+{
+  "seo": {
+    "title": "Pricing — Acme",
+    "description": "Plans and pricing for Acme. Start free or go Pro.",
+    "canonical": "https://example.com/pricing"
+  },
+  "sections": [
+    {
+      "id": "nav",
+      "type": "nav",
+      "logo": { "src": "/logo.svg", "alt": "Acme", "href": "/" },
+      "links": [
+        { "label": "Features", "href": "/#features" },
+        { "label": "Pricing", "href": "/pricing" },
+        { "label": "Contact", "href": "/contact" }
+      ],
+      "cta": { "label": "Sign in", "href": "/login" }
+    },
+    {
+      "id": "hero",
+      "type": "hero",
+      "headline": "Pricing",
+      "subheadline": "Simple plans. No hidden fees.",
+      "variant": "centered"
+    },
+    {
+      "id": "pricing",
+      "type": "pricing",
+      "title": "Choose your plan",
+      "tiers": [
+        {
+          "name": "Free",
+          "price": "$0",
+          "period": "month",
+          "features": ["Up to 3 pages", "Community support"],
+          "cta": { "label": "Get started", "href": "/signup" }
+        },
+        {
+          "name": "Pro",
+          "price": "$29",
+          "period": "month",
+          "features": ["Unlimited pages", "Priority support", "Custom domain"],
+          "cta": { "label": "Start trial", "href": "/signup" },
+          "highlighted": true
+        },
+        {
+          "name": "Enterprise",
+          "price": "Custom",
+          "features": ["Everything in Pro", "SLA", "Dedicated support"],
+          "cta": { "label": "Contact us", "href": "/contact" }
+        }
+      ]
+    },
+    {
+      "id": "comparison",
+      "type": "comparison",
+      "title": "Compare plans",
+      "planNames": ["Free", "Pro", "Enterprise"],
+      "highlightColumn": 1,
+      "rows": [
+        { "feature": "Pages", "values": ["3", "Unlimited", "Unlimited"] },
+        { "feature": "Support", "values": ["Community", "Priority", "Dedicated"] },
+        { "feature": "Custom domain", "values": [false, true, true] },
+        { "feature": "SLA", "values": [false, false, true] }
+      ],
+      "variant": "table"
+    },
+    {
+      "id": "faq",
+      "type": "faq",
+      "title": "Pricing FAQ",
+      "items": [
+        { "question": "Can I change plans later?", "answer": "Yes. Upgrade or downgrade anytime from your account." },
+        { "question": "What payment methods do you accept?", "answer": "We accept all major credit cards and PayPal." }
+      ]
+    },
+    {
+      "id": "cta",
+      "type": "cta",
+      "title": "Need a custom plan?",
+      "subtitle": "We can tailor a solution for your team.",
+      "primaryCta": { "label": "Contact sales", "href": "/contact" }
+    },
+    {
+      "id": "footer",
+      "type": "footer",
+      "brand": { "name": "Acme", "href": "/" },
+      "bottom": { "text": "© 2025 Acme." }
+    }
+  ]
+}

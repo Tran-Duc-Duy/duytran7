@@ -1,0 +1,76 @@
+{
+  "seo": {
+    "title": "About us — Acme",
+    "description": "Meet the team behind Acme and our story.",
+    "canonical": "https://example.com/about"
+  },
+  "sections": [
+    {
+      "id": "nav",
+      "type": "nav",
+      "logo": { "src": "/logo.svg", "alt": "Acme", "href": "/" },
+      "links": [
+        { "label": "Features", "href": "/#features" },
+        { "label": "Pricing", "href": "/pricing" },
+        { "label": "About", "href": "/about" },
+        { "label": "Contact", "href": "/contact" }
+      ],
+      "cta": { "label": "Get started", "href": "/signup" }
+    },
+    {
+      "id": "hero",
+      "type": "hero",
+      "headline": "About Acme",
+      "subheadline": "We build tools that help teams ship faster.",
+      "variant": "centered"
+    },
+    {
+      "id": "stats",
+      "type": "stats",
+      "items": [
+        { "value": "2020", "label": "Founded" },
+        { "value": "50+", "label": "Team members" },
+        { "value": "10k+", "label": "Customers" }
+      ],
+      "columns": 3,
+      "variant": "minimal"
+    },
+    {
+      "id": "timeline",
+      "type": "timeline",
+      "title": "Our journey",
+      "items": [
+        { "date": "2020", "title": "Founded", "description": "Started in a small office with a big idea." },
+        { "date": "2022", "title": "Series A", "description": "Raised funding to scale the product." },
+        { "date": "2024", "title": "10k customers", "description": "Reached a major milestone." }
+      ],
+      "variant": "vertical"
+    },
+    {
+      "id": "team",
+      "type": "team",
+      "title": "Meet the team",
+      "subtitle": "The people building Acme.",
+      "members": [
+        { "name": "Jane Doe", "role": "CEO", "avatar": "/team/jane.jpg", "bio": "Former founder. Loves product." },
+        { "name": "John Smith", "role": "CTO", "avatar": "/team/john.jpg", "bio": "Engineer. Scaling systems." },
+        { "name": "Alex Lee", "role": "Head of Design", "avatar": "/team/alex.jpg", "bio": "Design systems and UX." }
+      ],
+      "columns": 3,
+      "variant": "cards"
+    },
+    {
+      "id": "cta",
+      "type": "cta",
+      "title": "Join us",
+      "subtitle": "We're always looking for talented people.",
+      "primaryCta": { "label": "View openings", "href": "/careers" }
+    },
+    {
+      "id": "footer",
+      "type": "footer",
+      "brand": { "name": "Acme", "href": "/" },
+      "bottom": { "text": "© 2025 Acme." }
+    }
+  ]
+}

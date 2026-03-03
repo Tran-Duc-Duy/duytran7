@@ -1,0 +1,46 @@
+{
+  "name": "landing-monorepo",
+  "private": true,
+  "description": "Monorepo: npm libs để build landing page từ JSON config (Next.js, SEO, shadcn-style).",
+  "type": "module",
+  "scripts": {
+    "build": "pnpm -r run build",
+    "dev": "pnpm -r run dev",
+    "demo": "pnpm --filter landing-demo dev",
+    "clean": "pnpm -r run clean; rm -rf node_modules",
+    "lint": "pnpm exec prettier --check .",
+    "format": "pnpm exec prettier --write .",
+    "test": "pnpm exec vitest run",
+    "export-registry": "node scripts/export-registry.mjs",
+    "test:watch": "pnpm exec vitest",
+    "publish-packages": "pnpm run build && pnpm --filter @duytran7/landing-core run ci:publish && pnpm --filter @duytran7/landing-components run ci:publish && pnpm --filter @duytran7/landing-next run ci:publish"
+  },
+  "devDependencies": {
+    "prettier": "^3.4.2",
+    "prettier-plugin-tailwindcss": "^0.6.9",
+    "typescript": "~5.7.2",
+    "vitest": "^3.1.4"
+  },
+  "packageManager": "pnpm@9.15.0",
+  "engines": {
+    "node": ">=20.9"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/duytran7/landing.git"
+  },
+  "bugs": {
+    "url": "https://github.com/duytran7/landing/issues"
+  },
+  "homepage": "https://github.com/duytran7/landing#readme",
+  "license": "MIT",
+  "keywords": [
+    "landing-page",
+    "nextjs",
+    "seo",
+    "json-config",
+    "shadcn",
+    "typescript",
+    "react"
+  ]
+}

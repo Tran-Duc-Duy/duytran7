@@ -1,0 +1,830 @@
+[
+  {
+    "id": "hero",
+    "name": "Hero",
+    "description": "Top-of-page block: large headline, subheadline, 1–2 CTAs, optional image (split or centered layout).",
+    "useCase": "Above the fold; product/service intro; primary call-to-action.",
+    "variants": [
+      "default",
+      "centered",
+      "split",
+      "minimal",
+      "gradient",
+      "badge",
+      "left",
+      "right-image",
+      "dark",
+      "floating"
+    ],
+    "configFields": [
+      "id",
+      "type",
+      "headline",
+      "subheadline",
+      "primaryCta",
+      "secondaryCta",
+      "image",
+      "badge",
+      "variant"
+    ],
+    "classesKeys": [
+      "root",
+      "container",
+      "title",
+      "subtitle",
+      "primaryButton",
+      "secondaryButton",
+      "image",
+      "badge"
+    ],
+    "exampleConfig": {
+      "id": "hero-1",
+      "type": "hero",
+      "headline": "Headline",
+      "subheadline": "Subheadline.",
+      "primaryCta": {
+        "label": "Get started",
+        "href": "#"
+      },
+      "variant": "centered"
+    }
+  },
+  {
+    "id": "nav",
+    "name": "Nav",
+    "description": "Page header: logo, nav links, optional CTA button.",
+    "useCase": "Site header; main navigation; sign up / login entry.",
+    "variants": [
+      "default",
+      "centered",
+      "minimal",
+      "transparent",
+      "sticky",
+      "two-row",
+      "dark",
+      "bordered",
+      "floating",
+      "compact"
+    ],
+    "configFields": [
+      "id",
+      "type",
+      "logo",
+      "links",
+      "cta",
+      "variant"
+    ],
+    "classesKeys": [
+      "root",
+      "container"
+    ],
+    "exampleConfig": {
+      "id": "nav-1",
+      "type": "nav",
+      "links": [
+        {
+          "label": "Features",
+          "href": "#features"
+        },
+        {
+          "label": "Pricing",
+          "href": "#pricing"
+        }
+      ],
+      "cta": {
+        "label": "Sign up",
+        "href": "#"
+      }
+    }
+  },
+  {
+    "id": "features",
+    "name": "Features",
+    "description": "Feature grid: title, subtitle, list of items (title + description), card or list layout.",
+    "useCase": "Product features; benefit comparison; 2–4 columns.",
+    "variants": [
+      "default",
+      "cards",
+      "list",
+      "alternating",
+      "icon-top",
+      "icon-left",
+      "numbered",
+      "bordered",
+      "zigzag",
+      "grid-images"
+    ],
+    "configFields": [
+      "id",
+      "type",
+      "title",
+      "subtitle",
+      "items",
+      "columns",
+      "variant"
+    ],
+    "classesKeys": [
+      "root",
+      "container",
+      "title",
+      "subtitle",
+      "header",
+      "grid",
+      "card"
+    ],
+    "exampleConfig": {
+      "id": "features-1",
+      "type": "features",
+      "title": "Features",
+      "items": [
+        {
+          "title": "Feature A",
+          "description": "Description."
+        },
+        {
+          "title": "Feature B",
+          "description": "Description."
+        }
+      ],
+      "columns": 3,
+      "variant": "cards"
+    }
+  },
+  {
+    "id": "stats",
+    "name": "Stats",
+    "description": "KPI block: value + label (e.g. 10k+ Users, 99% Uptime).",
+    "useCase": "Social proof; key metrics; trust (users, uptime, support).",
+    "variants": [
+      "default",
+      "bordered",
+      "minimal",
+      "icons",
+      "gradient",
+      "vertical",
+      "divider",
+      "large",
+      "compact",
+      "split"
+    ],
+    "configFields": [
+      "id",
+      "type",
+      "title",
+      "items",
+      "columns",
+      "variant"
+    ],
+    "classesKeys": [
+      "root",
+      "container",
+      "title"
+    ],
+    "exampleConfig": {
+      "id": "stats-1",
+      "type": "stats",
+      "title": "Stats",
+      "items": [
+        {
+          "value": "10k+",
+          "label": "Users"
+        },
+        {
+          "value": "99%",
+          "label": "Uptime"
+        }
+      ],
+      "columns": 3
+    }
+  },
+  {
+    "id": "logo-cloud",
+    "name": "Logo Cloud",
+    "description": "Partner or customer logos (trusted by).",
+    "useCase": "Trust; list of customer or partner logos.",
+    "variants": [
+      "default",
+      "grayscale",
+      "grid",
+      "carousel",
+      "bordered",
+      "dark",
+      "small",
+      "large",
+      "title-bottom",
+      "opacity"
+    ],
+    "configFields": [
+      "id",
+      "type",
+      "title",
+      "items",
+      "variant"
+    ],
+    "classesKeys": [
+      "root",
+      "container",
+      "title"
+    ],
+    "exampleConfig": {
+      "id": "logo-cloud-1",
+      "type": "logo-cloud",
+      "title": "Trusted by",
+      "items": [
+        {
+          "src": "https://example.com/logo-a.svg",
+          "alt": "Company A"
+        },
+        {
+          "src": "https://example.com/logo-b.svg",
+          "alt": "Company B"
+        }
+      ]
+    }
+  },
+  {
+    "id": "team",
+    "name": "Team",
+    "description": "Team members: name, role, optional avatar and bio.",
+    "useCase": "About us; team page; people section.",
+    "variants": [
+      "default",
+      "cards",
+      "list",
+      "social-only",
+      "overlay",
+      "minimal",
+      "alternating",
+      "grid-large",
+      "horizontal",
+      "compact"
+    ],
+    "configFields": [
+      "id",
+      "type",
+      "title",
+      "members",
+      "columns",
+      "variant"
+    ],
+    "classesKeys": [
+      "root",
+      "container",
+      "title"
+    ],
+    "exampleConfig": {
+      "id": "team-1",
+      "type": "team",
+      "title": "Team",
+      "members": [
+        {
+          "name": "Jane",
+          "role": "CEO"
+        },
+        {
+          "name": "John",
+          "role": "CTO"
+        }
+      ],
+      "columns": 2
+    }
+  },
+  {
+    "id": "testimonials",
+    "name": "Testimonials",
+    "description": "Customer quotes: quote, author, role, optional avatar.",
+    "useCase": "Social proof; reviews; customer feedback.",
+    "variants": [
+      "default",
+      "carousel",
+      "grid",
+      "featured",
+      "rating",
+      "minimal",
+      "bordered",
+      "alternating",
+      "masonry",
+      "compact"
+    ],
+    "configFields": [
+      "id",
+      "type",
+      "title",
+      "items",
+      "variant"
+    ],
+    "classesKeys": [
+      "root",
+      "container",
+      "title"
+    ],
+    "exampleConfig": {
+      "id": "testimonials-1",
+      "type": "testimonials",
+      "title": "Testimonials",
+      "items": [
+        {
+          "quote": "Great product.",
+          "author": "Alice",
+          "role": "User"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pricing",
+    "name": "Pricing",
+    "description": "Pricing table: tiers (name, price, period, features, CTA), optional highlighted plan.",
+    "useCase": "Pricing page; plan comparison; sign up or purchase CTA.",
+    "variants": [
+      "default",
+      "cards",
+      "table",
+      "toggle",
+      "minimal",
+      "badge",
+      "featured-center",
+      "horizontal",
+      "compact",
+      "bordered"
+    ],
+    "configFields": [
+      "id",
+      "type",
+      "title",
+      "tiers",
+      "variant"
+    ],
+    "classesKeys": [
+      "root",
+      "container",
+      "title"
+    ],
+    "exampleConfig": {
+      "id": "pricing-1",
+      "type": "pricing",
+      "title": "Pricing",
+      "tiers": [
+        {
+          "name": "Free",
+          "price": "$0",
+          "period": "mo",
+          "features": [
+            "Feature 1"
+          ],
+          "cta": {
+            "label": "Start",
+            "href": "#"
+          }
+        },
+        {
+          "name": "Pro",
+          "price": "$29",
+          "period": "mo",
+          "features": [
+            "Feature 1",
+            "Feature 2"
+          ],
+          "cta": {
+            "label": "Buy",
+            "href": "#"
+          },
+          "highlighted": true
+        }
+      ]
+    }
+  },
+  {
+    "id": "faq",
+    "name": "FAQ",
+    "description": "Frequently asked questions: question + answer pairs.",
+    "useCase": "Answer common questions; reduce support; SEO long-tail.",
+    "variants": [
+      "default",
+      "accordion",
+      "two-column",
+      "bordered",
+      "minimal",
+      "category",
+      "grid",
+      "compact",
+      "expanded",
+      "cards"
+    ],
+    "configFields": [
+      "id",
+      "type",
+      "title",
+      "items",
+      "variant"
+    ],
+    "classesKeys": [
+      "root",
+      "container",
+      "title"
+    ],
+    "exampleConfig": {
+      "id": "faq-1",
+      "type": "faq",
+      "title": "FAQ",
+      "items": [
+        {
+          "question": "Question?",
+          "answer": "Answer."
+        }
+      ]
+    }
+  },
+  {
+    "id": "cta",
+    "name": "CTA",
+    "description": "Call to action: title, subtitle, 1–2 buttons (primary, optional secondary).",
+    "useCase": "End of page or mid-page; conversion; sign up or contact.",
+    "variants": [
+      "default",
+      "banner",
+      "card",
+      "split-image",
+      "minimal",
+      "gradient",
+      "two-column",
+      "floating",
+      "dark",
+      "bordered"
+    ],
+    "configFields": [
+      "id",
+      "type",
+      "title",
+      "subtitle",
+      "primaryCta",
+      "secondaryCta",
+      "variant"
+    ],
+    "classesKeys": [
+      "root",
+      "container",
+      "inner",
+      "title",
+      "subtitle",
+      "actions",
+      "primaryButton",
+      "secondaryButton"
+    ],
+    "exampleConfig": {
+      "id": "cta-1",
+      "type": "cta",
+      "title": "Ready to start?",
+      "subtitle": "Optional subtitle.",
+      "primaryCta": {
+        "label": "Get started",
+        "href": "#"
+      },
+      "variant": "default"
+    }
+  },
+  {
+    "id": "newsletter",
+    "name": "Newsletter",
+    "description": "Email signup form: title, subtitle, input, submit button.",
+    "useCase": "Collect emails; marketing; stay updated.",
+    "variants": [
+      "default",
+      "inline",
+      "minimal",
+      "card",
+      "benefits",
+      "split",
+      "bordered",
+      "dark",
+      "compact",
+      "floating"
+    ],
+    "configFields": [
+      "id",
+      "type",
+      "title",
+      "subtitle",
+      "placeholder",
+      "submitLabel",
+      "actionUrl",
+      "variant"
+    ],
+    "classesKeys": [
+      "root",
+      "container",
+      "title"
+    ],
+    "exampleConfig": {
+      "id": "newsletter-1",
+      "type": "newsletter",
+      "title": "Newsletter",
+      "placeholder": "Email",
+      "submitLabel": "Subscribe",
+      "actionUrl": "#"
+    }
+  },
+  {
+    "id": "contact",
+    "name": "Contact",
+    "description": "Contact info and/or form: email, phone, address, form (name, email, message).",
+    "useCase": "Contact page; contact form; company details.",
+    "variants": [
+      "default",
+      "split",
+      "minimal",
+      "map-side",
+      "centered",
+      "two-column",
+      "cards",
+      "dark",
+      "compact",
+      "inline"
+    ],
+    "configFields": [
+      "id",
+      "type",
+      "title",
+      "email",
+      "phone",
+      "address",
+      "formLabels",
+      "actionUrl",
+      "variant"
+    ],
+    "classesKeys": [
+      "root",
+      "container",
+      "title"
+    ],
+    "exampleConfig": {
+      "id": "contact-1",
+      "type": "contact",
+      "title": "Contact",
+      "email": "hello@example.com",
+      "formLabels": {
+        "name": "Name",
+        "email": "Email",
+        "message": "Message",
+        "submit": "Send"
+      },
+      "actionUrl": "#"
+    }
+  },
+  {
+    "id": "gallery",
+    "name": "Gallery",
+    "description": "Image grid: title, list of images (src, alt, optional caption).",
+    "useCase": "Portfolio; product shots; image showcase.",
+    "variants": [
+      "default",
+      "masonry",
+      "carousel",
+      "grid-bordered",
+      "staggered",
+      "full-width",
+      "compact",
+      "dark",
+      "overlay",
+      "list"
+    ],
+    "configFields": [
+      "id",
+      "type",
+      "title",
+      "images",
+      "columns",
+      "variant"
+    ],
+    "classesKeys": [
+      "root",
+      "container",
+      "title"
+    ],
+    "exampleConfig": {
+      "id": "gallery-1",
+      "type": "gallery",
+      "title": "Gallery",
+      "images": [
+        {
+          "src": "https://placehold.co/400x300",
+          "alt": "1"
+        },
+        {
+          "src": "https://placehold.co/400x300",
+          "alt": "2"
+        }
+      ],
+      "columns": 3
+    }
+  },
+  {
+    "id": "banner",
+    "name": "Banner",
+    "description": "Short announcement bar: message, optional CTA link (alert or promo).",
+    "useCase": "Announcements; promotions; maintenance; cookie notice.",
+    "variants": [
+      "default",
+      "warning",
+      "success",
+      "info",
+      "gradient",
+      "icon",
+      "minimal",
+      "bordered",
+      "dark",
+      "compact"
+    ],
+    "configFields": [
+      "id",
+      "type",
+      "message",
+      "cta",
+      "variant",
+      "dismissible"
+    ],
+    "classesKeys": [
+      "root",
+      "container",
+      "message",
+      "cta"
+    ],
+    "exampleConfig": {
+      "id": "banner-1",
+      "type": "banner",
+      "message": "Announcement message.",
+      "cta": {
+        "label": "Learn more",
+        "href": "#"
+      }
+    }
+  },
+  {
+    "id": "comparison",
+    "name": "Comparison",
+    "description": "Comparison table: plan names, rows (feature + values per plan), optional highlighted column.",
+    "useCase": "Plan comparison; feature matrix; pricing comparison.",
+    "variants": [
+      "default",
+      "table",
+      "cards",
+      "highlighted-row",
+      "checkmarks",
+      "minimal",
+      "compact",
+      "bordered",
+      "striped",
+      "inline"
+    ],
+    "configFields": [
+      "id",
+      "type",
+      "title",
+      "planNames",
+      "rows",
+      "highlightColumn",
+      "variant"
+    ],
+    "classesKeys": [
+      "root",
+      "container",
+      "title"
+    ],
+    "exampleConfig": {
+      "id": "comparison-1",
+      "type": "comparison",
+      "title": "Compare plans",
+      "planNames": [
+        "Free",
+        "Pro"
+      ],
+      "rows": [
+        {
+          "feature": "Feature A",
+          "values": [
+            "Yes",
+            "Yes"
+          ]
+        },
+        {
+          "feature": "Feature B",
+          "values": [
+            false,
+            true
+          ]
+        }
+      ],
+      "highlightColumn": 1
+    }
+  },
+  {
+    "id": "timeline",
+    "name": "Timeline",
+    "description": "Timeline: items with date, title, optional description.",
+    "useCase": "Roadmap; process; journey; milestones.",
+    "variants": [
+      "default",
+      "vertical",
+      "horizontal",
+      "alternate",
+      "minimal",
+      "connectors",
+      "cards",
+      "compact",
+      "dark",
+      "numbered"
+    ],
+    "configFields": [
+      "id",
+      "type",
+      "title",
+      "items",
+      "variant"
+    ],
+    "classesKeys": [
+      "root",
+      "container",
+      "title"
+    ],
+    "exampleConfig": {
+      "id": "timeline-1",
+      "type": "timeline",
+      "title": "Timeline",
+      "items": [
+        {
+          "date": "2024",
+          "title": "Step 1",
+          "description": "Description."
+        }
+      ],
+      "variant": "vertical"
+    }
+  },
+  {
+    "id": "footer",
+    "name": "Footer",
+    "description": "Page footer: brand, link groups, bottom bar (copyright, links).",
+    "useCase": "Site footer; secondary links; legal; social.",
+    "variants": [
+      "default",
+      "minimal",
+      "newsletter",
+      "multi-column",
+      "centered",
+      "social",
+      "dark",
+      "bordered",
+      "compact",
+      "simple"
+    ],
+    "configFields": [
+      "id",
+      "type",
+      "brand",
+      "linkGroups",
+      "bottom",
+      "variant"
+    ],
+    "classesKeys": [
+      "root",
+      "container"
+    ],
+    "exampleConfig": {
+      "id": "footer-1",
+      "type": "footer",
+      "brand": {
+        "name": "Brand",
+        "href": "/"
+      },
+      "linkGroups": [
+        {
+          "title": "Product",
+          "links": [
+            {
+              "label": "Features",
+              "href": "#"
+            }
+          ]
+        },
+        {
+          "title": "Company",
+          "links": [
+            {
+              "label": "About",
+              "href": "#"
+            }
+          ]
+        }
+      ],
+      "bottom": {
+        "text": "© 2025",
+        "links": [
+          {
+            "label": "Privacy",
+            "href": "#"
+          }
+        ]
+      }
+    }
+  }
+]

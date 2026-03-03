@@ -1,0 +1,196 @@
+{
+  "seo": {
+    "title": "Acme — Build landing pages from JSON",
+    "description": "One config file. Full SEO. Ready-made sections and widgets.",
+    "canonical": "https://example.com",
+    "og": {
+      "title": "Acme — Build landing pages from JSON",
+      "description": "One config file. Full SEO. Ready-made sections.",
+      "image": "https://example.com/og.png",
+      "type": "website"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "Acme — Build landing pages from JSON"
+    },
+    "jsonLd": [
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Acme",
+        "url": "https://example.com"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "banner",
+      "type": "banner",
+      "message": "New: Comparison table and Timeline sections. Check the docs.",
+      "cta": { "label": "Learn more", "href": "#features" },
+      "variant": "info",
+      "classes": {
+        "root": "py-4",
+        "message": "font-semibold",
+        "cta": "underline-offset-4"
+      }
+    },
+    {
+      "id": "nav",
+      "type": "nav",
+      "logo": { "src": "/logo.svg", "alt": "Acme", "href": "/" },
+      "links": [
+        { "label": "Features", "href": "#features" },
+        { "label": "Pricing", "href": "#pricing" },
+        { "label": "About", "href": "/about" },
+        { "label": "Contact", "href": "/contact" }
+      ],
+      "cta": { "label": "Get started", "href": "/signup" }
+    },
+    {
+      "id": "hero",
+      "type": "hero",
+      "headline": "Landing pages from JSON. No boilerplate.",
+      "subheadline": "Configure once. Get nav, hero, features, pricing, FAQ, CTA, newsletter, and more. SEO and accessibility built in.",
+      "primaryCta": { "label": "View demo", "href": "#features" },
+      "secondaryCta": { "label": "Docs", "href": "#" },
+      "variant": "centered",
+      "classes": {
+        "root": "bg-muted/20",
+        "title": "tracking-tight",
+        "subtitle": "text-lg max-w-2xl mx-auto",
+        "primaryButton": "rounded-full px-8 shadow-md",
+        "secondaryButton": "rounded-full border-2"
+      }
+    },
+    {
+      "id": "stats",
+      "type": "stats",
+      "title": "Trusted by teams",
+      "items": [
+        { "value": "10k+", "label": "Active users" },
+        { "value": "99.9%", "label": "Uptime" },
+        { "value": "50+", "label": "Integrations" },
+        { "value": "24/7", "label": "Support" }
+      ],
+      "columns": 4,
+      "variant": "default"
+    },
+    {
+      "id": "logo-cloud",
+      "type": "logo-cloud",
+      "title": "Used by",
+      "items": [
+        { "src": "/logos/company-a.svg", "alt": "Company A" },
+        { "src": "/logos/company-b.svg", "alt": "Company B" },
+        { "src": "/logos/company-c.svg", "alt": "Company C" }
+      ],
+      "variant": "grayscale"
+    },
+    {
+      "id": "features",
+      "type": "features",
+      "title": "Everything you need",
+      "subtitle": "Sections and widgets ready to drop into your config.",
+      "items": [
+        { "title": "Hero", "description": "Headline, subheadline, CTAs, optional image. Variants: default, centered, split." },
+        { "title": "Features grid", "description": "Cards or list. 2–4 columns." },
+        { "title": "Pricing", "description": "Tiers with features and CTA. Highlight a plan." },
+        { "title": "Testimonials", "description": "Quotes with author and avatar." },
+        { "title": "FAQ", "description": "Accordion-style Q&A." },
+        { "title": "Stats", "description": "KPI numbers. Logo cloud. Team. Newsletter. Contact. Gallery. Timeline. Comparison table." }
+      ],
+      "columns": 3,
+      "variant": "cards",
+      "classes": {
+        "title": "text-3xl sm:text-4xl",
+        "subtitle": "text-muted-foreground",
+        "card": "rounded-xl border-2 border-border/50 shadow-sm hover:shadow-md transition-shadow"
+      }
+    },
+    {
+      "id": "testimonials",
+      "type": "testimonials",
+      "title": "What people say",
+      "subtitle": "Real feedback from real users.",
+      "items": [
+        { "quote": "We shipped our landing in a day.", "author": "Jane Doe", "role": "CTO, Startup" },
+        { "quote": "SEO and JSON-LD out of the box. Huge time saver.", "author": "John Smith", "role": "Developer" }
+      ],
+      "variant": "grid"
+    },
+    {
+      "id": "pricing",
+      "type": "pricing",
+      "title": "Simple pricing",
+      "subtitle": "Choose the plan that fits.",
+      "tiers": [
+        {
+          "name": "Starter",
+          "description": "For side projects",
+          "price": "$0",
+          "period": "month",
+          "features": ["5 pages", "Basic SEO", "Email support"],
+          "cta": { "label": "Get started", "href": "/signup" }
+        },
+        {
+          "name": "Pro",
+          "description": "For growing teams",
+          "price": "$29",
+          "period": "month",
+          "features": ["Unlimited pages", "Advanced SEO", "Priority support", "Custom domain"],
+          "cta": { "label": "Start trial", "href": "/signup" },
+          "highlighted": true
+        },
+        {
+          "name": "Enterprise",
+          "description": "For large orgs",
+          "price": "Custom",
+          "features": ["Everything in Pro", "SLA", "Dedicated success manager"],
+          "cta": { "label": "Contact sales", "href": "/contact" }
+        }
+      ]
+    },
+    {
+      "id": "faq",
+      "type": "faq",
+      "title": "FAQ",
+      "items": [
+        { "question": "Can I use my own design?", "answer": "Yes. Override className per section or use Tailwind in your app." },
+        { "question": "Is it SEO-friendly?", "answer": "Yes. Metadata, Open Graph, Twitter Card, and JSON-LD are supported." }
+      ]
+    },
+    {
+      "id": "cta",
+      "type": "cta",
+      "title": "Ready to build?",
+      "subtitle": "Copy an example config and customize.",
+      "primaryCta": { "label": "Get started", "href": "/signup" },
+      "variant": "banner",
+      "classes": {
+        "root": "rounded-none",
+        "title": "text-3xl sm:text-4xl font-bold",
+        "primaryButton": "rounded-full bg-white text-primary hover:bg-white/90 px-8"
+      }
+    },
+    {
+      "id": "newsletter",
+      "type": "newsletter",
+      "title": "Stay updated",
+      "subtitle": "Get product updates and tips.",
+      "placeholder": "you@example.com",
+      "submitLabel": "Subscribe",
+      "actionUrl": "/api/newsletter"
+    },
+    {
+      "id": "footer",
+      "type": "footer",
+      "brand": { "name": "Acme", "href": "/" },
+      "linkGroups": [
+        { "title": "Product", "links": [{ "label": "Features", "href": "#features" }, { "label": "Pricing", "href": "#pricing" }] },
+        { "title": "Company", "links": [{ "label": "About", "href": "/about" }, { "label": "Contact", "href": "/contact" }] }
+      ],
+      "bottom": { "text": "© 2025 Acme.", "links": [{ "label": "Privacy", "href": "/privacy" }, { "label": "Terms", "href": "/terms" }] }
+    }
+  ]
+}

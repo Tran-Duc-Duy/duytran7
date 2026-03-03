@@ -1,0 +1,46 @@
+{
+  "seo": {
+    "title": "Contact — Acme",
+    "description": "Get in touch with the Acme team.",
+    "canonical": "https://example.com/contact"
+  },
+  "sections": [
+    {
+      "id": "nav",
+      "type": "nav",
+      "logo": { "src": "/logo.svg", "alt": "Acme", "href": "/" },
+      "links": [
+        { "label": "Features", "href": "/#features" },
+        { "label": "Pricing", "href": "/pricing" },
+        { "label": "About", "href": "/about" },
+        { "label": "Contact", "href": "/contact" }
+      ],
+      "cta": { "label": "Get started", "href": "/signup" }
+    },
+    {
+      "id": "hero",
+      "type": "hero",
+      "headline": "Contact us",
+      "subheadline": "We'd love to hear from you.",
+      "variant": "centered"
+    },
+    {
+      "id": "contact",
+      "type": "contact",
+      "title": "Get in touch",
+      "subtitle": "Send a message or use the details below.",
+      "email": "hello@example.com",
+      "phone": "+1 (555) 000-0000",
+      "address": "123 Main St, San Francisco, CA",
+      "formLabels": { "name": "Name", "email": "Email", "message": "Message", "submit": "Send message" },
+      "actionUrl": "/api/contact",
+      "variant": "split"
+    },
+    {
+      "id": "footer",
+      "type": "footer",
+      "brand": { "name": "Acme", "href": "/" },
+      "bottom": { "text": "© 2025 Acme." }
+    }
+  ]
+}

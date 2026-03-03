@@ -1,0 +1,57 @@
+{
+  "name": "@duytran7/landing-components",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "clean": "rm -rf dist",
+    "test": "vitest run --config ../../vitest.config.ts",
+    "ci:publish": "pnpm publish --access public --no-git-checks",
+    "prepublishOnly": "pnpm run build"
+  },
+  "dependencies": {
+    "@duytran7/landing-core": "workspace:*"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.6",
+    "@types/react-dom": "^19.0.2",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tsup": "^8.4.0",
+    "typescript": "~5.7.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/duytran7/landing.git",
+    "directory": "packages/components"
+  },
+  "license": "MIT",
+  "keywords": [
+    "landing",
+    "react",
+    "components",
+    "shadcn",
+    "tailwind",
+    "ui"
+  ],
+  "description": "React section components (hero, nav, features, CTA, footer, etc.) and SectionRenderer. Shadcn-style, Tailwind, config-driven."
+}
