@@ -1,6 +1,6 @@
 /**
- * Page templates: mỗi loại trang có tên, slug mặc định và danh sách section types.
- * Dùng khi "Add page" hoặc "Add inner page" để tạo trang với nội dung mẫu.
+ * Page templates: each page type has name, default slug and section type list.
+ * Used when "Add page" or "Add inner page" to create a page with sample content.
  */
 
 import type { LandingSection } from "@duytran7/landing-core"
@@ -11,104 +11,104 @@ export interface PageTemplate {
   name: string
   slug: string
   description: string
-  /** Section type ids theo thứ tự (nav/hero/... từ defaultSections). */
+  /** Section type ids in order (nav/hero/... from defaultSections). */
   sectionTypes: string[]
 }
 
-/** Các template trang và inner page. */
+/** Page and inner-page templates. */
 export const PAGE_TEMPLATES: PageTemplate[] = [
   {
     id: "landing",
     name: "Landing",
     slug: "/",
-    description: "Trang chủ: Nav, Hero, Features, CTA, Footer",
+    description: "Home: Nav, Hero, Features, CTA, Footer",
     sectionTypes: ["nav", "hero", "features", "cta", "footer"],
   },
   {
     id: "about",
-    name: "Về chúng tôi",
+    name: "About",
     slug: "/about",
-    description: "Giới thiệu: Nav, Hero, Team, Testimonials, CTA, Footer",
+    description: "About: Nav, Hero, Team, Testimonials, CTA, Footer",
     sectionTypes: ["nav", "hero", "team", "testimonials", "cta", "footer"],
   },
   {
     id: "pricing",
-    name: "Giá",
+    name: "Pricing",
     slug: "/pricing",
-    description: "Bảng giá: Nav, Hero, Pricing, FAQ, CTA, Footer",
+    description: "Pricing: Nav, Hero, Pricing, FAQ, CTA, Footer",
     sectionTypes: ["nav", "hero", "pricing", "faq", "cta", "footer"],
   },
   {
     id: "contact",
-    name: "Liên hệ",
+    name: "Contact",
     slug: "/contact",
-    description: "Liên hệ: Nav, Hero, Contact, Footer",
+    description: "Contact: Nav, Hero, Contact, Footer",
     sectionTypes: ["nav", "hero", "contact", "footer"],
   },
   {
     id: "faq",
     name: "FAQ",
     slug: "/faq",
-    description: "Câu hỏi thường gặp: Nav, Hero, FAQ, CTA, Footer",
+    description: "FAQ: Nav, Hero, FAQ, CTA, Footer",
     sectionTypes: ["nav", "hero", "faq", "cta", "footer"],
   },
   {
     id: "login",
-    name: "Đăng nhập / Đăng ký",
+    name: "Login / Sign up",
     slug: "/login",
-    description: "Trang đăng nhập: Nav, Hero (Sign in), CTA, Footer",
+    description: "Login: Nav, Hero (Sign in), CTA, Footer",
     sectionTypes: ["nav", "hero", "cta", "footer"],
   },
   {
     id: "blog-post",
-    name: "Bài viết / Blog",
+    name: "Blog post",
     slug: "/blog/post",
-    description: "Nội dung bài viết: Nav, Hero, Features (nội dung), Footer",
+    description: "Blog: Nav, Hero, Features, Footer",
     sectionTypes: ["nav", "hero", "features", "footer"],
   },
   {
     id: "product",
-    name: "Sản phẩm / Tính năng",
+    name: "Product / Feature",
     slug: "/product",
-    description: "Trang sản phẩm: Nav, Hero, Features, Gallery, CTA, Footer",
+    description: "Product: Nav, Hero, Features, Gallery, CTA, Footer",
     sectionTypes: ["nav", "hero", "features", "gallery", "cta", "footer"],
   },
   {
     id: "dashboard",
-    name: "Dashboard / Danh sách",
+    name: "Dashboard / List",
     slug: "/dashboard",
-    description: "Thống kê & danh sách: Nav, Stats, Features, Footer",
+    description: "Dashboard: Nav, Stats, Features, Footer",
     sectionTypes: ["nav", "stats", "features", "footer"],
   },
   {
     id: "team",
-    name: "Đội ngũ (inner)",
+    name: "Team (inner)",
     slug: "team",
-    description: "Trang con Đội ngũ: Hero, Team, Footer",
+    description: "Inner Team: Hero, Team, Footer",
     sectionTypes: ["hero", "team", "footer"],
   },
   {
     id: "testimonials",
-    name: "Đánh giá (inner)",
+    name: "Testimonials (inner)",
     slug: "testimonials",
-    description: "Trang con Testimonials: Hero, Testimonials, Footer",
+    description: "Inner Testimonials: Hero, Testimonials, Footer",
     sectionTypes: ["hero", "testimonials", "footer"],
   },
   {
     id: "blank",
-    name: "Trang trống",
+    name: "Blank page",
     slug: "/new-page",
-    description: "Trang không section, tự thêm sau",
+    description: "No sections; add sections later",
     sectionTypes: [],
   },
 ]
 
-/** Template cho trang gốc (không phải inner). */
+/** Templates for root pages (not inner). */
 export const ROOT_PAGE_TEMPLATES = PAGE_TEMPLATES.filter(
   (t) => t.slug.startsWith("/") || t.id === "blank"
 )
 
-/** Template phù hợp cho inner page (slug không có leading /). */
+/** Templates for inner pages (slug without leading /). */
 export const INNER_PAGE_TEMPLATES = PAGE_TEMPLATES.filter(
   (t) => !t.slug.startsWith("/") || t.id === "blank"
 )

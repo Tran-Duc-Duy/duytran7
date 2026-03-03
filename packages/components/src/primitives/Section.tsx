@@ -1,5 +1,5 @@
 /**
- * Section wrapper — semantic section với id và className cho từng block landing.
+ * Section wrapper — semantic section with id and className per landing block.
  */
 
 import { forwardRef } from "react"

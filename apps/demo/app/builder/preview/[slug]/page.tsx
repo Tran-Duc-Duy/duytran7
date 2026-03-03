@@ -1,8 +1,8 @@
 "use client"
 
 /**
- * Preview standalone theo slug: mở trong tab mới tại /builder/preview/[slug].
- * Đọc config từ localStorage (key landing-preview-${slug}), shared giữa các tab cùng origin.
+ * Standalone preview by slug: open in new tab at /builder/preview/[slug].
+ * Reads config from localStorage (key landing-preview-${slug}), shared across same-origin tabs.
  */
 
 import React, { useState, useEffect, use } from "react"

@@ -1,5 +1,5 @@
 /**
- * Layout for builder preview iframe — no extra chrome; header ẩn bằng CSS (body.builder-preview).
+ * Layout for builder preview iframe — no extra chrome; header hidden via CSS (body.builder-preview).
  * Suspense required for useSearchParams() in page.
  */
 

@@ -1,5 +1,5 @@
 /**
- * Container — max-width wrapper cho nội dung, responsive.
+ * Container — max-width wrapper for content, responsive.
  */
 
 import { forwardRef } from "react"

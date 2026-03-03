@@ -1,5 +1,5 @@
 /**
- * Showcase data: section list for nav/grid và configs theo từng section type.
+ * Showcase data: section list for nav/grid and configs per section type.
  */
 
 import type { LandingSection } from "@duytran7/landing-core"
@@ -9,7 +9,7 @@ export interface SectionMeta {
   name: string
 }
 
-/** Danh sách section dùng cho sidebar và grid (slug = id). */
+/** Section list for sidebar and grid (slug = id). */
 export const SECTION_LIST: SectionMeta[] = [
   { id: "hero", name: "Hero" },
   { id: "nav", name: "Nav" },
@@ -488,12 +488,12 @@ const SHOWCASE_ITEMS: ShowcaseItem[] = [
   },
 ]
 
-/** Lấy danh sách showcase items theo section type (slug). */
+/** Get showcase items by section type (slug). */
 export function getShowcaseItemsByType(sectionType: string): ShowcaseItem[] {
   return SHOWCASE_ITEMS.filter((item) => item.section.type === sectionType)
 }
 
-/** Toàn bộ items (cho trang sections cũ). */
+/** All items (for legacy sections page). */
 export function getAllShowcaseItems(): ShowcaseItem[] {
   return SHOWCASE_ITEMS.map((item) => ({
     label: `${item.section.type} — ${item.label}`,

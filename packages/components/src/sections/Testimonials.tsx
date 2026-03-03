@@ -1,5 +1,5 @@
 /**
- * Testimonials section — quotes grid/carousel placeholder (carousel logic có thể inject từ bên ngoài).
+ * Testimonials section — quotes grid/carousel placeholder (carousel logic injectable from outside).
  */
 
 import type { TestimonialsSection as TestimonialsSectionConfig } from "@duytran7/landing-core"

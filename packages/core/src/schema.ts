@@ -1,5 +1,5 @@
 /**
- * Zod schema cho LandingConfig — validate JSON config từ file hoặc API.
+ * Zod schema for LandingConfig — validate JSON config from file or API.
  */
 
 import { z } from "zod"
@@ -33,7 +33,7 @@ const sectionBaseSchema = z.object({
   id: z.string().min(1),
   type: z.string(),
   className: z.string().optional(),
-  /** Đa tầng Tailwind: override từng phần tử (root, title, subtitle, primaryButton, ...). */
+  /** Multi-layer Tailwind: override per element (root, title, subtitle, primaryButton, ...). */
   classes: z.record(z.string(), z.string().optional()).optional(),
 })
 

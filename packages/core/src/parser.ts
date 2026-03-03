@@ -1,6 +1,6 @@
 /**
- * Parse và validate JSON config thành LandingConfig.
- * Trả về result type để caller xử lý lỗi rõ ràng.
+ * Parse and validate JSON config into LandingConfig.
+ * Returns result type for caller to handle errors explicitly.
  */
 
 import type { LandingConfig } from "./types"
@@ -19,7 +19,7 @@ export interface ParseError {
 export type ParseLandingConfigResult = ParseResult | ParseError
 
 /**
- * Parse và validate config (object hoặc JSON string).
+ * Parse and validate config (object or JSON string).
  */
 export function parseLandingConfig(input: unknown): ParseLandingConfigResult {
   let raw: unknown = input
@@ -52,7 +52,7 @@ export function parseLandingConfig(input: unknown): ParseLandingConfigResult {
 }
 
 /**
- * Assert parse: throw nếu invalid (dùng trong môi trường đã đảm bảo config đúng).
+ * Assert parse: throw if invalid (use when config is guaranteed correct).
  */
 export function parseLandingConfigStrict(input: unknown): LandingConfig {
   const parsed = parseLandingConfig(input)

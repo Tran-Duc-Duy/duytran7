@@ -1,5 +1,5 @@
 /**
- * Merge classNames (shadcn-style). Consumer có thể cung cấp clsx + tailwind-merge hoặc dùng fallback.
+ * Merge classNames (shadcn-style). Consumer can provide clsx + tailwind-merge or use fallback.
  */
 
 export function cn(

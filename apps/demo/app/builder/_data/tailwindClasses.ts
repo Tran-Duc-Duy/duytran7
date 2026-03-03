@@ -1,6 +1,6 @@
 /**
- * Danh sách class Tailwind gợi ý cho autocomplete trong builder.
- * Bao phủ utility thường dùng; user vẫn có thể gõ class bất kỳ.
+ * Suggested Tailwind classes for builder autocomplete.
+ * Covers common utilities; user can still type any class.
  */
 
 const colors = [
@@ -198,7 +198,7 @@ const UNIQ = [...new Set(TAILWIND_CLASSES)].sort()
 
 export const TAILWIND_SUGGESTIONS: string[] = UNIQ
 
-/** Default value gợi ý theo ngữ cảnh (vd. className root, overlay). */
+/** Default value suggested by context (e.g. root className, overlay). */
 export const TAILWIND_DEFAULTS: Record<string, string> = {
   "className (root)": "py-16 bg-muted/20",
   "classes.root": "py-16 bg-muted/20",
@@ -212,20 +212,20 @@ export const TAILWIND_DEFAULTS: Record<string, string> = {
   "background color": "bg-red-100",
 }
 
-/** Lọc gợi ý theo từ khóa (prefix). */
+/** Filter suggestions by keyword (prefix). */
 export function filterTailwindSuggestions(query: string, limit = 40): string[] {
   const q = query.trim().toLowerCase()
   if (!q) return TAILWIND_SUGGESTIONS.slice(0, limit)
   return TAILWIND_SUGGESTIONS.filter((c) => c.toLowerCase().startsWith(q)).slice(0, limit)
 }
 
-/** Lấy token hiện tại (từ cuối cùng) trong chuỗi nhiều class. */
+/** Get current token (last word) in a multi-class string. */
 export function getCurrentToken(value: string): string {
   const parts = value.trim().split(/\s+/)
   return parts[parts.length - 1] ?? ""
 }
 
-/** Thay token cuối bằng suggestion (hoặc append nếu chưa có token). */
+/** Replace last token with suggestion (or append if no token yet). */
 export function applySuggestion(currentValue: string, suggestion: string): string {
   const trimmed = currentValue.trim()
   const parts = trimmed.split(/\s+/).filter(Boolean)

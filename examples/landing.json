@@ -1,18 +1,18 @@
 {
   "seo": {
-    "title": "Landing — Build nhanh với JSON",
-    "description": "Bộ thư viện npm để build landing page Next.js từ config JSON. SEO, shadcn-style, TypeScript.",
+    "title": "Landing — Build fast with JSON",
+    "description": "npm libs to build Next.js landing pages from JSON config. SEO, shadcn-style, TypeScript.",
     "canonical": "https://example.com",
     "og": {
-      "title": "Landing — Build nhanh với JSON",
-      "description": "Bộ thư viện npm để build landing page Next.js từ config JSON.",
+      "title": "Landing — Build fast with JSON",
+      "description": "npm libs to build Next.js landing pages from JSON config.",
       "image": "https://example.com/og.png",
       "type": "website"
     },
     "twitter": {
       "card": "summary_large_image",
-      "title": "Landing — Build nhanh với JSON",
-      "description": "Bộ thư viện npm để build landing page Next.js từ config JSON."
+      "title": "Landing — Build fast with JSON",
+      "description": "npm libs to build Next.js landing pages from JSON config."
     },
     "jsonLd": [
       {
@@ -20,7 +20,7 @@
         "@type": "WebSite",
         "name": "Landing",
         "url": "https://example.com",
-        "description": "Bộ thư viện npm để build landing page Next.js từ config JSON."
+        "description": "npm libs to build Next.js landing pages from JSON config."
       }
     ]
   },
@@ -34,30 +34,30 @@
         "href": "/"
       },
       "links": [
-        { "label": "Tính năng", "href": "#features" },
-        { "label": "Giá", "href": "#pricing" },
+        { "label": "Features", "href": "#features" },
+        { "label": "Pricing", "href": "#pricing" },
         { "label": "FAQ", "href": "#faq" }
       ],
-      "cta": { "label": "Bắt đầu", "href": "/signup" }
+      "cta": { "label": "Get started", "href": "/signup" }
     },
     {
       "id": "hero",
       "type": "hero",
-      "headline": "Landing page từ JSON, vài dòng code.",
-      "subheadline": "Config một lần, render mọi section. SEO sẵn, component shadcn-style, TypeScript + tsup.",
-      "primaryCta": { "label": "Xem docs", "href": "#" },
+      "headline": "Landing page from JSON, a few lines of code.",
+      "subheadline": "Config once, render every section. SEO built-in, shadcn-style components, TypeScript + tsup.",
+      "primaryCta": { "label": "View docs", "href": "#" },
       "secondaryCta": { "label": "GitHub", "href": "https://github.com" },
       "variant": "centered"
     },
     {
       "id": "features",
       "type": "features",
-      "title": "Tính năng",
-      "subtitle": "Mọi thứ cần cho một landing chuẩn.",
+      "title": "Features",
+      "subtitle": "Everything you need for a solid landing.",
       "items": [
         {
           "title": "JSON-driven",
-          "description": "Chỉ cần file config, không cần viết JSX cho từng section."
+          "description": "Just a config file, no JSX per section."
         },
         {
           "title": "SEO",
@@ -65,7 +65,7 @@
         },
         {
           "title": "Shadcn-style",
-          "description": "Component tối ưu, dễ override bằng Tailwind."
+          "description": "Optimized components, easy to override with Tailwind."
         }
       ],
       "columns": 3,
@@ -74,9 +74,9 @@
     {
       "id": "cta",
       "type": "cta",
-      "title": "Sẵn sàng bắt đầu?",
-      "subtitle": "Cài đặt và config trong vài phút.",
-      "primaryCta": { "label": "Cài đặt", "href": "#" },
+      "title": "Ready to get started?",
+      "subtitle": "Install and config in minutes.",
+      "primaryCta": { "label": "Install", "href": "#" },
       "variant": "banner"
     },
     {
@@ -85,16 +85,16 @@
       "brand": { "name": "Landing", "href": "/" },
       "linkGroups": [
         {
-          "title": "Sản phẩm",
+          "title": "Product",
           "links": [
-            { "label": "Tính năng", "href": "#features" },
-            { "label": "Giá", "href": "#pricing" }
+            { "label": "Features", "href": "#features" },
+            { "label": "Pricing", "href": "#pricing" }
           ]
         },
         {
-          "title": "Công ty",
+          "title": "Company",
           "links": [
-            { "label": "Liên hệ", "href": "/contact" },
+            { "label": "Contact", "href": "/contact" },
             { "label": "Blog", "href": "/blog" }
           ]
         }

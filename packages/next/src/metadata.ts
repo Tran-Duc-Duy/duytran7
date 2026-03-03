@@ -1,5 +1,5 @@
 /**
- * Build Next.js Metadata từ LandingConfig — tối ưu SEO (title, description, openGraph, twitter, JSON-LD).
+ * Build Next.js Metadata from LandingConfig — SEO (title, description, openGraph, twitter, JSON-LD).
  */
 
 import type { Metadata } from "next"

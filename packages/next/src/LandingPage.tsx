@@ -1,5 +1,5 @@
 /**
- * LandingPage — render toàn bộ sections từ config (Server Component). Dùng trong page/layout Next.js.
+ * LandingPage — renders all sections from config (Server Component). Use in Next.js page/layout.
  */
 
 import type { LandingConfig } from "@duytran7/landing-core"

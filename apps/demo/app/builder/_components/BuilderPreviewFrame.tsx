@@ -1,9 +1,9 @@
 "use client"
 
 /**
- * Khung nội dung preview: nhận pages + currentSlug, xử lý click nav/CTA và render sections.
- * Áp dụng config.seo (page settings) vào document title và meta tags.
- * Dùng chung cho iframe (postMessage) và standalone (mở tab mới theo slug).
+ * Preview frame: receives pages + currentSlug, handles nav/CTA clicks and renders sections.
+ * Applies config.seo (page settings) to document title and meta tags.
+ * Shared for iframe (postMessage) and standalone (open in new tab by slug).
  */
 
 import React, { useCallback, useEffect } from "react"

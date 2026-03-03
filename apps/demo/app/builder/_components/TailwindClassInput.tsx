@@ -1,7 +1,7 @@
 "use client"
 
 /**
- * Input autocomplete Tailwind: gợi ý class, Tab/Enter complete, preview swatch, default value.
+ * Tailwind autocomplete input: class suggestions, Tab/Enter complete, preview swatch, default value.
  */
 
 import React, { useState, useMemo, useRef, useEffect } from "react"
@@ -114,7 +114,7 @@ export function TailwindClassInput({
             type="button"
             onClick={() => onChange(defaultVal)}
             className="shrink-0 rounded border border-border bg-muted/30 px-2 py-1.5 text-xs text-muted-foreground hover:bg-muted/50"
-            title="Điền giá trị mặc định"
+            title="Fill default value"
           >
             Default
           </button>

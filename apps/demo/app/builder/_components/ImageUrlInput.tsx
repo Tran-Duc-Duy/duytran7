@@ -1,7 +1,7 @@
 "use client"
 
 /**
- * Input URL ảnh: gợi ý Unsplash placeholder, preview thumbnail, default một ảnh mẫu.
+ * Image URL input: Unsplash placeholder suggestion, thumbnail preview, default sample image.
  */
 
 import React, { useState } from "react"
@@ -58,7 +58,7 @@ export function ImageUrlInput({
           type="button"
           onClick={pickRandom}
           className="shrink-0 rounded border border-border bg-muted/30 px-2 py-1.5 text-xs text-muted-foreground hover:bg-muted/50"
-          title="Chèn ảnh mẫu Unsplash"
+          title="Insert Unsplash sample image"
         >
           Unsplash
         </button>
@@ -69,7 +69,7 @@ export function ImageUrlInput({
           <div className="relative h-24 w-full overflow-hidden rounded border border-border bg-muted/20">
             {previewError ? (
               <div className="flex h-full items-center justify-center text-xs text-muted-foreground">
-                Không tải được ảnh
+                Failed to load image
               </div>
             ) : (
               <img

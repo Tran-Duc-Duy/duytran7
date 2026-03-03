@@ -28,8 +28,8 @@ export interface SeoConfig {
 }
 
 /**
- * Đa tầng Tailwind: className = root; classes = override từng phần tử con.
- * Keys tùy section (vd: hero có title, subtitle, primaryButton; features có title, card, itemTitle).
+ * Multi-layer Tailwind: className = root; classes = override per child element.
+ * Keys vary by section (e.g. hero: title, subtitle, primaryButton; features: title, card, itemTitle).
  */
 export interface SectionClasses {
   root?: string
@@ -44,39 +44,39 @@ export interface SectionClasses {
   [key: string]: string | undefined
 }
 
-/** Base section: id + type + optional className + optional đa tầng classes */
+/** Base section: id + type + optional className + optional multi-layer classes */
 export interface SectionBase {
   id: string
   type: string
-  /** Tailwind cho wrapper section (một tầng). */
+  /** Tailwind for section wrapper (single layer). */
   className?: string
-  /** Tailwind đa tầng: override từng phần tử (title, subtitle, button, ...). AI/config có thể gửi thêm lớp tùy ý. */
+  /** Multi-layer Tailwind: override per element (title, subtitle, button, ...). AI/config can send extra keys. */
   classes?: SectionClasses
 }
 
-/** Nguồn dữ liệu cho section có danh sách lặp: static (mặc định) hoặc lấy từ API. */
+/** Data source for sections with repeat list: static (default) or from API. */
 export interface DataSource {
   type: "static" | "api"
-  /** URL API (GET). Ưu tiên dùng envKey nếu có để tránh lộ URL. */
+  /** API URL (GET). Prefer envKey when set to avoid exposing URL. */
   apiUrl?: string
-  /** Tên biến môi trường (vd: NEXT_PUBLIC_CMS_URL). App sẽ fetch từ process.env[envKey] + path hoặc dùng apiUrl. */
+  /** Env var name (e.g. NEXT_PUBLIC_CMS_URL). App fetches from process.env[envKey] + path or uses apiUrl. */
   envKey?: string
-  /** Đường dẫn JSON trả về chứa mảng (vd: "data.posts", "items"). Mặc định tùy section (features → "items"). */
+  /** JSON path to array in response (e.g. "data.posts", "items"). Default per section (features → "items"). */
   dataPath?: string
 }
 
-/** Background cho Hero (và section khác nếu cần): màu, ảnh, gradient, Lottie, video. */
+/** Background for Hero (and other sections if needed): color, image, gradient, Lottie, video. */
 export type HeroBackgroundType = "color" | "image" | "gradient" | "lottie" | "video"
 
 export interface HeroBackground {
   type: HeroBackgroundType
-  /** URL ảnh / Lottie JSON / video. */
+  /** Image / Lottie JSON / video URL. */
   url?: string
-  /** Màu nền khi type = color (CSS value). */
+  /** Background color when type = color (CSS value). */
   color?: string
-  /** CSS gradient khi type = gradient (vd: linear-gradient(...)). */
+  /** CSS gradient when type = gradient (e.g. linear-gradient(...)). */
   gradientCss?: string
-  /** Lớp overlay (vd: bg-black/40) để làm tối ảnh nền. */
+  /** Overlay class (e.g. bg-black/40) to darken background image. */
   overlay?: string
 }
 
@@ -103,9 +103,9 @@ export interface HeroSection extends SectionBase {
   image?: { src: string; alt: string }
   badge?: string
   variant?: HeroVariant
-  /** Nền: màu, ảnh, gradient, Lottie, video. */
+  /** Background: color, image, gradient, Lottie, video. */
   background?: HeroBackground
-  /** Font chữ (CSS font-family). */
+  /** Font (CSS font-family). */
   fontFamily?: string
 }
 
@@ -138,7 +138,7 @@ export interface FeaturesSection extends SectionBase {
   items: FeatureItem[]
   columns?: 2 | 3 | 4
   variant?: FeaturesVariant
-  /** Nguồn dữ liệu: static (items trong config) hoặc api (fetch, merge vào items tại runtime). */
+  /** Data source: static (items in config) or api (fetch, merge into items at runtime). */
   dataSource?: DataSource
 }
 
@@ -212,7 +212,7 @@ export interface NavSection extends SectionBase {
   type: "nav"
   logo?: { src: string; alt: string; href?: string }
   links: { label: string; href: string }[]
-  /** Thêm link tùy chỉnh (hiển thị sau links từ Pages). */
+  /** Extra custom links (shown after links from Pages). */
   extraLinks?: { label: string; href: string }[]
   cta?: { label: string; href: string }
   variant?: NavVariant
@@ -637,9 +637,9 @@ export type LandingSection =
 export interface LandingConfig {
   /** SEO & meta */
   seo: SeoConfig
-  /** Các section theo thứ tự render */
+  /** Sections in render order */
   sections: LandingSection[]
-  /** Theme / global (optional, để adapter map sang CSS vars hoặc theme) */
+  /** Theme / global (optional, for adapter to map to CSS vars or theme) */
   theme?: {
     primaryColor?: string
     fontFamily?: string

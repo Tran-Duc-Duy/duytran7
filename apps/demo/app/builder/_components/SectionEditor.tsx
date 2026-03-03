@@ -258,7 +258,7 @@ export function SectionEditor({
                       )}
                       {(s.background as { type?: string })?.type === "color" && (
                         <TailwindClassInput
-                          label="Background color (CSS hoặc Tailwind)"
+                          label="Background color (CSS or Tailwind)"
                           defaultKey="background color"
                           value={(s.background as { color?: string })?.color ?? ""}
                           onChange={(v) =>
@@ -712,7 +712,7 @@ export function SectionEditor({
                         }
                       />
                       <LabelInput
-                        label="Env key (ưu tiên)"
+                        label="Env key (preferred)"
                         value={(s.dataSource as { envKey?: string })?.envKey ?? ""}
                         placeholder="NEXT_PUBLIC_CMS_URL"
                         onChange={(v) =>
@@ -727,7 +727,7 @@ export function SectionEditor({
                       <LabelInput
                         label="Data path (JSON)"
                         value={(s.dataSource as { dataPath?: string })?.dataPath ?? ""}
-                        placeholder="items hoặc data.posts"
+                        placeholder="items or data.posts"
                         onChange={(v) =>
                           update({
                             dataSource: {

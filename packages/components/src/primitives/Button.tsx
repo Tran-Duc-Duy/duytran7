@@ -1,5 +1,5 @@
 /**
- * Button primitive — tương thích shadcn style, dùng cho CTA. asChild: render child (e.g. <a>) với style button.
+ * Button primitive — shadcn-style, for CTA. asChild: render child (e.g. <a>) with button styles.
  */
 
 import {

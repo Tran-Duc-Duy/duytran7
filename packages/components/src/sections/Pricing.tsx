@@ -1,5 +1,5 @@
 /**
- * Pricing section — tiers với Card, highlighted tier nổi bật.
+ * Pricing section — tiers with Card, highlighted tier emphasized.
  */
 
 import type { PricingSection as PricingSectionConfig } from "@duytran7/landing-core"

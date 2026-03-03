@@ -1,5 +1,5 @@
 /**
- * Default section configs khi thêm từ builder. Mỗi lần add tạo bản copy với id unique.
+ * Default section configs when adding from builder. Each add creates a copy with unique id.
  */
 
 import type { LandingSection } from "@duytran7/landing-core"

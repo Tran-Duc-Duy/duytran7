@@ -1,7 +1,7 @@
 {
   "name": "landing-monorepo",
   "private": true,
-  "description": "Monorepo: npm libs để build landing page từ JSON config (Next.js, SEO, shadcn-style).",
+  "description": "Monorepo: npm libs to build landing pages from JSON config (Next.js, SEO, shadcn-style).",
   "type": "module",
   "scripts": {
     "build": "pnpm -r run build",
@@ -27,12 +27,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/duytran7/landing.git"
+    "url": "https://github.com/Tran-Duc-Duy/duytran7.git"
   },
   "bugs": {
-    "url": "https://github.com/duytran7/landing/issues"
+    "url": "https://github.com/Tran-Duc-Duy/duytran7/issues"
   },
-  "homepage": "https://github.com/duytran7/landing#readme",
+  "homepage": "https://github.com/Tran-Duc-Duy/duytran7#readme",
   "license": "MIT",
   "keywords": [
     "landing-page",

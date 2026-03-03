@@ -1,6 +1,6 @@
 /**
  * @duytran7/landing-core — types, schema, parser cho landing page JSON config.
- * Framework-agnostic: dùng được với Next, React, hoặc bất kỳ runtime nào.
+ * Framework-agnostic: works with Next, React, or any runtime.
  */
 
 export type {

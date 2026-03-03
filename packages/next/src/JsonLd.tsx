@@ -5,7 +5,7 @@
 import type { SeoConfig } from "@duytran7/landing-core"
 
 export interface JsonLdProps {
-  /** Từ config.seo.jsonLd — một object hoặc mảng object */
+  /** From config.seo.jsonLd — single object or array of objects */
   data: SeoConfig["jsonLd"]
 }
 

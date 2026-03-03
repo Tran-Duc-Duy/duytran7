@@ -3,7 +3,7 @@ import { BuilderCanvas } from "./_components/BuilderCanvas"
 
 export const metadata = {
   title: "Page Builder — Landing UI Demo",
-  description: "Drag-and-drop builder: lắp ghép sections, export JSON, render thành trang",
+  description: "Drag-and-drop builder: compose sections, export JSON, render as page",
 }
 
 export default function BuilderPage(): React.ReactElement {

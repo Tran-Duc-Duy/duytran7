@@ -21,7 +21,7 @@ const validConfig = {
 }
 
 describe("parseLandingConfig", () => {
-  it("trả về success và data khi config hợp lệ", () => {
+  it("returns success and data when config is valid", () => {
     const result = parseLandingConfig(validConfig)
     expect(result.success).toBe(true)
     if (result.success) {
@@ -31,7 +31,7 @@ describe("parseLandingConfig", () => {
     }
   })
 
-  it("chấp nhận JSON string", () => {
+  it("accepts JSON string", () => {
     const result = parseLandingConfig(JSON.stringify(validConfig))
     expect(result.success).toBe(true)
     if (result.success) {
@@ -39,7 +39,7 @@ describe("parseLandingConfig", () => {
     }
   })
 
-  it("trả về errors khi JSON string invalid", () => {
+  it("returns errors when JSON string is invalid", () => {
     const result = parseLandingConfig("not json {")
     expect(result.success).toBe(false)
     if (!result.success) {
@@ -48,7 +48,7 @@ describe("parseLandingConfig", () => {
     }
   })
 
-  it("trả về errors khi thiếu seo", () => {
+  it("returns errors when seo is missing", () => {
     const result = parseLandingConfig({ sections: [] })
     expect(result.success).toBe(false)
     if (!result.success) {
@@ -56,7 +56,7 @@ describe("parseLandingConfig", () => {
     }
   })
 
-  it("trả về errors khi section type không hợp lệ", () => {
+  it("returns errors when section type is invalid", () => {
     const result = parseLandingConfig({
       seo: { title: "T", description: "D" },
       sections: [{ id: "x", type: "unknown_section" }],
@@ -66,13 +66,13 @@ describe("parseLandingConfig", () => {
 })
 
 describe("parseLandingConfigStrict", () => {
-  it("trả về config khi hợp lệ", () => {
+  it("returns config when valid", () => {
     const data = parseLandingConfigStrict(validConfig)
     expect(data.seo.title).toBe("Test")
     expect(data.sections).toHaveLength(2)
   })
 
-  it("throw khi config invalid", () => {
+  it("throws when config is invalid", () => {
     expect(() => parseLandingConfigStrict({})).toThrow(/Invalid landing config/)
   })
 })

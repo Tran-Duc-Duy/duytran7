@@ -1,5 +1,5 @@
 /**
- * @duytran7/landing-next — Next.js adapter: metadata, JSON-LD, LandingPage từ config.
+ * @duytran7/landing-next — Next.js adapter: metadata, JSON-LD, LandingPage from config.
  */
 
 export { buildMetadata } from "./metadata"

@@ -18,7 +18,7 @@ import {
 import { SectionEditor } from "./SectionEditor"
 import { PageSettingsEditor } from "./PageSettingsEditor"
 
-/** Key prefix localStorage cho preview mở tab mới (shared giữa các tab cùng origin; trùng với preview/[slug]/page). */
+/** localStorage key prefix for preview in new tab (shared across same-origin tabs; matches preview/[slug]/page). */
 const PREVIEW_STORAGE_KEY_PREFIX = "landing-preview-"
 
 const SECTION_NAMES: Record<string, string> = {
@@ -51,13 +51,13 @@ export interface BuilderPage {
   name: string
   slug: string
   sections: LandingSection[]
-  /** Template id từ pageTemplates (landing, about, pricing, …). */
+  /** Template id from pageTemplates (landing, about, pricing, …). */
   pageType?: string
-  /** Id trang cha; set thì đây là inner page. */
+  /** Parent page id; when set this is an inner page. */
   parentId?: string | null
   /** Metadata & SEO (title, description, og, twitter, jsonLd). */
   seo?: Partial<SeoConfig>
-  /** Theme (primaryColor, fontFamily) — dùng cho CSS vars. */
+  /** Theme (primaryColor, fontFamily) — used for CSS vars. */
   theme?: { primaryColor?: string; fontFamily?: string }
 }
 
@@ -411,7 +411,7 @@ export function BuilderCanvas(): React.ReactElement {
       )
       window.open(`/builder/preview/${encodeURIComponent(urlSlug)}?v=desktop`, "_blank", "noopener")
     } catch {
-      // localStorage full hoặc popup bị chặn
+      // localStorage full or popup blocked
     }
   }, [activePage.slug, pages, buildConfigForPage])
 
@@ -627,7 +627,7 @@ export function BuilderCanvas(): React.ReactElement {
             ) : (
               <div className="mt-2 space-y-2 rounded-md border border-border bg-muted/20 p-2">
                 <p className="text-xs font-medium text-muted-foreground">
-                  Chọn loại trang
+                  Choose page type
                 </p>
                 <div className="max-h-48 space-y-1 overflow-y-auto">
                   {ROOT_PAGE_TEMPLATES.map((t) => (
@@ -650,7 +650,7 @@ export function BuilderCanvas(): React.ReactElement {
                   onClick={() => setShowCustomPageForm(true)}
                   className="w-full rounded border border-dashed border-border py-1.5 text-sm text-muted-foreground hover:bg-muted/60"
                 >
-                  Trang trống (tùy chỉnh)
+                  Blank page (custom)
                 </button>
                 <button
                   type="button"

@@ -1,8 +1,8 @@
 "use client"
 
 /**
- * Preview frame for builder: load trong iframe với ?v=desktop|tablet|mobile.
- * Nhận config qua postMessage. Standalone (mở tab mới) dùng route /builder/preview/[slug].
+ * Preview frame for builder: load in iframe with ?v=desktop|tablet|mobile.
+ * Receives config via postMessage. Standalone (new tab) uses route /builder/preview/[slug].
  */
 
 import React, { useState, useEffect } from "react"

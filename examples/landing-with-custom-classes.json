@@ -1,7 +1,7 @@
 {
   "seo": {
     "title": "Custom Tailwind demo — Landing UI",
-    "description": "Demo page showing classes (đa tầng Tailwind) in JSON config."
+    "description": "Demo page showing classes (multi-layer Tailwind) in JSON config."
   },
   "sections": [
     {

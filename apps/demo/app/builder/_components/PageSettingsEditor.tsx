@@ -1,5 +1,5 @@
 /**
- * PageSettingsEditor — form cấu hình metadata, theme, SEO cho trang hiện tại (Lighthouse, SEO).
+ * PageSettingsEditor — form for metadata, theme, SEO of current page (Lighthouse, SEO).
  */
 
 "use client"

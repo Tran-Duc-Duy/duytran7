@@ -1,5 +1,5 @@
 /**
- * Hero section — render từ HeroSection config, SEO-friendly (h1 cho headline).
+ * Hero section — renders from HeroSection config, SEO-friendly (h1 for headline).
  */
 
 import type { HeroSection as HeroSectionConfig } from "@duytran7/landing-core"
@@ -13,7 +13,7 @@ export interface HeroProps {
   className?: string
 }
 
-/** True nếu giá trị trông như Tailwind class (bg-*, from-*, …), không phải CSS color (#hex, rgb(), …). */
+/** True if value looks like a Tailwind class (bg-*, from-*, …), not a CSS color (#hex, rgb(), …). */
 function looksLikeTailwindClass(s: string): boolean {
   const v = s.trim()
   if (!v) return false
@@ -111,7 +111,7 @@ export function Hero({ config, className }: HeroProps) {
           data-lottie-url={background.url}
           aria-hidden
         >
-          {/* App có thể inject Lottie player vào đây qua data-lottie-url */}
+          {/* App can inject Lottie player here via data-lottie-url */}
         </div>
       )}
       {background?.type === "video" && background.url && (

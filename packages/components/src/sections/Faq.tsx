@@ -1,5 +1,5 @@
 /**
- * FAQ section — semantic dl/dt/dd, có thể mở rộng accordion bằng composition.
+ * FAQ section — semantic dl/dt/dd, extensible to accordion via composition.
  */
 
 import type { FaqSection as FaqSectionConfig } from "@duytran7/landing-core"
