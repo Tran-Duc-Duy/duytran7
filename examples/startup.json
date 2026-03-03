@@ -1,0 +1,149 @@
+{
+  "seo": {
+    "title": "Launchpad — Ship your startup faster",
+    "description": "Templates, components, and infra for early-stage startups.",
+    "canonical": "https://launchpad.example.com",
+    "og": {
+      "title": "Launchpad — Ship your startup faster",
+      "description": "Templates and infra for early-stage startups.",
+      "image": "https://launchpad.example.com/og.png",
+      "type": "website"
+    },
+    "twitter": { "card": "summary_large_image", "title": "Launchpad" }
+  },
+  "sections": [
+    {
+      "id": "banner",
+      "type": "banner",
+      "message": "Early access: get 50% off your first year.",
+      "cta": { "label": "Claim offer", "href": "/signup" },
+      "variant": "default"
+    },
+    {
+      "id": "nav",
+      "type": "nav",
+      "logo": { "src": "/logo.svg", "alt": "Launchpad", "href": "/" },
+      "links": [
+        { "label": "Features", "href": "#features" },
+        { "label": "Pricing", "href": "#pricing" },
+        { "label": "Changelog", "href": "/changelog" }
+      ],
+      "cta": { "label": "Get started", "href": "/signup" }
+    },
+    {
+      "id": "hero",
+      "type": "hero",
+      "headline": "Ship your startup in weeks, not months.",
+      "subheadline": "Landing pages, auth, billing, and dashboard templates. Copy, customize, deploy.",
+      "primaryCta": { "label": "Start building", "href": "/signup" },
+      "secondaryCta": { "label": "See templates", "href": "#features" },
+      "badge": "New: Next.js 15 templates",
+      "variant": "badge"
+    },
+    {
+      "id": "stats",
+      "type": "stats",
+      "title": "Loved by founders",
+      "items": [
+        { "value": "2,000+", "label": "Startups launched" },
+        { "value": "40%", "label": "Faster to market" },
+        { "value": "4.9", "label": "Average rating" }
+      ],
+      "columns": 3,
+      "variant": "default"
+    },
+    {
+      "id": "features",
+      "type": "features",
+      "title": "Everything you need to launch",
+      "subtitle": "Pre-built, customizable, and production-ready.",
+      "items": [
+        {
+          "title": "Landing & marketing",
+          "description": "Hero, pricing, FAQ, blog. Multiple themes."
+        },
+        {
+          "title": "Auth & users",
+          "description": "Sign up, login, password reset. NextAuth or Clerk."
+        },
+        {
+          "title": "Billing",
+          "description": "Stripe integration. Plans, usage, invoices."
+        },
+        {
+          "title": "Dashboard",
+          "description": "Tables, charts, settings. Shadcn-based."
+        }
+      ],
+      "columns": 2,
+      "variant": "cards"
+    },
+    {
+      "id": "pricing",
+      "type": "pricing",
+      "title": "Simple pricing",
+      "subtitle": "One plan. No surprises.",
+      "tiers": [
+        {
+          "name": "Launch",
+          "description": "For indie hackers and small teams",
+          "price": "$29",
+          "period": "month",
+          "features": [
+            "All templates",
+            "Unlimited projects",
+            "Discord support",
+            "Updates"
+          ],
+          "cta": { "label": "Get started", "href": "/signup" },
+          "highlighted": true
+        }
+      ]
+    },
+    {
+      "id": "faq",
+      "type": "faq",
+      "title": "FAQ",
+      "items": [
+        {
+          "question": "Can I use this for client work?",
+          "answer": "Yes. One subscription covers unlimited projects."
+        },
+        {
+          "question": "What stack?",
+          "answer": "Next.js, React, Tailwind, TypeScript. Optional Stripe, Supabase."
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "type": "cta",
+      "title": "Ready to ship?",
+      "subtitle": "Join 2,000+ startups. No credit card for trial.",
+      "primaryCta": { "label": "Get started", "href": "/signup" },
+      "variant": "banner"
+    },
+    {
+      "id": "footer",
+      "type": "footer",
+      "brand": { "name": "Launchpad", "href": "/" },
+      "linkGroups": [
+        {
+          "title": "Product",
+          "links": [
+            { "label": "Features", "href": "#features" },
+            { "label": "Pricing", "href": "#pricing" }
+          ]
+        },
+        {
+          "title": "Company",
+          "links": [
+            { "label": "Changelog", "href": "/changelog" },
+            { "label": "Contact", "href": "/contact" }
+          ]
+        }
+      ],
+      "bottom": { "text": "© 2025 Launchpad." }
+    }
+  ]
+}

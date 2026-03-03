@@ -1,0 +1,153 @@
+{
+  "seo": {
+    "title": "Flowbase — Automate your workflow",
+    "description": "Connect apps, automate tasks, and scale your team without code.",
+    "canonical": "https://flowbase.example.com",
+    "og": {
+      "title": "Flowbase — Automate your workflow",
+      "description": "Connect apps, automate tasks. No code required.",
+      "image": "https://flowbase.example.com/og.png",
+      "type": "website"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "Flowbase — Automate your workflow"
+    }
+  },
+  "sections": [
+    {
+      "id": "nav",
+      "type": "nav",
+      "logo": { "src": "/logo.svg", "alt": "Flowbase", "href": "/" },
+      "links": [
+        { "label": "Features", "href": "#features" },
+        { "label": "Integrations", "href": "#integrations" },
+        { "label": "Pricing", "href": "#pricing" }
+      ],
+      "cta": { "label": "Start free trial", "href": "/signup" },
+      "variant": "minimal"
+    },
+    {
+      "id": "hero",
+      "type": "hero",
+      "headline": "Automate everything. Code nothing.",
+      "subheadline": "Connect 200+ apps with drag-and-drop. Triggers, actions, and workflows in minutes.",
+      "primaryCta": { "label": "Try free", "href": "/signup" },
+      "secondaryCta": { "label": "Watch demo", "href": "#" },
+      "variant": "centered",
+      "classes": { "root": "bg-gradient-to-b from-primary/5 to-background" }
+    },
+    {
+      "id": "stats",
+      "type": "stats",
+      "title": "Trusted by 50,000+ teams",
+      "items": [
+        { "value": "10M+", "label": "Tasks run daily" },
+        { "value": "200+", "label": "Integrations" },
+        { "value": "99.9%", "label": "Uptime" }
+      ],
+      "columns": 3,
+      "variant": "default"
+    },
+    {
+      "id": "features",
+      "type": "features",
+      "title": "Built for scale",
+      "subtitle": "Everything you need to automate and orchestrate.",
+      "items": [
+        {
+          "title": "Triggers",
+          "description": "Events from apps start workflows automatically."
+        },
+        {
+          "title": "Actions",
+          "description": "Create, update, and sync data across tools."
+        },
+        {
+          "title": "Conditions",
+          "description": "Branch logic and filters without code."
+        }
+      ],
+      "columns": 3,
+      "variant": "cards"
+    },
+    {
+      "id": "logo-cloud",
+      "type": "logo-cloud",
+      "title": "Integrations",
+      "items": [
+        { "src": "/logos/company-a.svg", "alt": "Slack" },
+        { "src": "/logos/company-b.svg", "alt": "Notion" },
+        { "src": "/logos/company-c.svg", "alt": "Stripe" }
+      ],
+      "variant": "grayscale"
+    },
+    {
+      "id": "pricing",
+      "type": "pricing",
+      "title": "Simple pricing",
+      "subtitle": "Start free. Scale as you grow.",
+      "tiers": [
+        {
+          "name": "Free",
+          "description": "For individuals",
+          "price": "$0",
+          "period": "month",
+          "features": ["1,000 runs/month", "5 workflows", "Community support"],
+          "cta": { "label": "Get started", "href": "/signup" }
+        },
+        {
+          "name": "Pro",
+          "description": "For teams",
+          "price": "$49",
+          "period": "month",
+          "features": [
+            "50,000 runs",
+            "Unlimited workflows",
+            "Email support",
+            "SSO"
+          ],
+          "cta": { "label": "Start trial", "href": "/signup" },
+          "highlighted": true
+        },
+        {
+          "name": "Enterprise",
+          "description": "For organizations",
+          "price": "Custom",
+          "features": ["Unlimited", "SLA", "Dedicated support"],
+          "cta": { "label": "Contact", "href": "/contact" }
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "type": "cta",
+      "title": "Ready to automate?",
+      "subtitle": "Join 50,000+ teams. No credit card required.",
+      "primaryCta": { "label": "Start free", "href": "/signup" },
+      "variant": "banner"
+    },
+    {
+      "id": "footer",
+      "type": "footer",
+      "brand": { "name": "Flowbase", "href": "/" },
+      "linkGroups": [
+        {
+          "title": "Product",
+          "links": [
+            { "label": "Features", "href": "#features" },
+            { "label": "Pricing", "href": "#pricing" }
+          ]
+        },
+        {
+          "title": "Company",
+          "links": [
+            { "label": "Blog", "href": "/blog" },
+            { "label": "Contact", "href": "/contact" }
+          ]
+        }
+      ],
+      "bottom": { "text": "© 2025 Flowbase." }
+    }
+  ]
+}

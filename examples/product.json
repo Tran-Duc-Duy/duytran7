@@ -1,0 +1,148 @@
+{
+  "seo": {
+    "title": "Relay — API platform for modern teams",
+    "description": "Design, test, and monitor APIs in one place.",
+    "canonical": "https://relay.example.com",
+    "og": {
+      "title": "Relay — API platform for modern teams",
+      "description": "Design, test, and monitor APIs in one place.",
+      "image": "https://relay.example.com/og.png",
+      "type": "website"
+    },
+    "twitter": { "card": "summary_large_image", "title": "Relay API platform" }
+  },
+  "sections": [
+    {
+      "id": "nav",
+      "type": "nav",
+      "logo": { "src": "/logo.svg", "alt": "Relay", "href": "/" },
+      "links": [
+        { "label": "Product", "href": "#product" },
+        { "label": "Docs", "href": "/docs" },
+        { "label": "Pricing", "href": "#pricing" }
+      ],
+      "cta": { "label": "Sign in", "href": "/login" }
+    },
+    {
+      "id": "hero",
+      "type": "hero",
+      "headline": "The API platform built for scale.",
+      "subheadline": "Design, mock, test, and monitor your APIs. OpenAPI-first. Works with your stack.",
+      "primaryCta": { "label": "Start free", "href": "/signup" },
+      "secondaryCta": { "label": "Read docs", "href": "/docs" },
+      "variant": "centered",
+      "classes": { "root": "bg-muted/30" }
+    },
+    {
+      "id": "logo-cloud",
+      "type": "logo-cloud",
+      "title": "Used by engineering teams at",
+      "items": [
+        { "src": "/logos/company-a.svg", "alt": "Company A" },
+        { "src": "/logos/company-b.svg", "alt": "Company B" },
+        { "src": "/logos/company-c.svg", "alt": "Company C" }
+      ],
+      "variant": "grayscale"
+    },
+    {
+      "id": "features",
+      "type": "features",
+      "title": "One platform for the full API lifecycle",
+      "subtitle": "From design to production.",
+      "items": [
+        {
+          "title": "Design",
+          "description": "OpenAPI editor, versioning, and collaboration."
+        },
+        {
+          "title": "Mock servers",
+          "description": "Instant mocks from your spec. No code."
+        },
+        {
+          "title": "Testing",
+          "description": "Contract and integration tests. CI-ready."
+        },
+        {
+          "title": "Monitoring",
+          "description": "Latency, errors, and alerts. Per endpoint."
+        }
+      ],
+      "columns": 2,
+      "variant": "numbered"
+    },
+    {
+      "id": "testimonials",
+      "type": "testimonials",
+      "title": "Trusted by API teams",
+      "subtitle": "What engineers say about Relay.",
+      "items": [
+        {
+          "quote": "We cut our API onboarding time in half.",
+          "author": "Dev Lead",
+          "role": "Fintech"
+        },
+        {
+          "quote": "Best mock server we have used.",
+          "author": "Backend engineer",
+          "role": "SaaS"
+        }
+      ],
+      "variant": "grid"
+    },
+    {
+      "id": "pricing",
+      "type": "pricing",
+      "title": "Pricing",
+      "subtitle": "Free to start. Scale with your team.",
+      "tiers": [
+        {
+          "name": "Developer",
+          "description": "Solo devs",
+          "price": "$0",
+          "period": "month",
+          "features": ["1 workspace", "Unlimited APIs", "Community support"],
+          "cta": { "label": "Get started", "href": "/signup" }
+        },
+        {
+          "name": "Team",
+          "description": "Growing teams",
+          "price": "$99",
+          "period": "month",
+          "features": ["5 workspaces", "SSO", "Priority support", "SLA"],
+          "cta": { "label": "Start trial", "href": "/signup" },
+          "highlighted": true
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "type": "cta",
+      "title": "Try Relay free",
+      "subtitle": "No credit card. Full access for 14 days.",
+      "primaryCta": { "label": "Sign up", "href": "/signup" },
+      "variant": "banner"
+    },
+    {
+      "id": "footer",
+      "type": "footer",
+      "brand": { "name": "Relay", "href": "/" },
+      "linkGroups": [
+        {
+          "title": "Product",
+          "links": [
+            { "label": "Features", "href": "#product" },
+            { "label": "Pricing", "href": "#pricing" }
+          ]
+        },
+        {
+          "title": "Resources",
+          "links": [
+            { "label": "Docs", "href": "/docs" },
+            { "label": "Blog", "href": "/blog" }
+          ]
+        }
+      ],
+      "bottom": { "text": "© 2025 Relay." }
+    }
+  ]
+}

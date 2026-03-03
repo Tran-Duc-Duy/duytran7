@@ -1,0 +1,106 @@
+{
+  "seo": {
+    "title": "Studio Nine — Design & development agency",
+    "description": "We build brands, websites, and products that convert.",
+    "canonical": "https://studionine.example.com",
+    "og": {
+      "title": "Studio Nine — Design & development agency",
+      "description": "Brands, websites, and products that convert.",
+      "image": "https://studionine.example.com/og.png",
+      "type": "website"
+    },
+    "twitter": { "card": "summary_large_image", "title": "Studio Nine" }
+  },
+  "sections": [
+    {
+      "id": "nav",
+      "type": "nav",
+      "logo": { "src": "/logo.svg", "alt": "Studio Nine", "href": "/" },
+      "links": [
+        { "label": "Work", "href": "#work" },
+        { "label": "Services", "href": "#services" },
+        { "label": "About", "href": "#about" },
+        { "label": "Contact", "href": "/contact" }
+      ],
+      "cta": { "label": "Start a project", "href": "/contact" },
+      "variant": "transparent"
+    },
+    {
+      "id": "hero",
+      "type": "hero",
+      "headline": "We design and build digital products.",
+      "subheadline": "Brand strategy, UI/UX, and development. From idea to launch.",
+      "primaryCta": { "label": "View our work", "href": "#work" },
+      "secondaryCta": { "label": "Get in touch", "href": "/contact" },
+      "variant": "split",
+      "classes": { "root": "min-h-[90vh] flex items-center" }
+    },
+    {
+      "id": "features",
+      "type": "features",
+      "title": "What we do",
+      "subtitle": "End-to-end delivery.",
+      "items": [
+        {
+          "title": "Brand & identity",
+          "description": "Strategy, naming, visual identity, and guidelines."
+        },
+        {
+          "title": "Product design",
+          "description": "Research, UX, UI, and design systems."
+        },
+        {
+          "title": "Development",
+          "description": "Web, mobile, and headless. React, Next.js, Node."
+        }
+      ],
+      "columns": 3,
+      "variant": "cards"
+    },
+    {
+      "id": "testimonials",
+      "type": "testimonials",
+      "title": "Client stories",
+      "subtitle": "Results we are proud of.",
+      "items": [
+        {
+          "quote": "Studio Nine delivered on time and beyond expectations.",
+          "author": "Sarah Chen",
+          "role": "CEO, TechCo"
+        },
+        {
+          "quote": "Best design partner we have worked with.",
+          "author": "Marcus Hill",
+          "role": "Founder, Startup"
+        }
+      ],
+      "variant": "grid"
+    },
+    {
+      "id": "cta",
+      "type": "cta",
+      "title": "Let's work together",
+      "subtitle": "Tell us about your project.",
+      "primaryCta": { "label": "Contact us", "href": "/contact" },
+      "variant": "card"
+    },
+    {
+      "id": "footer",
+      "type": "footer",
+      "brand": { "name": "Studio Nine", "href": "/" },
+      "linkGroups": [
+        {
+          "title": "Work",
+          "links": [{ "label": "Case studies", "href": "/work" }]
+        },
+        {
+          "title": "Contact",
+          "links": [
+            { "label": "Email", "href": "mailto:hi@studio.example.com" }
+          ]
+        }
+      ],
+      "bottom": { "text": "© 2025 Studio Nine." }
+    }
+  ]
+}

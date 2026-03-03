@@ -1,0 +1,96 @@
+{
+  "seo": {
+    "title": "Alex Rivera — Product designer & developer",
+    "description": "Portfolio of product design and front-end development work.",
+    "canonical": "https://alexrivera.example.com",
+    "og": {
+      "title": "Alex Rivera — Product designer & developer",
+      "description": "Portfolio of product design and front-end work.",
+      "image": "https://alexrivera.example.com/og.png",
+      "type": "website"
+    },
+    "twitter": { "card": "summary_large_image", "title": "Alex Rivera" }
+  },
+  "sections": [
+    {
+      "id": "nav",
+      "type": "nav",
+      "logo": { "src": "/logo.svg", "alt": "AR", "href": "/" },
+      "links": [
+        { "label": "Work", "href": "#work" },
+        { "label": "About", "href": "#about" },
+        { "label": "Contact", "href": "#contact" }
+      ],
+      "cta": { "label": "Say hi", "href": "mailto:alex@example.com" },
+      "variant": "minimal"
+    },
+    {
+      "id": "hero",
+      "type": "hero",
+      "headline": "Product designer & developer.",
+      "subheadline": "I design and build interfaces and design systems. Previously at Figma, Linear.",
+      "primaryCta": { "label": "View work", "href": "#work" },
+      "secondaryCta": { "label": "Resume", "href": "/resume.pdf" },
+      "variant": "minimal"
+    },
+    {
+      "id": "features",
+      "type": "features",
+      "title": "Selected work",
+      "subtitle": "A few recent projects.",
+      "items": [
+        {
+          "title": "Fintech dashboard",
+          "description": "Design system and UI for a B2B analytics product."
+        },
+        {
+          "title": "E-commerce platform",
+          "description": "End-to-end product design and React implementation."
+        },
+        {
+          "title": "Design system",
+          "description": "Component library and documentation for a SaaS company."
+        }
+      ],
+      "columns": 3,
+      "variant": "bordered"
+    },
+    {
+      "id": "testimonials",
+      "type": "testimonials",
+      "title": "Kind words",
+      "items": [
+        {
+          "quote": "Alex is one of the best design-system thinkers I've worked with.",
+          "author": "Jordan Lee",
+          "role": "Design lead"
+        }
+      ],
+      "variant": "minimal"
+    },
+    {
+      "id": "cta",
+      "type": "cta",
+      "title": "Get in touch",
+      "subtitle": "Open to new projects and conversations.",
+      "primaryCta": { "label": "Email me", "href": "mailto:alex@example.com" },
+      "variant": "minimal"
+    },
+    {
+      "id": "footer",
+      "type": "footer",
+      "brand": { "name": "Alex Rivera", "href": "/" },
+      "linkGroups": [
+        {
+          "title": "Elsewhere",
+          "links": [
+            { "label": "Twitter", "href": "https://twitter.com" },
+            { "label": "LinkedIn", "href": "https://linkedin.com" },
+            { "label": "GitHub", "href": "https://github.com" }
+          ]
+        }
+      ],
+      "bottom": { "text": "© 2025 Alex Rivera." }
+    }
+  ]
+}
