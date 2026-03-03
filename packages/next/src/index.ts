@@ -8,5 +8,11 @@ export type { JsonLdProps } from "./JsonLd"
 export { LandingPage } from "./LandingPage"
 export type { LandingPageProps } from "./LandingPage"
 
-export { parseLandingConfig, parseLandingConfigStrict } from "@duytran7/landing-core"
-export type { LandingConfig, ParseLandingConfigResult } from "@duytran7/landing-core"
+export {
+  parseLandingConfig,
+  parseLandingConfigStrict,
+} from "@duytran7/landing-core"
+export type {
+  LandingConfig,
+  ParseLandingConfigResult,
+} from "@duytran7/landing-core"

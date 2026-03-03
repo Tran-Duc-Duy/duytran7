@@ -37,48 +37,60 @@ export function Timeline({ config, className }: TimelineProps) {
             {title && (
               <h2
                 id={`${id}-title`}
-                className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl"
+                className="text-foreground text-3xl font-bold tracking-tight sm:text-4xl"
               >
                 {title}
               </h2>
             )}
             {subtitle && (
-              <p className="mt-4 text-lg text-muted-foreground">{subtitle}</p>
+              <p className="text-muted-foreground mt-4 text-lg">{subtitle}</p>
             )}
           </div>
         )}
         {isVertical && (
-          <ul className="relative list-none border-l border-border pl-6 sm:pl-8">
+          <ul className="border-border relative list-none border-l pl-6 sm:pl-8">
             {items.map((item, i) => (
               <li key={i} className="relative pb-10 last:pb-0">
                 <span
-                  className="absolute -left-[1.6rem] top-0 h-4 w-4 rounded-full border-2 border-primary bg-background sm:-left-8"
+                  className="border-primary bg-background absolute -left-[1.6rem] top-0 h-4 w-4 rounded-full border-2 sm:-left-8"
                   aria-hidden
                 />
                 {item.date && (
-                  <p className="text-sm font-medium text-muted-foreground">{item.date}</p>
+                  <p className="text-muted-foreground text-sm font-medium">
+                    {item.date}
+                  </p>
                 )}
-                <h3 className="mt-1 text-lg font-semibold text-foreground">{item.title}</h3>
+                <h3 className="text-foreground mt-1 text-lg font-semibold">
+                  {item.title}
+                </h3>
                 {item.description && (
-                  <p className="mt-2 text-muted-foreground">{item.description}</p>
+                  <p className="text-muted-foreground mt-2">
+                    {item.description}
+                  </p>
                 )}
               </li>
             ))}
           </ul>
         )}
         {isHorizontal && (
-          <ul className="flex flex-wrap justify-center gap-8 list-none p-0">
+          <ul className="flex list-none flex-wrap justify-center gap-8 p-0">
             {items.map((item, i) => (
               <li
                 key={i}
-                className="flex max-w-xs flex-col rounded-lg border bg-card p-6 text-center"
+                className="bg-card flex max-w-xs flex-col rounded-lg border p-6 text-center"
               >
                 {item.date && (
-                  <p className="text-sm font-medium text-muted-foreground">{item.date}</p>
+                  <p className="text-muted-foreground text-sm font-medium">
+                    {item.date}
+                  </p>
                 )}
-                <h3 className="mt-2 text-lg font-semibold text-foreground">{item.title}</h3>
+                <h3 className="text-foreground mt-2 text-lg font-semibold">
+                  {item.title}
+                </h3>
                 {item.description && (
-                  <p className="mt-2 text-sm text-muted-foreground">{item.description}</p>
+                  <p className="text-muted-foreground mt-2 text-sm">
+                    {item.description}
+                  </p>
                 )}
               </li>
             ))}

@@ -7,7 +7,10 @@
 
 import React, { useState, useEffect, use } from "react"
 import { useSearchParams } from "next/navigation"
-import { BuilderPreviewFrame, type PageEntry } from "../../_components/BuilderPreviewFrame"
+import {
+  BuilderPreviewFrame,
+  type PageEntry,
+} from "../../_components/BuilderPreviewFrame"
 
 export const PREVIEW_STORAGE_KEY_PREFIX = "landing-preview-"
 
@@ -58,10 +61,12 @@ export default function BuilderPreviewBySlugPage({
   }, [viewportMeta.meta])
 
   useEffect(() => {
-    const decodedSlug = typeof slug === "string" ? decodeURIComponent(slug) : slug
+    const decodedSlug =
+      typeof slug === "string" ? decodeURIComponent(slug) : slug
     const key = `${PREVIEW_STORAGE_KEY_PREFIX}${decodedSlug}`
     try {
-      const raw = typeof window !== "undefined" ? localStorage.getItem(key) : null
+      const raw =
+        typeof window !== "undefined" ? localStorage.getItem(key) : null
       if (raw) {
         const data = JSON.parse(raw) as StoredPayload
         if (Array.isArray(data.pages) && data.pages.length > 0) {
@@ -76,7 +81,7 @@ export default function BuilderPreviewBySlugPage({
 
   if (!loaded) {
     return (
-      <div className="flex min-h-[50vh] items-center justify-center bg-muted/30 p-8 text-center text-muted-foreground">
+      <div className="bg-muted/30 text-muted-foreground flex min-h-[50vh] items-center justify-center p-8 text-center">
         <p>Loading preview…</p>
       </div>
     )
@@ -84,8 +89,11 @@ export default function BuilderPreviewBySlugPage({
 
   if (pages.length === 0) {
     return (
-      <div className="flex min-h-[50vh] items-center justify-center bg-muted/30 p-8 text-center text-muted-foreground">
-        <p>No preview data for this slug. Open from builder with &quot;Open in new tab&quot;.</p>
+      <div className="bg-muted/30 text-muted-foreground flex min-h-[50vh] items-center justify-center p-8 text-center">
+        <p>
+          No preview data for this slug. Open from builder with &quot;Open in
+          new tab&quot;.
+        </p>
       </div>
     )
   }

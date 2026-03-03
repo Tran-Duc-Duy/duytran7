@@ -113,7 +113,9 @@ export const INNER_PAGE_TEMPLATES = PAGE_TEMPLATES.filter(
   (t) => !t.slug.startsWith("/") || t.id === "blank"
 )
 
-export function createSectionsFromTemplate(sectionTypes: string[]): LandingSection[] {
+export function createSectionsFromTemplate(
+  sectionTypes: string[]
+): LandingSection[] {
   const sections: LandingSection[] = []
   for (const type of sectionTypes) {
     const section = createDefaultSection(type)
@@ -136,7 +138,9 @@ export function createPageFromTemplate(
     slug = `${options.parentSlug.replace(/\/$/, "")}/${base}`
   }
   if (options?.slugSuffix && !options?.parentSlug) {
-    slug = options.slugSuffix.startsWith("/") ? options.slugSuffix : `/${options.slugSuffix}`
+    slug = options.slugSuffix.startsWith("/")
+      ? options.slugSuffix
+      : `/${options.slugSuffix}`
   }
 
   return {

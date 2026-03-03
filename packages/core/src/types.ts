@@ -66,7 +66,12 @@ export interface DataSource {
 }
 
 /** Background for Hero (and other sections if needed): color, image, gradient, Lottie, video. */
-export type HeroBackgroundType = "color" | "image" | "gradient" | "lottie" | "video"
+export type HeroBackgroundType =
+  | "color"
+  | "image"
+  | "gradient"
+  | "lottie"
+  | "video"
 
 export interface HeroBackground {
   type: HeroBackgroundType
@@ -446,7 +451,12 @@ export interface ContactSection extends SectionBase {
   email?: string
   phone?: string
   address?: string
-  formLabels?: { name?: string; email?: string; message?: string; submit?: string }
+  formLabels?: {
+    name?: string
+    email?: string
+    message?: string
+    submit?: string
+  }
   actionUrl?: string
   variant?: ContactVariant
 }

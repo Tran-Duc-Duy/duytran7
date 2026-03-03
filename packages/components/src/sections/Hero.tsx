@@ -17,10 +17,21 @@ export interface HeroProps {
 function looksLikeTailwindClass(s: string): boolean {
   const v = s.trim()
   if (!v) return false
-  if (v.startsWith("bg-") || v.startsWith("from-") || v.startsWith("to-") || v.startsWith("via-"))
+  if (
+    v.startsWith("bg-") ||
+    v.startsWith("from-") ||
+    v.startsWith("to-") ||
+    v.startsWith("via-")
+  )
     return true
   if (/^#[0-9A-Fa-f]{3,8}$/.test(v)) return false
-  if (/^rgb\(/.test(v) || /^rgba\(/.test(v) || /^hsl\(/.test(v) || /^hsla\(/.test(v)) return false
+  if (
+    /^rgb\(/.test(v) ||
+    /^rgba\(/.test(v) ||
+    /^hsl\(/.test(v) ||
+    /^hsla\(/.test(v)
+  )
+    return false
   return true
 }
 
@@ -53,10 +64,17 @@ export function Hero({ config, className }: HeroProps) {
     classes = {},
   } = config
 
-  const isCentered = ["centered", "minimal", "gradient", "badge", "floating"].includes(variant ?? "")
+  const isCentered = [
+    "centered",
+    "minimal",
+    "gradient",
+    "badge",
+    "floating",
+  ].includes(variant ?? "")
   const isSplitLayout = variant === "split" || variant === "right-image"
   const isRightImage = variant === "right-image"
-  const sectionClass = heroVariantClasses[variant ?? "default"] ?? heroVariantClasses.default
+  const sectionClass =
+    heroVariantClasses[variant ?? "default"] ?? heroVariantClasses.default
   const isDark = variant === "dark"
 
   return (
@@ -79,7 +97,9 @@ export function Hero({ config, className }: HeroProps) {
           <div
             className={cn(
               "absolute inset-0 -z-10",
-              looksLikeTailwindClass(background.color) ? background.color : undefined
+              looksLikeTailwindClass(background.color)
+                ? background.color
+                : undefined
             )}
             style={
               looksLikeTailwindClass(background.color)
@@ -88,13 +108,19 @@ export function Hero({ config, className }: HeroProps) {
             }
           />
           {background.overlay && (
-            <div className={cn("absolute inset-0 -z-10", background.overlay)} aria-hidden />
+            <div
+              className={cn("absolute inset-0 -z-10", background.overlay)}
+              aria-hidden
+            />
           )}
         </>
       )}
       {background?.type === "image" && background.url && (
         <div
-          className={cn("absolute inset-0 -z-10 bg-cover bg-center", background.overlay)}
+          className={cn(
+            "absolute inset-0 -z-10 bg-cover bg-center",
+            background.overlay
+          )}
           style={{ backgroundImage: `url(${background.url})` }}
         />
       )}
@@ -106,7 +132,10 @@ export function Hero({ config, className }: HeroProps) {
       )}
       {background?.type === "lottie" && background.url && (
         <div
-          className={cn("absolute inset-0 -z-10 flex items-center justify-center", background.overlay)}
+          className={cn(
+            "absolute inset-0 -z-10 flex items-center justify-center",
+            background.overlay
+          )}
           data-landing-bg="lottie"
           data-lottie-url={background.url}
           aria-hidden
@@ -129,87 +158,94 @@ export function Hero({ config, className }: HeroProps) {
       )}
       <Container size="lg" className={cn("relative", classes.container)}>
         <div className={cn(classes.animation)}>
-        <div
-          className={cn(
-            "flex flex-col gap-8",
-            isSplitLayout && "lg:flex-row lg:items-center lg:gap-12",
-            isRightImage && "lg:flex-row-reverse",
-            isCentered && "text-center"
-          )}
-        >
-          <div className={cn("flex-1", isCentered && "mx-auto max-w-3xl")}>
-            {badge && (
-              <p
-                className={cn(
-                  "mb-4 inline-block rounded-full border bg-muted/50 px-4 py-1 text-sm font-medium text-muted-foreground",
-                  classes.badge
-                )}
-              >
-                {badge}
-              </p>
+          <div
+            className={cn(
+              "flex flex-col gap-8",
+              isSplitLayout && "lg:flex-row lg:items-center lg:gap-12",
+              isRightImage && "lg:flex-row-reverse",
+              isCentered && "text-center"
             )}
-            <h1
-              id={`${id}-heading`}
-              className={cn(
-                "text-foreground text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl",
-                classes.title
+          >
+            <div className={cn("flex-1", isCentered && "mx-auto max-w-3xl")}>
+              {badge && (
+                <p
+                  className={cn(
+                    "bg-muted/50 text-muted-foreground mb-4 inline-block rounded-full border px-4 py-1 text-sm font-medium",
+                    classes.badge
+                  )}
+                >
+                  {badge}
+                </p>
               )}
-            >
-              {headline}
-            </h1>
-            {subheadline && (
-              <p
+              <h1
+                id={`${id}-heading`}
                 className={cn(
-                  "text-muted-foreground mt-4 text-lg sm:text-xl",
-                  classes.subtitle
+                  "text-foreground text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl",
+                  classes.title
                 )}
               >
-                {subheadline}
-              </p>
-            )}
-            {(primaryCta || secondaryCta) && (
-              <div
-                className={cn(
-                  "mt-8 flex flex-wrap gap-4",
-                  isCentered && "justify-center"
-                )}
-              >
-                {primaryCta && (
-                  <Button asChild size="lg" className={classes.primaryButton}>
-                    <a href={primaryCta.href}>{primaryCta.label}</a>
-                  </Button>
-                )}
-                {secondaryCta && (
-                  <Button asChild variant="outline" size="lg" className={classes.secondaryButton}>
-                    <a href={secondaryCta.href}>{secondaryCta.label}</a>
-                  </Button>
-                )}
+                {headline}
+              </h1>
+              {subheadline && (
+                <p
+                  className={cn(
+                    "text-muted-foreground mt-4 text-lg sm:text-xl",
+                    classes.subtitle
+                  )}
+                >
+                  {subheadline}
+                </p>
+              )}
+              {(primaryCta || secondaryCta) && (
+                <div
+                  className={cn(
+                    "mt-8 flex flex-wrap gap-4",
+                    isCentered && "justify-center"
+                  )}
+                >
+                  {primaryCta && (
+                    <Button asChild size="lg" className={classes.primaryButton}>
+                      <a href={primaryCta.href}>{primaryCta.label}</a>
+                    </Button>
+                  )}
+                  {secondaryCta && (
+                    <Button
+                      asChild
+                      variant="outline"
+                      size="lg"
+                      className={classes.secondaryButton}
+                    >
+                      <a href={secondaryCta.href}>{secondaryCta.label}</a>
+                    </Button>
+                  )}
+                </div>
+              )}
+            </div>
+            {image && isSplitLayout && (
+              <div className={cn("flex-1", classes.image)}>
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  className="rounded-lg object-cover shadow-lg"
+                  loading="eager"
+                  fetchPriority="high"
+                />
               </div>
             )}
           </div>
-          {image && isSplitLayout && (
-            <div className={cn("flex-1", classes.image)}>
-              <img
-                src={image.src}
-                alt={image.alt}
-                className="rounded-lg object-cover shadow-lg"
-                loading="eager"
-                fetchPriority="high"
-              />
-            </div>
-          )}
-        </div>
-        {image && !isSplitLayout && (variant === "default" || variant === "left") && (
-          <div className={cn("mt-12", classes.image)}>
-            <img
-              src={image.src}
-              alt={image.alt}
-              className="mx-auto rounded-lg object-cover shadow-lg"
-              loading="eager"
-              fetchPriority="high"
-            />
-          </div>
-        )}
+          {image &&
+            !isSplitLayout &&
+            (variant === "default" || variant === "left") && (
+              <div className={cn("mt-12", classes.image)}>
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  className="mx-auto rounded-lg object-cover shadow-lg"
+                  loading="eager"
+                  fetchPriority="high"
+                />
+              </div>
+            )}
         </div>
       </Container>
     </Section>

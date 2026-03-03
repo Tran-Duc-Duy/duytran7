@@ -73,7 +73,12 @@ export function Cta({ config, className }: CtaProps) {
               {subtitle}
             </p>
           )}
-          <div className={cn("mt-8 flex flex-wrap justify-center gap-4", classes.actions)}>
+          <div
+            className={cn(
+              "mt-8 flex flex-wrap justify-center gap-4",
+              classes.actions
+            )}
+          >
             <Button
               asChild
               size="lg"

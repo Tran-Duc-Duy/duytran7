@@ -37,7 +37,7 @@ function LabelInput({
 }) {
   return (
     <div>
-      <label htmlFor={id} className="block text-xs font-medium text-foreground">
+      <label htmlFor={id} className="text-foreground block text-xs font-medium">
         {label}
       </label>
       <input
@@ -46,7 +46,7 @@ function LabelInput({
         value={value}
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
-        className="mt-1 w-full rounded border border-border bg-background px-2 py-1.5 text-sm text-foreground"
+        className="border-border bg-background text-foreground mt-1 w-full rounded border px-2 py-1.5 text-sm"
       />
     </div>
   )
@@ -70,20 +70,23 @@ export function PageSettingsEditor({
     })
   }
 
-  const updateTheme = (patch: { primaryColor?: string; fontFamily?: string }) => {
+  const updateTheme = (patch: {
+    primaryColor?: string
+    fontFamily?: string
+  }) => {
     onChange({ seo, theme: { ...theme, ...patch } })
   }
 
   return (
-    <div className="flex h-full flex-col border-l border-border bg-card">
-      <div className="flex items-center justify-between border-b border-border px-3 py-2">
-        <h2 className="text-sm font-semibold text-foreground">
+    <div className="border-border bg-card flex h-full flex-col border-l">
+      <div className="border-border flex items-center justify-between border-b px-3 py-2">
+        <h2 className="text-foreground text-sm font-semibold">
           Page settings — {pageName}
         </h2>
         <button
           type="button"
           onClick={onClose}
-          className="rounded p-1 text-muted-foreground hover:bg-muted hover:text-foreground"
+          className="text-muted-foreground hover:bg-muted hover:text-foreground rounded p-1"
           aria-label="Close page settings"
         >
           ×
@@ -91,7 +94,7 @@ export function PageSettingsEditor({
       </div>
       <div className="min-h-0 flex-1 overflow-y-auto p-3">
         <section className="mb-6">
-          <h3 className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+          <h3 className="text-muted-foreground mb-2 text-xs font-semibold uppercase tracking-wider">
             Metadata & SEO
           </h3>
           <div className="space-y-2">
@@ -120,7 +123,7 @@ export function PageSettingsEditor({
         </section>
 
         <section className="mb-6">
-          <h3 className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+          <h3 className="text-muted-foreground mb-2 text-xs font-semibold uppercase tracking-wider">
             Open Graph
           </h3>
           <div className="space-y-2">
@@ -170,7 +173,7 @@ export function PageSettingsEditor({
         </section>
 
         <section className="mb-6">
-          <h3 className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+          <h3 className="text-muted-foreground mb-2 text-xs font-semibold uppercase tracking-wider">
             Twitter Card
           </h3>
           <div className="space-y-2">
@@ -222,7 +225,7 @@ export function PageSettingsEditor({
         </section>
 
         <section className="mb-6">
-          <h3 className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+          <h3 className="text-muted-foreground mb-2 text-xs font-semibold uppercase tracking-wider">
             Theme
           </h3>
           <div className="space-y-2">
@@ -244,15 +247,15 @@ export function PageSettingsEditor({
         </section>
 
         <section>
-          <h3 className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+          <h3 className="text-muted-foreground mb-2 text-xs font-semibold uppercase tracking-wider">
             JSON-LD (optional)
           </h3>
-          <p className="mb-1 text-xs text-muted-foreground">
+          <p className="text-muted-foreground mb-1 text-xs">
             Structured data for search. Valid JSON object or array.
           </p>
           <textarea
             id="seo-jsonld"
-            className="w-full rounded border border-border bg-background px-2 py-1.5 font-mono text-xs min-h-[80px] resize-y"
+            className="border-border bg-background min-h-[80px] w-full resize-y rounded border px-2 py-1.5 font-mono text-xs"
             value={
               s.jsonLd
                 ? JSON.stringify(
@@ -269,7 +272,9 @@ export function PageSettingsEditor({
                 return
               }
               try {
-                const parsed = JSON.parse(raw) as Record<string, unknown> | Record<string, unknown>[]
+                const parsed = JSON.parse(raw) as
+                  | Record<string, unknown>
+                  | Record<string, unknown>[]
                 updateSeo({ jsonLd: parsed })
               } catch {
                 // ignore invalid JSON while typing

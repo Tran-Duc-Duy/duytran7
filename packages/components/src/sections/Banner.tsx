@@ -17,7 +17,8 @@ const variantClasses: Record<string, string> = {
   warning: "bg-amber-500 text-white",
   success: "bg-emerald-600 text-white",
   info: "bg-blue-600 text-white",
-  gradient: "bg-gradient-to-r from-primary to-primary/80 text-primary-foreground",
+  gradient:
+    "bg-gradient-to-r from-primary to-primary/80 text-primary-foreground",
   icon: "bg-primary text-primary-foreground",
   minimal: "bg-muted text-muted-foreground border-b",
   bordered: "border bg-background text-foreground",

@@ -10,8 +10,14 @@ import React, { useCallback, useEffect } from "react"
 import type { LandingConfig } from "@duytran7/landing-core"
 import { SectionRenderer } from "@duytran7/landing-components"
 
-function setMeta(name: string, content: string, attr: "name" | "property" = "name"): void {
-  let el = document.querySelector(`meta[${attr}="${name}"]`) as HTMLMetaElement | null
+function setMeta(
+  name: string,
+  content: string,
+  attr: "name" | "property" = "name"
+): void {
+  let el = document.querySelector(
+    `meta[${attr}="${name}"]`
+  ) as HTMLMetaElement | null
   if (!el) {
     el = document.createElement("meta")
     el.setAttribute(attr, name)
@@ -21,7 +27,9 @@ function setMeta(name: string, content: string, attr: "name" | "property" = "nam
 }
 
 function setCanonical(href: string): void {
-  let el = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null
+  let el = document.querySelector(
+    'link[rel="canonical"]'
+  ) as HTMLLinkElement | null
   if (!el) {
     el = document.createElement("link")
     el.setAttribute("rel", "canonical")
@@ -65,11 +73,14 @@ export function BuilderPreviewFrame({
       if (!href || href.startsWith("#")) return
       const pathname = getPathnameFromHref(href)
       const normalized = pathname.replace(/\/$/, "") || "/"
-      const match = pageSlugs.find((s) => (s.replace(/\/$/, "") || "/") === normalized)
+      const match = pageSlugs.find(
+        (s) => (s.replace(/\/$/, "") || "/") === normalized
+      )
       if (match !== undefined) {
         e.preventDefault()
         setCurrentSlug(
-          pages.find((p) => (p.slug.replace(/\/$/, "") || "/") === normalized)?.slug ?? match
+          pages.find((p) => (p.slug.replace(/\/$/, "") || "/") === normalized)
+            ?.slug ?? match
         )
       }
     },
@@ -78,10 +89,12 @@ export function BuilderPreviewFrame({
 
   useEffect(() => {
     document.addEventListener("click", handleDocumentClick, true)
-    return () => document.removeEventListener("click", handleDocumentClick, true)
+    return () =>
+      document.removeEventListener("click", handleDocumentClick, true)
   }, [handleDocumentClick])
 
-  const config = pages.find((p) => p.slug === currentSlug)?.config ?? pages[0]?.config
+  const config =
+    pages.find((p) => p.slug === currentSlug)?.config ?? pages[0]?.config
 
   useEffect(() => {
     if (!config?.seo) return
@@ -91,21 +104,23 @@ export function BuilderPreviewFrame({
     if (s.canonical) setCanonical(s.canonical)
     if (s.og) {
       if (s.og.title) setMeta("og:title", s.og.title, "property")
-      if (s.og.description) setMeta("og:description", s.og.description, "property")
+      if (s.og.description)
+        setMeta("og:description", s.og.description, "property")
       if (s.og.image) setMeta("og:image", s.og.image, "property")
       if (s.og.type) setMeta("og:type", s.og.type, "property")
     }
     if (s.twitter) {
       if (s.twitter.card) setMeta("twitter:card", s.twitter.card)
       if (s.twitter.title) setMeta("twitter:title", s.twitter.title)
-      if (s.twitter.description) setMeta("twitter:description", s.twitter.description)
+      if (s.twitter.description)
+        setMeta("twitter:description", s.twitter.description)
       if (s.twitter.image) setMeta("twitter:image", s.twitter.image)
     }
   }, [config?.seo])
 
   if (!config) {
     return (
-      <div className="flex min-h-[50vh] items-center justify-center bg-muted/30 p-8 text-center text-muted-foreground">
+      <div className="bg-muted/30 text-muted-foreground flex min-h-[50vh] items-center justify-center p-8 text-center">
         <p>Waiting for config from builder…</p>
       </div>
     )
@@ -114,7 +129,7 @@ export function BuilderPreviewFrame({
   const sections = config.sections ?? []
   if (sections.length === 0) {
     return (
-      <div className="flex min-h-[50vh] items-center justify-center bg-muted/30 p-8 text-center text-muted-foreground">
+      <div className="bg-muted/30 text-muted-foreground flex min-h-[50vh] items-center justify-center p-8 text-center">
         <p>No sections on this page.</p>
       </div>
     )

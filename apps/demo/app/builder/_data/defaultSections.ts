@@ -76,9 +76,7 @@ const defaults: Record<string, () => LandingSection> = {
     type: "testimonials",
     variant: "default",
     title: "Testimonials",
-    items: [
-      { quote: "Great product.", author: "Alice", role: "User" },
-    ],
+    items: [{ quote: "Great product.", author: "Alice", role: "User" }],
   }),
   pricing: () => ({
     id: uid("pricing"),
@@ -108,9 +106,7 @@ const defaults: Record<string, () => LandingSection> = {
     type: "faq",
     variant: "default",
     title: "FAQ",
-    items: [
-      { question: "Question?", answer: "Answer." },
-    ],
+    items: [{ question: "Question?", answer: "Answer." }],
   }),
   cta: () => ({
     id: uid("cta"),
@@ -136,7 +132,12 @@ const defaults: Record<string, () => LandingSection> = {
     variant: "default",
     title: "Contact",
     email: "hello@example.com",
-    formLabels: { name: "Name", email: "Email", message: "Message", submit: "Send" },
+    formLabels: {
+      name: "Name",
+      email: "Email",
+      message: "Message",
+      submit: "Send",
+    },
     actionUrl: "#",
   }),
   gallery: () => ({
@@ -163,18 +164,14 @@ const defaults: Record<string, () => LandingSection> = {
     variant: "table",
     title: "Compare",
     planNames: ["Free", "Pro"],
-    rows: [
-      { feature: "Feature A", values: ["Yes", "Yes"] },
-    ],
+    rows: [{ feature: "Feature A", values: ["Yes", "Yes"] }],
   }),
   timeline: () => ({
     id: uid("timeline"),
     type: "timeline",
     variant: "vertical",
     title: "Timeline",
-    items: [
-      { date: "2024", title: "Step 1", description: "Description." },
-    ],
+    items: [{ date: "2024", title: "Step 1", description: "Description." }],
   }),
   footer: () => ({
     id: uid("footer"),
@@ -193,7 +190,8 @@ const defaults: Record<string, () => LandingSection> = {
     variant: "default",
     title: "Find us",
     address: "123 Main St, City",
-    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2970.0!2d105.0!3d21.0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjHCsDAwJzAwLjAiTiAxMDXCsDAwJzAwLjAiRQ!5e0!3m2!1sen!2s!4v1",
+    mapEmbedUrl:
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2970.0!2d105.0!3d21.0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjHCsDAwJzAwLjAiTiAxMDXCsDAwJzAwLjAiRQ!5e0!3m2!1sen!2s!4v1",
     linkLabel: "Open in Google Maps",
     linkUrl: "https://maps.google.com/",
   }),
@@ -236,7 +234,9 @@ export function getDefaultSeo() {
 }
 
 /** Create a nav section with links (e.g. from builder pages). */
-export function createNavSectionWithLinks(links: { label: string; href: string }[]): LandingSection {
+export function createNavSectionWithLinks(
+  links: { label: string; href: string }[]
+): LandingSection {
   return {
     id: uid("nav"),
     type: "nav",

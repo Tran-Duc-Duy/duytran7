@@ -41,19 +41,19 @@ export function Gallery({ config, className }: GalleryProps) {
             {title && (
               <h2
                 id={`${id}-title`}
-                className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl"
+                className="text-foreground text-3xl font-bold tracking-tight sm:text-4xl"
               >
                 {title}
               </h2>
             )}
             {subtitle && (
-              <p className="mt-4 text-lg text-muted-foreground">{subtitle}</p>
+              <p className="text-muted-foreground mt-4 text-lg">{subtitle}</p>
             )}
           </div>
         )}
         <ul
           className={cn(
-            "grid gap-4 list-none p-0 m-0",
+            "m-0 grid list-none gap-4 p-0",
             colClasses[columns],
             variant === "masonry" && "sm:grid-cols-2 lg:grid-cols-3"
           )}
@@ -68,7 +68,9 @@ export function Gallery({ config, className }: GalleryProps) {
                     className="h-64 w-full object-cover transition hover:scale-105"
                   />
                   {img.caption && (
-                    <p className="mt-2 text-sm text-muted-foreground">{img.caption}</p>
+                    <p className="text-muted-foreground mt-2 text-sm">
+                      {img.caption}
+                    </p>
                   )}
                 </a>
               ) : (
@@ -79,7 +81,9 @@ export function Gallery({ config, className }: GalleryProps) {
                     className="h-64 w-full object-cover"
                   />
                   {img.caption && (
-                    <p className="mt-2 text-sm text-muted-foreground">{img.caption}</p>
+                    <p className="text-muted-foreground mt-2 text-sm">
+                      {img.caption}
+                    </p>
                   )}
                 </div>
               )}

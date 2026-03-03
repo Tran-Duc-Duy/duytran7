@@ -37,7 +37,11 @@ Peer dependencies: `next`, `react`, `react-dom`. Your app must use **Tailwind CS
 // app/page.tsx
 import { readFileSync } from "fs"
 import { join } from "path"
-import { LandingPage, buildMetadata, parseLandingConfigStrict } from "@landing/next"
+import {
+  LandingPage,
+  buildMetadata,
+  parseLandingConfigStrict,
+} from "@landing/next"
 
 const config = parseLandingConfigStrict(
   JSON.parse(readFileSync(join(process.cwd(), "content/landing.json"), "utf-8"))
@@ -86,18 +90,18 @@ Every section supports a **variant** field. Choose one value per section; unknow
 
 ### Hero
 
-| Variant | Description |
-|--------|-------------|
-| `default` | Headline + subheadline + CTAs; image below if provided. |
-| `centered` | Content centered, max-width copy. |
-| `split` | Text and image side by side (image right). |
-| `minimal` | Less padding, centered. |
-| `gradient` | Subtle gradient background. |
-| `badge` | Optional `badge` text above headline; centered. |
-| `left` | Text left-aligned. |
-| `right-image` | Same as split but image on the right. |
-| `dark` | Dark background, light text. |
-| `floating` | Centered, card-like. |
+| Variant       | Description                                             |
+| ------------- | ------------------------------------------------------- |
+| `default`     | Headline + subheadline + CTAs; image below if provided. |
+| `centered`    | Content centered, max-width copy.                       |
+| `split`       | Text and image side by side (image right).              |
+| `minimal`     | Less padding, centered.                                 |
+| `gradient`    | Subtle gradient background.                             |
+| `badge`       | Optional `badge` text above headline; centered.         |
+| `left`        | Text left-aligned.                                      |
+| `right-image` | Same as split but image on the right.                   |
+| `dark`        | Dark background, light text.                            |
+| `floating`    | Centered, card-like.                                    |
 
 Example:
 
@@ -119,273 +123,273 @@ Example:
 
 ### Nav
 
-| Variant | Description |
-|--------|-------------|
-| `default` | Logo left, links center/right, CTA. |
-| `centered` | Logo and links centered. |
-| `minimal` | Simplified layout. |
-| `transparent` | For overlay on hero. |
-| `sticky` | Sticks on scroll. |
-| `two-row` | Two rows (e.g. top links + main nav). |
-| `dark` | Dark background. |
-| `bordered` | Bottom border. |
-| `floating` | Rounded, shadow. |
-| `compact` | Reduced padding. |
+| Variant       | Description                           |
+| ------------- | ------------------------------------- |
+| `default`     | Logo left, links center/right, CTA.   |
+| `centered`    | Logo and links centered.              |
+| `minimal`     | Simplified layout.                    |
+| `transparent` | For overlay on hero.                  |
+| `sticky`      | Sticks on scroll.                     |
+| `two-row`     | Two rows (e.g. top links + main nav). |
+| `dark`        | Dark background.                      |
+| `bordered`    | Bottom border.                        |
+| `floating`    | Rounded, shadow.                      |
+| `compact`     | Reduced padding.                      |
 
 ---
 
 ### Features
 
-| Variant | Description |
-|--------|-------------|
-| `default` | Grid of title + description. |
-| `cards` | Each item in a card. |
-| `list` | Single column list. |
+| Variant       | Description                  |
+| ------------- | ---------------------------- |
+| `default`     | Grid of title + description. |
+| `cards`       | Each item in a card.         |
+| `list`        | Single column list.          |
 | `alternating` | Alternating image/text rows. |
-| `icon-top` | Icon above title. |
-| `icon-left` | Icon left of text. |
-| `numbered` | Numbered items. |
-| `bordered` | Bordered cards. |
-| `zigzag` | Zigzag layout. |
-| `grid-images` | Grid with optional images. |
+| `icon-top`    | Icon above title.            |
+| `icon-left`   | Icon left of text.           |
+| `numbered`    | Numbered items.              |
+| `bordered`    | Bordered cards.              |
+| `zigzag`      | Zigzag layout.               |
+| `grid-images` | Grid with optional images.   |
 
 ---
 
 ### Stats
 
-| Variant | Description |
-|--------|-------------|
-| `default` | Row of value + label. |
-| `bordered` | Cards with border. |
-| `minimal` | Text only, centered. |
-| `icons` | With optional icon per stat. |
-| `gradient` | Gradient background. |
-| `vertical` | Stacked layout. |
-| `divider` | With dividers between. |
-| `large` | Larger typography. |
-| `compact` | Tighter spacing. |
-| `split` | Split background. |
+| Variant    | Description                  |
+| ---------- | ---------------------------- |
+| `default`  | Row of value + label.        |
+| `bordered` | Cards with border.           |
+| `minimal`  | Text only, centered.         |
+| `icons`    | With optional icon per stat. |
+| `gradient` | Gradient background.         |
+| `vertical` | Stacked layout.              |
+| `divider`  | With dividers between.       |
+| `large`    | Larger typography.           |
+| `compact`  | Tighter spacing.             |
+| `split`    | Split background.            |
 
 ---
 
 ### Logo cloud
 
-| Variant | Description |
-|--------|-------------|
-| `default` | Row of logos. |
-| `grayscale` | Grayscale, color on hover. |
-| `grid` | Grid layout. |
-| `carousel` | Horizontal scroll. |
-| `bordered` | Bordered container. |
-| `dark` | Dark background. |
-| `small` | Smaller logos. |
-| `large` | Larger logos. |
-| `title-bottom` | Title below logos. |
-| `opacity` | Faded, full opacity on hover. |
+| Variant        | Description                   |
+| -------------- | ----------------------------- |
+| `default`      | Row of logos.                 |
+| `grayscale`    | Grayscale, color on hover.    |
+| `grid`         | Grid layout.                  |
+| `carousel`     | Horizontal scroll.            |
+| `bordered`     | Bordered container.           |
+| `dark`         | Dark background.              |
+| `small`        | Smaller logos.                |
+| `large`        | Larger logos.                 |
+| `title-bottom` | Title below logos.            |
+| `opacity`      | Faded, full opacity on hover. |
 
 ---
 
 ### Team
 
-| Variant | Description |
-|--------|-------------|
-| `default` | Avatar + name + role. |
-| `cards` | Card per member, optional bio & social. |
-| `list` | List layout. |
-| `social-only` | Emphasize social links. |
-| `overlay` | Name on image overlay. |
-| `minimal` | Minimal styling. |
-| `alternating` | Alternating layout. |
-| `grid-large` | Large grid. |
-| `horizontal` | Horizontal scroll. |
-| `compact` | Compact cards. |
+| Variant       | Description                             |
+| ------------- | --------------------------------------- |
+| `default`     | Avatar + name + role.                   |
+| `cards`       | Card per member, optional bio & social. |
+| `list`        | List layout.                            |
+| `social-only` | Emphasize social links.                 |
+| `overlay`     | Name on image overlay.                  |
+| `minimal`     | Minimal styling.                        |
+| `alternating` | Alternating layout.                     |
+| `grid-large`  | Large grid.                             |
+| `horizontal`  | Horizontal scroll.                      |
+| `compact`     | Compact cards.                          |
 
 ---
 
 ### Testimonials
 
-| Variant | Description |
-|--------|-------------|
-| `default` | Quote cards. |
-| `carousel` | Carousel (single visible). |
-| `grid` | Grid of quotes. |
-| `featured` | One large + rest small. |
-| `rating` | With rating display. |
-| `minimal` | Minimal card. |
-| `bordered` | Bordered cards. |
-| `alternating` | Alternating style. |
-| `masonry` | Masonry layout. |
-| `compact` | Compact quotes. |
+| Variant       | Description                |
+| ------------- | -------------------------- |
+| `default`     | Quote cards.               |
+| `carousel`    | Carousel (single visible). |
+| `grid`        | Grid of quotes.            |
+| `featured`    | One large + rest small.    |
+| `rating`      | With rating display.       |
+| `minimal`     | Minimal card.              |
+| `bordered`    | Bordered cards.            |
+| `alternating` | Alternating style.         |
+| `masonry`     | Masonry layout.            |
+| `compact`     | Compact quotes.            |
 
 ---
 
 ### Pricing
 
-| Variant | Description |
-|--------|-------------|
-| `default` | Tiers as cards. |
-| `cards` | Card per tier. |
-| `table` | Table layout. |
-| `toggle` | Monthly/annual toggle. |
-| `minimal` | Minimal cards. |
-| `badge` | “Popular” badge on tier. |
+| Variant           | Description                 |
+| ----------------- | --------------------------- |
+| `default`         | Tiers as cards.             |
+| `cards`           | Card per tier.              |
+| `table`           | Table layout.               |
+| `toggle`          | Monthly/annual toggle.      |
+| `minimal`         | Minimal cards.              |
+| `badge`           | “Popular” badge on tier.    |
 | `featured-center` | Highlighted tier in center. |
-| `horizontal` | Horizontal scroll. |
-| `compact` | Compact layout. |
-| `bordered` | Bordered cards. |
+| `horizontal`      | Horizontal scroll.          |
+| `compact`         | Compact layout.             |
+| `bordered`        | Bordered cards.             |
 
 ---
 
 ### FAQ
 
-| Variant | Description |
-|--------|-------------|
-| `default` | List of Q&A. |
-| `accordion` | Collapsible (expand/collapse). |
-| `two-column` | Two columns. |
-| `bordered` | Bordered items. |
-| `minimal` | Minimal styling. |
-| `category` | Grouped by category. |
-| `grid` | Grid layout. |
-| `compact` | Tighter spacing. |
-| `expanded` | All expanded. |
-| `cards` | Each in a card. |
+| Variant      | Description                    |
+| ------------ | ------------------------------ |
+| `default`    | List of Q&A.                   |
+| `accordion`  | Collapsible (expand/collapse). |
+| `two-column` | Two columns.                   |
+| `bordered`   | Bordered items.                |
+| `minimal`    | Minimal styling.               |
+| `category`   | Grouped by category.           |
+| `grid`       | Grid layout.                   |
+| `compact`    | Tighter spacing.               |
+| `expanded`   | All expanded.                  |
+| `cards`      | Each in a card.                |
 
 ---
 
 ### CTA
 
-| Variant | Description |
-|--------|-------------|
-| `default` | Title + subtitle + buttons. |
-| `banner` | Full-width colored banner. |
-| `card` | Inside a card. |
-| `split-image` | With optional image. |
-| `minimal` | Minimal layout. |
-| `gradient` | Gradient background. |
-| `two-column` | Two columns. |
-| `floating` | Floating card. |
-| `dark` | Dark background. |
-| `bordered` | Bordered block. |
+| Variant       | Description                 |
+| ------------- | --------------------------- |
+| `default`     | Title + subtitle + buttons. |
+| `banner`      | Full-width colored banner.  |
+| `card`        | Inside a card.              |
+| `split-image` | With optional image.        |
+| `minimal`     | Minimal layout.             |
+| `gradient`    | Gradient background.        |
+| `two-column`  | Two columns.                |
+| `floating`    | Floating card.              |
+| `dark`        | Dark background.            |
+| `bordered`    | Bordered block.             |
 
 ---
 
 ### Newsletter
 
-| Variant | Description |
-|--------|-------------|
-| `default` | Card with form. |
-| `inline` | Inline email + submit. |
-| `minimal` | Minimal form. |
-| `card` | Card style. |
-| `benefits` | With benefit list. |
-| `split` | Split layout. |
-| `bordered` | Bordered container. |
-| `dark` | Dark background. |
-| `compact` | Compact form. |
-| `floating` | Floating card. |
+| Variant    | Description            |
+| ---------- | ---------------------- |
+| `default`  | Card with form.        |
+| `inline`   | Inline email + submit. |
+| `minimal`  | Minimal form.          |
+| `card`     | Card style.            |
+| `benefits` | With benefit list.     |
+| `split`    | Split layout.          |
+| `bordered` | Bordered container.    |
+| `dark`     | Dark background.       |
+| `compact`  | Compact form.          |
+| `floating` | Floating card.         |
 
 ---
 
 ### Contact
 
-| Variant | Description |
-|--------|-------------|
-| `default` | Form and/or info. |
-| `split` | Form one side, info other. |
-| `minimal` | Minimal layout. |
-| `map-side` | Map placeholder one side. |
-| `centered` | Centered form. |
-| `two-column` | Two columns. |
-| `cards` | Info in cards. |
-| `dark` | Dark background. |
-| `compact` | Compact form. |
-| `inline` | Inline fields. |
+| Variant      | Description                |
+| ------------ | -------------------------- |
+| `default`    | Form and/or info.          |
+| `split`      | Form one side, info other. |
+| `minimal`    | Minimal layout.            |
+| `map-side`   | Map placeholder one side.  |
+| `centered`   | Centered form.             |
+| `two-column` | Two columns.               |
+| `cards`      | Info in cards.             |
+| `dark`       | Dark background.           |
+| `compact`    | Compact form.              |
+| `inline`     | Inline fields.             |
 
 ---
 
 ### Gallery
 
-| Variant | Description |
-|--------|-------------|
-| `default` | Grid of images. |
-| `masonry` | Masonry grid. |
-| `carousel` | Horizontal scroll. |
-| `grid-bordered` | Bordered grid. |
-| `staggered` | Staggered layout. |
-| `full-width` | Full-width images. |
-| `compact` | Compact grid. |
-| `dark` | Dark background. |
-| `overlay` | Caption overlay. |
-| `list` | List layout. |
+| Variant         | Description        |
+| --------------- | ------------------ |
+| `default`       | Grid of images.    |
+| `masonry`       | Masonry grid.      |
+| `carousel`      | Horizontal scroll. |
+| `grid-bordered` | Bordered grid.     |
+| `staggered`     | Staggered layout.  |
+| `full-width`    | Full-width images. |
+| `compact`       | Compact grid.      |
+| `dark`          | Dark background.   |
+| `overlay`       | Caption overlay.   |
+| `list`          | List layout.       |
 
 ---
 
 ### Banner
 
-| Variant | Description |
-|--------|-------------|
-| `default` | Primary color bar. |
-| `warning` | Amber/warning style. |
-| `success` | Green/success. |
-| `info` | Blue/info. |
+| Variant    | Description          |
+| ---------- | -------------------- |
+| `default`  | Primary color bar.   |
+| `warning`  | Amber/warning style. |
+| `success`  | Green/success.       |
+| `info`     | Blue/info.           |
 | `gradient` | Gradient background. |
-| `icon` | With icon. |
-| `minimal` | Minimal bar. |
-| `bordered` | Bordered. |
-| `dark` | Dark bar. |
-| `compact` | Less padding. |
+| `icon`     | With icon.           |
+| `minimal`  | Minimal bar.         |
+| `bordered` | Bordered.            |
+| `dark`     | Dark bar.            |
+| `compact`  | Less padding.        |
 
 ---
 
 ### Comparison
 
-| Variant | Description |
-|--------|-------------|
-| `default` | Table. |
-| `table` | Full table. |
-| `cards` | One card per plan. |
-| `highlighted-row` | Highlight a row. |
-| `checkmarks` | Check/cross marks. |
-| `minimal` | Minimal table. |
-| `compact` | Compact table. |
-| `bordered` | Bordered table. |
-| `striped` | Striped rows. |
-| `inline` | Inline comparison. |
+| Variant           | Description        |
+| ----------------- | ------------------ |
+| `default`         | Table.             |
+| `table`           | Full table.        |
+| `cards`           | One card per plan. |
+| `highlighted-row` | Highlight a row.   |
+| `checkmarks`      | Check/cross marks. |
+| `minimal`         | Minimal table.     |
+| `compact`         | Compact table.     |
+| `bordered`        | Bordered table.    |
+| `striped`         | Striped rows.      |
+| `inline`          | Inline comparison. |
 
 ---
 
 ### Timeline
 
-| Variant | Description |
-|--------|-------------|
-| `default` | Vertical timeline. |
-| `vertical` | Vertical with line. |
-| `horizontal` | Horizontal cards. |
-| `alternate` | Alternate left/right. |
-| `minimal` | Minimal line. |
-| `connectors` | With connectors. |
-| `cards` | Card per item. |
-| `compact` | Compact. |
-| `dark` | Dark background. |
-| `numbered` | Numbered steps. |
+| Variant      | Description           |
+| ------------ | --------------------- |
+| `default`    | Vertical timeline.    |
+| `vertical`   | Vertical with line.   |
+| `horizontal` | Horizontal cards.     |
+| `alternate`  | Alternate left/right. |
+| `minimal`    | Minimal line.         |
+| `connectors` | With connectors.      |
+| `cards`      | Card per item.        |
+| `compact`    | Compact.              |
+| `dark`       | Dark background.      |
+| `numbered`   | Numbered steps.       |
 
 ---
 
 ### Footer
 
-| Variant | Description |
-|--------|-------------|
-| `default` | Brand + link groups + bottom. |
-| `minimal` | Minimal links. |
-| `newsletter` | With newsletter block. |
-| `multi-column` | Multiple columns. |
-| `centered` | Centered content. |
-| `social` | Emphasize social. |
-| `dark` | Dark background. |
-| `bordered` | Top border. |
-| `compact` | Compact. |
-| `simple` | Single row. |
+| Variant        | Description                   |
+| -------------- | ----------------------------- |
+| `default`      | Brand + link groups + bottom. |
+| `minimal`      | Minimal links.                |
+| `newsletter`   | With newsletter block.        |
+| `multi-column` | Multiple columns.             |
+| `centered`     | Centered content.             |
+| `social`       | Emphasize social.             |
+| `dark`         | Dark background.              |
+| `bordered`     | Top border.                   |
+| `compact`      | Compact.                      |
+| `simple`       | Single row.                   |
 
 ---
 
@@ -424,16 +428,16 @@ So that AI in your ecosystem can **identify and pick** the right section (instea
 
 ### Entry fields
 
-| Field | Meaning |
-|-------|--------|
-| **id** | Section type (hero, nav, features, …). |
-| **name** | Display name. |
-| **description** | Short description for AI to identify the section (one sentence). |
-| **useCase** | When to use this section. |
-| **variants** | List of UI variants (default, centered, split, …). |
-| **configFields** | Main config fields (AI knows what to send). |
-| **classesKeys** | Keys in the `classes` object (multi-level Tailwind) if supported. |
-| **exampleConfig** | Minimal example config (JSON). |
+| Field             | Meaning                                                           |
+| ----------------- | ----------------------------------------------------------------- |
+| **id**            | Section type (hero, nav, features, …).                            |
+| **name**          | Display name.                                                     |
+| **description**   | Short description for AI to identify the section (one sentence).  |
+| **useCase**       | When to use this section.                                         |
+| **variants**      | List of UI variants (default, centered, split, …).                |
+| **configFields**  | Main config fields (AI knows what to send).                       |
+| **classesKeys**   | Keys in the `classes` object (multi-level Tailwind) if supported. |
+| **exampleConfig** | Minimal example config (JSON).                                    |
 
 ### How to consume
 

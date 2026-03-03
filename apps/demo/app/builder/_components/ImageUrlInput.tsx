@@ -33,14 +33,17 @@ export function ImageUrlInput({
   const [previewError, setPreviewError] = useState(false)
 
   const pickRandom = () => {
-    const url = UNSPLASH_PLACEHOLDERS[Math.floor(Math.random() * UNSPLASH_PLACEHOLDERS.length)]
+    const url =
+      UNSPLASH_PLACEHOLDERS[
+        Math.floor(Math.random() * UNSPLASH_PLACEHOLDERS.length)
+      ]
     onChange(url)
     setPreviewError(false)
   }
 
   return (
     <div>
-      <label className="mb-0.5 block text-xs font-medium text-muted-foreground">
+      <label className="text-muted-foreground mb-0.5 block text-xs font-medium">
         {label}
       </label>
       <div className="flex gap-1">
@@ -52,12 +55,12 @@ export function ImageUrlInput({
             onChange(e.target.value)
             setPreviewError(false)
           }}
-          className="min-w-0 flex-1 rounded border border-border bg-background px-2 py-1.5 text-sm"
+          className="border-border bg-background min-w-0 flex-1 rounded border px-2 py-1.5 text-sm"
         />
         <button
           type="button"
           onClick={pickRandom}
-          className="shrink-0 rounded border border-border bg-muted/30 px-2 py-1.5 text-xs text-muted-foreground hover:bg-muted/50"
+          className="border-border bg-muted/30 text-muted-foreground hover:bg-muted/50 shrink-0 rounded border px-2 py-1.5 text-xs"
           title="Insert Unsplash sample image"
         >
           Unsplash
@@ -65,10 +68,10 @@ export function ImageUrlInput({
       </div>
       {value && (
         <div className="mt-1.5">
-          <p className="mb-1 text-xs text-muted-foreground">Preview:</p>
-          <div className="relative h-24 w-full overflow-hidden rounded border border-border bg-muted/20">
+          <p className="text-muted-foreground mb-1 text-xs">Preview:</p>
+          <div className="border-border bg-muted/20 relative h-24 w-full overflow-hidden rounded border">
             {previewError ? (
-              <div className="flex h-full items-center justify-center text-xs text-muted-foreground">
+              <div className="text-muted-foreground flex h-full items-center justify-center text-xs">
                 Failed to load image
               </div>
             ) : (

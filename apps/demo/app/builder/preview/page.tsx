@@ -7,7 +7,10 @@
 
 import React, { useState, useEffect } from "react"
 import { useSearchParams } from "next/navigation"
-import { BuilderPreviewFrame, type PageEntry } from "../_components/BuilderPreviewFrame"
+import {
+  BuilderPreviewFrame,
+  type PageEntry,
+} from "../_components/BuilderPreviewFrame"
 
 const VIEWPORTS = {
   desktop: { width: 1280, meta: "width=1280" },

@@ -32,7 +32,12 @@
       "email": "hello@example.com",
       "phone": "+1 (555) 000-0000",
       "address": "123 Main St, San Francisco, CA",
-      "formLabels": { "name": "Name", "email": "Email", "message": "Message", "submit": "Send message" },
+      "formLabels": {
+        "name": "Name",
+        "email": "Email",
+        "message": "Message",
+        "submit": "Send message"
+      },
       "actionUrl": "/api/contact",
       "variant": "split"
     },

@@ -38,9 +38,18 @@
       "title": "Per-element overrides",
       "subtitle": "classes.title, classes.subtitle, classes.card, classes.grid…",
       "items": [
-        { "title": "root", "description": "Section wrapper. e.g. bg-muted/30, rounded-2xl." },
-        { "title": "title", "description": "Heading. e.g. text-4xl font-black, text-primary." },
-        { "title": "card", "description": "Feature card. e.g. rounded-xl shadow-lg hover:shadow-xl." }
+        {
+          "title": "root",
+          "description": "Section wrapper. e.g. bg-muted/30, rounded-2xl."
+        },
+        {
+          "title": "title",
+          "description": "Heading. e.g. text-4xl font-black, text-primary."
+        },
+        {
+          "title": "card",
+          "description": "Feature card. e.g. rounded-xl shadow-lg hover:shadow-xl."
+        }
       ],
       "columns": 3,
       "variant": "cards",

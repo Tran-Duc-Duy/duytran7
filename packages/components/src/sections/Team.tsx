@@ -5,7 +5,13 @@
 import type { TeamSection as TeamSectionConfig } from "@duytran7/landing-core"
 import { Section } from "../primitives/Section"
 import { Container } from "../primitives/Container"
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "../primitives/Card"
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+} from "../primitives/Card"
 import { cn } from "../utils/cn"
 
 export interface TeamProps {
@@ -42,22 +48,17 @@ export function Team({ config, className }: TeamProps) {
             {title && (
               <h2
                 id={`${id}-title`}
-                className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl"
+                className="text-foreground text-3xl font-bold tracking-tight sm:text-4xl"
               >
                 {title}
               </h2>
             )}
             {subtitle && (
-              <p className="mt-4 text-lg text-muted-foreground">{subtitle}</p>
+              <p className="text-muted-foreground mt-4 text-lg">{subtitle}</p>
             )}
           </div>
         )}
-        <ul
-          className={cn(
-            "grid gap-8 list-none p-0 m-0",
-            colClasses[columns]
-          )}
-        >
+        <ul className={cn("m-0 grid list-none gap-8 p-0", colClasses[columns])}>
           {members.map((member, i) => (
             <li key={i}>
               {variant === "cards" ? (
@@ -77,7 +78,9 @@ export function Team({ config, className }: TeamProps) {
                   </CardHeader>
                   {member.bio && (
                     <CardContent className="pt-0">
-                      <p className="text-sm text-muted-foreground">{member.bio}</p>
+                      <p className="text-muted-foreground text-sm">
+                        {member.bio}
+                      </p>
                     </CardContent>
                   )}
                   {member.social && member.social.length > 0 && (
@@ -105,12 +108,18 @@ export function Team({ config, className }: TeamProps) {
                       className="mx-auto h-24 w-24 rounded-full object-cover"
                     />
                   )}
-                  <h3 className="mt-4 text-lg font-semibold text-foreground">{member.name}</h3>
+                  <h3 className="text-foreground mt-4 text-lg font-semibold">
+                    {member.name}
+                  </h3>
                   {member.role && (
-                    <p className="text-sm text-muted-foreground">{member.role}</p>
+                    <p className="text-muted-foreground text-sm">
+                      {member.role}
+                    </p>
                   )}
                   {member.bio && (
-                    <p className="mt-2 text-sm text-muted-foreground">{member.bio}</p>
+                    <p className="text-muted-foreground mt-2 text-sm">
+                      {member.bio}
+                    </p>
                   )}
                   {member.social && member.social.length > 0 && (
                     <div className="mt-2 flex justify-center gap-4">

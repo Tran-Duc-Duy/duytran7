@@ -40,15 +40,15 @@ pnpm build
 
 ### Useful scripts
 
-| Script            | Description                                    |
-| ----------------- | ---------------------------------------------- |
-| `pnpm build`      | Build all packages                             |
-| `pnpm dev`       | Watch mode per package (run inside package)    |
-| `pnpm test`       | Run tests (Vitest, from root)                  |
-| `pnpm test:watch` | Run tests in watch mode                        |
-| `pnpm lint`       | Check format (Prettier)                        |
-| `pnpm format`     | Auto-format code                               |
-| `pnpm clean`      | Remove `dist` and `node_modules`              |
+| Script            | Description                                 |
+| ----------------- | ------------------------------------------- |
+| `pnpm build`      | Build all packages                          |
+| `pnpm dev`        | Watch mode per package (run inside package) |
+| `pnpm test`       | Run tests (Vitest, from root)               |
+| `pnpm test:watch` | Run tests in watch mode                     |
+| `pnpm lint`       | Check format (Prettier)                     |
+| `pnpm format`     | Auto-format code                            |
+| `pnpm clean`      | Remove `dist` and `node_modules`            |
 
 ## Contribution workflow
 

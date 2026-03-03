@@ -34,7 +34,7 @@ export function Comparison({ config, className }: ComparisonProps) {
   return (
     <Section
       id={id}
-      className={cn("py-16 sm:py-24 bg-muted/30", configClass, className)}
+      className={cn("bg-muted/30 py-16 sm:py-24", configClass, className)}
       aria-labelledby={title ? `${id}-title` : undefined}
     >
       <Container size="lg">
@@ -43,27 +43,27 @@ export function Comparison({ config, className }: ComparisonProps) {
             {title && (
               <h2
                 id={`${id}-title`}
-                className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl"
+                className="text-foreground text-3xl font-bold tracking-tight sm:text-4xl"
               >
                 {title}
               </h2>
             )}
             {subtitle && (
-              <p className="mt-4 text-lg text-muted-foreground">{subtitle}</p>
+              <p className="text-muted-foreground mt-4 text-lg">{subtitle}</p>
             )}
           </div>
         )}
         {isTable ? (
-          <div className="overflow-x-auto rounded-lg border bg-card">
+          <div className="bg-card overflow-x-auto rounded-lg border">
             <table className="w-full text-left text-sm">
               <thead>
-                <tr className="border-b bg-muted/50">
-                  <th className="p-4 font-medium text-foreground">Feature</th>
+                <tr className="bg-muted/50 border-b">
+                  <th className="text-foreground p-4 font-medium">Feature</th>
                   {planNames.map((name, i) => (
                     <th
                       key={i}
                       className={cn(
-                        "p-4 font-medium text-foreground",
+                        "text-foreground p-4 font-medium",
                         highlightColumn === i && "bg-primary/10"
                       )}
                     >
@@ -75,7 +75,7 @@ export function Comparison({ config, className }: ComparisonProps) {
               <tbody>
                 {rows.map((row, i) => (
                   <tr key={i} className="border-b last:border-0">
-                    <td className="p-4 text-muted-foreground">{row.feature}</td>
+                    <td className="text-muted-foreground p-4">{row.feature}</td>
                     {row.values.map((val, j) => (
                       <td
                         key={j}
@@ -98,15 +98,19 @@ export function Comparison({ config, className }: ComparisonProps) {
               <div
                 key={colIndex}
                 className={cn(
-                  "rounded-lg border bg-card p-6",
+                  "bg-card rounded-lg border p-6",
                   highlightColumn === colIndex && "border-primary shadow-md"
                 )}
               >
-                <h3 className="mb-4 text-lg font-semibold text-foreground">{planName}</h3>
+                <h3 className="text-foreground mb-4 text-lg font-semibold">
+                  {planName}
+                </h3>
                 <ul className="list-none space-y-2 p-0">
                   {rows.map((row, i) => (
                     <li key={i} className="flex justify-between gap-2 text-sm">
-                      <span className="text-muted-foreground">{row.feature}</span>
+                      <span className="text-muted-foreground">
+                        {row.feature}
+                      </span>
                       <span>{formatValue(row.values[colIndex] ?? "")}</span>
                     </li>
                   ))}

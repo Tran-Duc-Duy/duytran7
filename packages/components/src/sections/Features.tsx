@@ -42,12 +42,22 @@ export function Features({ config, className }: FeaturesProps) {
   return (
     <Section
       id={id}
-      className={cn("bg-muted/30 py-16 sm:py-24", configClass, classes.root, className)}
+      className={cn(
+        "bg-muted/30 py-16 sm:py-24",
+        configClass,
+        classes.root,
+        className
+      )}
       aria-labelledby={title ? `${id}-title` : undefined}
     >
       <Container size="lg" className={classes.container}>
         {(title || subtitle) && (
-          <div className={cn("mx-auto mb-12 max-w-2xl text-center", classes.header)}>
+          <div
+            className={cn(
+              "mx-auto mb-12 max-w-2xl text-center",
+              classes.header
+            )}
+          >
             {title && (
               <h2
                 id={`${id}-title`}
@@ -61,7 +71,10 @@ export function Features({ config, className }: FeaturesProps) {
             )}
             {subtitle && (
               <p
-                className={cn("text-muted-foreground mt-4 text-lg", classes.subtitle)}
+                className={cn(
+                  "text-muted-foreground mt-4 text-lg",
+                  classes.subtitle
+                )}
               >
                 {subtitle}
               </p>
@@ -83,7 +96,11 @@ export function Features({ config, className }: FeaturesProps) {
                   {item.image && (
                     <img
                       src={item.image}
-                      alt={item.title ? `${item.title}${item.description ? ` — ${item.description}` : ""}` : "Feature illustration"}
+                      alt={
+                        item.title
+                          ? `${item.title}${item.description ? ` — ${item.description}` : ""}`
+                          : "Feature illustration"
+                      }
                       className="h-48 w-full rounded-t-lg object-cover"
                     />
                   )}

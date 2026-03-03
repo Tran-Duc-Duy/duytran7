@@ -42,16 +42,16 @@ Every route has a header with links to Showcase, **Builder**, Pricing, About, Co
 
 ## Routes
 
-| Route                 | Description |
-|-----------------------|--------------|
-| `/`                   | Full landing (from `examples/landing-full.json`) |
-| `/showcase`           | Demo index: links to full landing, pricing, about, contact + Section gallery |
-| `/showcase/sections`  | Gallery: every section type + variants for preview |
-| `/builder`            | **Page Builder:** drag-and-drop sections, export JSON, preview page from JSON |
-| `/custom-classes`     | **Multi-level Tailwind demo:** page from `landing-with-custom-classes.json` — sections use **classes** in JSON (gradient, rounded, shadow). |
-| `/pricing`            | Pricing page (from `examples/pricing-page.json`) |
-| `/about`              | About page (from `examples/about-page.json`) |
-| `/contact`            | Contact page (from `examples/contact-page.json`) |
+| Route                | Description                                                                                                                                 |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| `/`                  | Full landing (from `examples/landing-full.json`)                                                                                            |
+| `/showcase`          | Demo index: links to full landing, pricing, about, contact + Section gallery                                                                |
+| `/showcase/sections` | Gallery: every section type + variants for preview                                                                                          |
+| `/builder`           | **Page Builder:** drag-and-drop sections, export JSON, preview page from JSON                                                               |
+| `/custom-classes`    | **Multi-level Tailwind demo:** page from `landing-with-custom-classes.json` — sections use **classes** in JSON (gradient, rounded, shadow). |
+| `/pricing`           | Pricing page (from `examples/pricing-page.json`)                                                                                            |
+| `/about`             | About page (from `examples/about-page.json`)                                                                                                |
+| `/contact`           | Contact page (from `examples/contact-page.json`)                                                                                            |
 
 Edit JSON in `examples/` and refresh the browser to update the preview (restart dev server if you change which file a route loads).
 

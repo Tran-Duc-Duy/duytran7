@@ -21,11 +21,11 @@ Minimize landing page build time: **JSON config + drop into Next.js** and you ge
 
 ## Monorepo structure
 
-| Package                 | Description                                                                                          |
-| ----------------------- | ---------------------------------------------------------------------------------------------------- |
-| **@landing/core**       | Types, Zod schema, and parser for JSON config. Framework-agnostic.                                    |
+| Package                 | Description                                                                                                                             |
+| ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| **@landing/core**       | Types, Zod schema, and parser for JSON config. Framework-agnostic.                                                                      |
 | **@landing/components** | React components (button, card, section, hero, nav, features, cta, footer, testimonials, pricing, faq). Shadcn-style, easy to override. |
-| **@landing/next**       | Next.js adapter: `buildMetadata`, `JsonLd`, `LandingPage` rendered from config.                     |
+| **@landing/next**       | Next.js adapter: `buildMetadata`, `JsonLd`, `LandingPage` rendered from config.                                                         |
 
 ## Installation
 
@@ -121,25 +121,25 @@ Done. You get all sections, SEO (title, description, OG, Twitter, JSON-LD), and 
 
 All sections are config-driven; add them to `sections` in your JSON in any order.
 
-| Section | Description |
-|--------|--------------|
-| **nav** | Header with logo, links, CTA. Variants: default, centered, minimal. |
-| **hero** | Headline (h1), subheadline, 1–2 CTAs, optional image. Variants: default, centered, split. |
-| **features** | Feature grid. Variants: default, cards, list. Columns: 2, 3, 4. |
-| **stats** | KPI numbers row. Variants: default, bordered, minimal. |
-| **logo-cloud** | Trusted-by / used-by logos. Variant: grayscale. |
-| **team** | Team members with avatar, role, bio, social. Variants: default, cards. |
-| **testimonials** | Quotes with author and avatar. Variants: default, grid. |
-| **pricing** | Tiers with features and CTA; optional highlighted tier. |
-| **comparison** | Plan/feature comparison table or cards. |
-| **faq** | Q&A list. |
-| **timeline** | Vertical or horizontal timeline. |
-| **gallery** | Image grid. Columns: 2, 3, 4. |
-| **newsletter** | Email signup form (post to `actionUrl`). Variants: default, inline, minimal. |
-| **contact** | Contact info and/or form (email, phone, address, formLabels, `actionUrl`). Variants: default, split, minimal. |
-| **banner** | Announcement bar. Variants: default, warning, success, info. |
-| **cta** | Call-to-action block. Variants: default, banner, card. |
-| **footer** | Brand, link groups, bottom bar. Variants: default, minimal. |
+| Section          | Description                                                                                                   |
+| ---------------- | ------------------------------------------------------------------------------------------------------------- |
+| **nav**          | Header with logo, links, CTA. Variants: default, centered, minimal.                                           |
+| **hero**         | Headline (h1), subheadline, 1–2 CTAs, optional image. Variants: default, centered, split.                     |
+| **features**     | Feature grid. Variants: default, cards, list. Columns: 2, 3, 4.                                               |
+| **stats**        | KPI numbers row. Variants: default, bordered, minimal.                                                        |
+| **logo-cloud**   | Trusted-by / used-by logos. Variant: grayscale.                                                               |
+| **team**         | Team members with avatar, role, bio, social. Variants: default, cards.                                        |
+| **testimonials** | Quotes with author and avatar. Variants: default, grid.                                                       |
+| **pricing**      | Tiers with features and CTA; optional highlighted tier.                                                       |
+| **comparison**   | Plan/feature comparison table or cards.                                                                       |
+| **faq**          | Q&A list.                                                                                                     |
+| **timeline**     | Vertical or horizontal timeline.                                                                              |
+| **gallery**      | Image grid. Columns: 2, 3, 4.                                                                                 |
+| **newsletter**   | Email signup form (post to `actionUrl`). Variants: default, inline, minimal.                                  |
+| **contact**      | Contact info and/or form (email, phone, address, formLabels, `actionUrl`). Variants: default, split, minimal. |
+| **banner**       | Announcement bar. Variants: default, warning, success, info.                                                  |
+| **cta**          | Call-to-action block. Variants: default, banner, card.                                                        |
+| **footer**       | Brand, link groups, bottom bar. Variants: default, minimal.                                                   |
 
 **Ready-made pages:** see [examples/](examples/) for full landing, pricing, about, and contact page configs. Copy a JSON file and point your route at it.
 

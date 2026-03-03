@@ -38,12 +38,17 @@ export function Stats({ config, className }: StatsProps) {
     >
       <Container size="lg" className={classes.container}>
         {(title || subtitle) && (
-          <div className={cn("mx-auto mb-12 max-w-2xl text-center", classes.header)}>
+          <div
+            className={cn(
+              "mx-auto mb-12 max-w-2xl text-center",
+              classes.header
+            )}
+          >
             {title && (
               <h2
                 id={`${id}-title`}
                 className={cn(
-                  "text-3xl font-bold tracking-tight text-foreground sm:text-4xl",
+                  "text-foreground text-3xl font-bold tracking-tight sm:text-4xl",
                   classes.title
                 )}
               >
@@ -52,7 +57,10 @@ export function Stats({ config, className }: StatsProps) {
             )}
             {subtitle && (
               <p
-                className={cn("mt-4 text-lg text-muted-foreground", classes.subtitle)}
+                className={cn(
+                  "text-muted-foreground mt-4 text-lg",
+                  classes.subtitle
+                )}
               >
                 {subtitle}
               </p>
@@ -61,22 +69,32 @@ export function Stats({ config, className }: StatsProps) {
         )}
         <dl
           className={cn(
-            "grid gap-8 list-none p-0 m-0",
+            "m-0 grid list-none gap-8 p-0",
             colClasses[columns],
-            variant === "bordered" && "divide-y divide-border rounded-lg border bg-card p-6",
+            variant === "bordered" &&
+              "divide-border bg-card divide-y rounded-lg border p-6",
             variant === "minimal" && "text-center"
           )}
         >
           {items.map((item, i) => (
-            <div key={i} className={cn(variant === "bordered" && "py-4 first:pt-0 last:pb-0")}>
-              <dt className="text-3xl font-bold text-foreground sm:text-4xl">
+            <div
+              key={i}
+              className={cn(
+                variant === "bordered" && "py-4 first:pt-0 last:pb-0"
+              )}
+            >
+              <dt className="text-foreground text-3xl font-bold sm:text-4xl">
                 {item.value}
                 {item.suffix && (
-                  <span className="text-muted-foreground font-normal">{item.suffix}</span>
+                  <span className="text-muted-foreground font-normal">
+                    {item.suffix}
+                  </span>
                 )}
               </dt>
               {item.label && (
-                <dd className="mt-1 text-sm text-muted-foreground">{item.label}</dd>
+                <dd className="text-muted-foreground mt-1 text-sm">
+                  {item.label}
+                </dd>
               )}
             </div>
           ))}

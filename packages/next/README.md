@@ -16,7 +16,11 @@ Peer dependencies: `next`, `react`, `react-dom`.
 // app/page.tsx
 import { readFileSync } from "fs"
 import { join } from "path"
-import { LandingPage, buildMetadata, parseLandingConfigStrict } from "@landing/next"
+import {
+  LandingPage,
+  buildMetadata,
+  parseLandingConfigStrict,
+} from "@landing/next"
 
 const config = parseLandingConfigStrict(
   JSON.parse(readFileSync(join(process.cwd(), "landing.json"), "utf-8"))

@@ -93,12 +93,27 @@
       "title": "Everything you need",
       "subtitle": "Sections and widgets ready to drop into your config.",
       "items": [
-        { "title": "Hero", "description": "Headline, subheadline, CTAs, optional image. Variants: default, centered, split." },
-        { "title": "Features grid", "description": "Cards or list. 2–4 columns." },
-        { "title": "Pricing", "description": "Tiers with features and CTA. Highlight a plan." },
-        { "title": "Testimonials", "description": "Quotes with author and avatar." },
+        {
+          "title": "Hero",
+          "description": "Headline, subheadline, CTAs, optional image. Variants: default, centered, split."
+        },
+        {
+          "title": "Features grid",
+          "description": "Cards or list. 2–4 columns."
+        },
+        {
+          "title": "Pricing",
+          "description": "Tiers with features and CTA. Highlight a plan."
+        },
+        {
+          "title": "Testimonials",
+          "description": "Quotes with author and avatar."
+        },
         { "title": "FAQ", "description": "Accordion-style Q&A." },
-        { "title": "Stats", "description": "KPI numbers. Logo cloud. Team. Newsletter. Contact. Gallery. Timeline. Comparison table." }
+        {
+          "title": "Stats",
+          "description": "KPI numbers. Logo cloud. Team. Newsletter. Contact. Gallery. Timeline. Comparison table."
+        }
       ],
       "columns": 3,
       "variant": "cards",
@@ -114,8 +129,16 @@
       "title": "What people say",
       "subtitle": "Real feedback from real users.",
       "items": [
-        { "quote": "We shipped our landing in a day.", "author": "Jane Doe", "role": "CTO, Startup" },
-        { "quote": "SEO and JSON-LD out of the box. Huge time saver.", "author": "John Smith", "role": "Developer" }
+        {
+          "quote": "We shipped our landing in a day.",
+          "author": "Jane Doe",
+          "role": "CTO, Startup"
+        },
+        {
+          "quote": "SEO and JSON-LD out of the box. Huge time saver.",
+          "author": "John Smith",
+          "role": "Developer"
+        }
       ],
       "variant": "grid"
     },
@@ -138,7 +161,12 @@
           "description": "For growing teams",
           "price": "$29",
           "period": "month",
-          "features": ["Unlimited pages", "Advanced SEO", "Priority support", "Custom domain"],
+          "features": [
+            "Unlimited pages",
+            "Advanced SEO",
+            "Priority support",
+            "Custom domain"
+          ],
           "cta": { "label": "Start trial", "href": "/signup" },
           "highlighted": true
         },
@@ -156,8 +184,14 @@
       "type": "faq",
       "title": "FAQ",
       "items": [
-        { "question": "Can I use my own design?", "answer": "Yes. Override className per section or use Tailwind in your app." },
-        { "question": "Is it SEO-friendly?", "answer": "Yes. Metadata, Open Graph, Twitter Card, and JSON-LD are supported." }
+        {
+          "question": "Can I use my own design?",
+          "answer": "Yes. Override className per section or use Tailwind in your app."
+        },
+        {
+          "question": "Is it SEO-friendly?",
+          "answer": "Yes. Metadata, Open Graph, Twitter Card, and JSON-LD are supported."
+        }
       ]
     },
     {
@@ -187,10 +221,28 @@
       "type": "footer",
       "brand": { "name": "Acme", "href": "/" },
       "linkGroups": [
-        { "title": "Product", "links": [{ "label": "Features", "href": "#features" }, { "label": "Pricing", "href": "#pricing" }] },
-        { "title": "Company", "links": [{ "label": "About", "href": "/about" }, { "label": "Contact", "href": "/contact" }] }
+        {
+          "title": "Product",
+          "links": [
+            { "label": "Features", "href": "#features" },
+            { "label": "Pricing", "href": "#pricing" }
+          ]
+        },
+        {
+          "title": "Company",
+          "links": [
+            { "label": "About", "href": "/about" },
+            { "label": "Contact", "href": "/contact" }
+          ]
+        }
       ],
-      "bottom": { "text": "© 2025 Acme.", "links": [{ "label": "Privacy", "href": "/privacy" }, { "label": "Terms", "href": "/terms" }] }
+      "bottom": {
+        "text": "© 2025 Acme.",
+        "links": [
+          { "label": "Privacy", "href": "/privacy" },
+          { "label": "Terms", "href": "/terms" }
+        ]
+      }
     }
   ]
 }

@@ -59,7 +59,10 @@
       "highlightColumn": 1,
       "rows": [
         { "feature": "Pages", "values": ["3", "Unlimited", "Unlimited"] },
-        { "feature": "Support", "values": ["Community", "Priority", "Dedicated"] },
+        {
+          "feature": "Support",
+          "values": ["Community", "Priority", "Dedicated"]
+        },
         { "feature": "Custom domain", "values": [false, true, true] },
         { "feature": "SLA", "values": [false, false, true] }
       ],
@@ -70,8 +73,14 @@
       "type": "faq",
       "title": "Pricing FAQ",
       "items": [
-        { "question": "Can I change plans later?", "answer": "Yes. Upgrade or downgrade anytime from your account." },
-        { "question": "What payment methods do you accept?", "answer": "We accept all major credit cards and PayPal." }
+        {
+          "question": "Can I change plans later?",
+          "answer": "Yes. Upgrade or downgrade anytime from your account."
+        },
+        {
+          "question": "What payment methods do you accept?",
+          "answer": "We accept all major credit cards and PayPal."
+        }
       ]
     },
     {

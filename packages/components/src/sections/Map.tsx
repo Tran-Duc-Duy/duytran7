@@ -34,7 +34,7 @@ export function Map({ config, className }: MapProps) {
     <Section
       id={id}
       className={cn(
-        "py-16 sm:py-24 bg-muted/30",
+        "bg-muted/30 py-16 sm:py-24",
         configClass,
         classes.root,
         className
@@ -44,16 +44,13 @@ export function Map({ config, className }: MapProps) {
       <Container size="lg" className={classes.container}>
         {(title || subtitle) && (
           <div
-            className={cn(
-              "mx-auto max-w-2xl",
-              !isSplit && "text-center mb-12"
-            )}
+            className={cn("mx-auto max-w-2xl", !isSplit && "mb-12 text-center")}
           >
             {title && (
               <h2
                 id={`${id}-title`}
                 className={cn(
-                  "text-3xl font-bold tracking-tight text-foreground sm:text-4xl",
+                  "text-foreground text-3xl font-bold tracking-tight sm:text-4xl",
                   classes.title
                 )}
               >
@@ -63,7 +60,7 @@ export function Map({ config, className }: MapProps) {
             {subtitle && (
               <p
                 className={cn(
-                  "mt-4 text-lg text-muted-foreground",
+                  "text-muted-foreground mt-4 text-lg",
                   classes.subtitle
                 )}
               >
@@ -74,22 +71,22 @@ export function Map({ config, className }: MapProps) {
         )}
         <div
           className={cn(
-            isSplit && "grid gap-8 lg:grid-cols-2 lg:gap-12 items-start"
+            isSplit && "grid items-start gap-8 lg:grid-cols-2 lg:gap-12"
           )}
         >
           {hasAddress && (
             <div className={cn(isSplit && "lg:order-2")}>
-              <div className="rounded-lg border border-border bg-card p-6">
-                <h3 className="text-lg font-semibold text-foreground">
+              <div className="border-border bg-card rounded-lg border p-6">
+                <h3 className="text-foreground text-lg font-semibold">
                   Address
                 </h3>
-                <p className="mt-2 text-muted-foreground">{address}</p>
+                <p className="text-muted-foreground mt-2">{address}</p>
                 {linkUrl && (
                   <a
                     href={linkUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-4 inline-flex text-primary hover:underline"
+                    className="text-primary mt-4 inline-flex hover:underline"
                   >
                     {linkLabel}
                   </a>
@@ -100,9 +97,11 @@ export function Map({ config, className }: MapProps) {
           {hasMap && (
             <div
               className={cn(
-                "overflow-hidden rounded-lg border border-border bg-muted",
+                "border-border bg-muted overflow-hidden rounded-lg border",
                 variant === "full-width" && "aspect-video w-full",
-                !variant || variant === "default" ? "aspect-video min-h-[280px]" : ""
+                !variant || variant === "default"
+                  ? "aspect-video min-h-[280px]"
+                  : ""
               )}
             >
               <iframe

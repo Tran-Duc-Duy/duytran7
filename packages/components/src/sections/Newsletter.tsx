@@ -42,7 +42,9 @@ export function Newsletter({ config, className }: NewsletterProps) {
         <div
           className={cn(
             "mx-auto max-w-2xl",
-            isMinimal ? "text-center" : "rounded-lg border bg-card p-8 text-center shadow-sm sm:p-12"
+            isMinimal
+              ? "text-center"
+              : "bg-card rounded-lg border p-8 text-center shadow-sm sm:p-12"
           )}
         >
           {(title || subtitle) && (
@@ -50,13 +52,13 @@ export function Newsletter({ config, className }: NewsletterProps) {
               {title && (
                 <h2
                   id={`${id}-title`}
-                  className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl"
+                  className="text-foreground text-2xl font-bold tracking-tight sm:text-3xl"
                 >
                   {title}
                 </h2>
               )}
               {subtitle && (
-                <p className="mt-2 text-muted-foreground">{subtitle}</p>
+                <p className="text-muted-foreground mt-2">{subtitle}</p>
               )}
             </>
           )}
@@ -65,7 +67,9 @@ export function Newsletter({ config, className }: NewsletterProps) {
             method="post"
             className={cn(
               "mt-6",
-              isInline ? "flex flex-col gap-3 sm:flex-row sm:justify-center" : "flex flex-col gap-3 sm:flex-row sm:justify-center"
+              isInline
+                ? "flex flex-col gap-3 sm:flex-row sm:justify-center"
+                : "flex flex-col gap-3 sm:flex-row sm:justify-center"
             )}
             aria-label="Newsletter signup"
           >
@@ -77,14 +81,14 @@ export function Newsletter({ config, className }: NewsletterProps) {
               type="email"
               name="email"
               placeholder={placeholder}
-              className="min-w-0 flex-1 rounded-md border border-input bg-background px-4 py-2 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
+              className="border-input bg-background text-foreground placeholder:text-muted-foreground focus:ring-ring min-w-0 flex-1 rounded-md border px-4 py-2 focus:outline-none focus:ring-2"
               required
               autoComplete="email"
               aria-label={placeholder}
             />
             <button
               type="submit"
-              className="rounded-md bg-primary px-4 py-2 font-medium text-primary-foreground hover:bg-primary/90"
+              className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-md px-4 py-2 font-medium"
               aria-label={submitLabel}
             >
               {submitLabel}

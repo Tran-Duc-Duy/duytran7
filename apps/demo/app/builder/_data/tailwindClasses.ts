@@ -30,9 +30,7 @@ const colors = [
 
 const shades = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950] as const
 
-function* colorClasses(
-  prefix: string
-): Generator<string> {
+function* colorClasses(prefix: string): Generator<string> {
   for (const c of colors) {
     for (const s of shades) {
       yield `${prefix}-${c}-${s}`
@@ -48,11 +46,14 @@ function* colorClasses(
 }
 
 const spacing = [
-  0, 0.5, 1, 1.5, 2, 2.5, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 16, 20, 24, 28, 32, 36, 40, 44, 48,
-  52, 56, 60, 64, 72, 80, 96,
+  0, 0.5, 1, 1.5, 2, 2.5, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 16, 20, 24, 28,
+  32, 36, 40, 44, 48, 52, 56, 60, 64, 72, 80, 96,
 ]
 
-function* spacingClasses(prefix: string, values: number[] = spacing): Generator<string> {
+function* spacingClasses(
+  prefix: string,
+  values: number[] = spacing
+): Generator<string> {
   for (const v of values) {
     yield `${prefix}-${v}`
   }
@@ -70,8 +71,32 @@ function* opacitySlash(prefix: string): Generator<string> {
 
 const rounded = ["none", "sm", "md", "lg", "xl", "2xl", "3xl", "full"] as const
 const shadows = ["sm", "md", "lg", "xl", "2xl", "inner", "none"] as const
-const fontSizes = ["xs", "sm", "base", "lg", "xl", "2xl", "3xl", "4xl", "5xl", "6xl", "7xl", "8xl", "9xl"] as const
-const fontWeights = ["thin", "extralight", "light", "normal", "medium", "semibold", "bold", "extrabold", "black"] as const
+const fontSizes = [
+  "xs",
+  "sm",
+  "base",
+  "lg",
+  "xl",
+  "2xl",
+  "3xl",
+  "4xl",
+  "5xl",
+  "6xl",
+  "7xl",
+  "8xl",
+  "9xl",
+] as const
+const fontWeights = [
+  "thin",
+  "extralight",
+  "light",
+  "normal",
+  "medium",
+  "semibold",
+  "bold",
+  "extrabold",
+  "black",
+] as const
 
 const TAILWIND_CLASSES: string[] = []
 
@@ -108,14 +133,22 @@ TAILWIND_CLASSES.push(...Array.from(spacingClasses("gap")))
 // w, h, min-w, min-h, max-w, max-h
 for (const prefix of ["w", "h", "min-w", "min-h", "max-w", "max-h"]) {
   TAILWIND_CLASSES.push(...Array.from(spacingClasses(prefix)))
-  TAILWIND_CLASSES.push(`${prefix}-full`, `${prefix}-screen`, `${prefix}-min`, `${prefix}-max`, `${prefix}-fit`)
+  TAILWIND_CLASSES.push(
+    `${prefix}-full`,
+    `${prefix}-screen`,
+    `${prefix}-min`,
+    `${prefix}-max`,
+    `${prefix}-fit`
+  )
 }
 
 // rounded
 for (const r of rounded) {
   TAILWIND_CLASSES.push(`rounded-${r}`)
 }
-TAILWIND_CLASSES.push(...Array.from(spacingClasses("rounded", [0, 1, 2, 3, 4, 5, 6, 7, 8])))
+TAILWIND_CLASSES.push(
+  ...Array.from(spacingClasses("rounded", [0, 1, 2, 3, 4, 5, 6, 7, 8]))
+)
 
 // shadow
 for (const sh of shadows) {
@@ -129,19 +162,70 @@ for (const fs of fontSizes) {
 for (const fw of fontWeights) {
   TAILWIND_CLASSES.push(`font-${fw}`)
 }
-TAILWIND_CLASSES.push("italic", "not-italic", "uppercase", "lowercase", "capitalize", "normal-case", "underline", "line-through", "no-underline")
+TAILWIND_CLASSES.push(
+  "italic",
+  "not-italic",
+  "uppercase",
+  "lowercase",
+  "capitalize",
+  "normal-case",
+  "underline",
+  "line-through",
+  "no-underline"
+)
 
 // flex, grid
-TAILWIND_CLASSES.push("flex", "inline-flex", "grid", "inline-grid", "hidden", "block", "inline-block", "inline", "contents")
-TAILWIND_CLASSES.push("flex-row", "flex-row-reverse", "flex-col", "flex-col-reverse")
+TAILWIND_CLASSES.push(
+  "flex",
+  "inline-flex",
+  "grid",
+  "inline-grid",
+  "hidden",
+  "block",
+  "inline-block",
+  "inline",
+  "contents"
+)
+TAILWIND_CLASSES.push(
+  "flex-row",
+  "flex-row-reverse",
+  "flex-col",
+  "flex-col-reverse"
+)
 TAILWIND_CLASSES.push("flex-wrap", "flex-nowrap", "flex-wrap-reverse")
-TAILWIND_CLASSES.push("items-start", "items-end", "items-center", "items-baseline", "items-stretch")
-TAILWIND_CLASSES.push("justify-start", "justify-end", "justify-center", "justify-between", "justify-around", "justify-evenly")
-TAILWIND_CLASSES.push("grid-cols-1", "grid-cols-2", "grid-cols-3", "grid-cols-4", "grid-cols-5", "grid-cols-6")
+TAILWIND_CLASSES.push(
+  "items-start",
+  "items-end",
+  "items-center",
+  "items-baseline",
+  "items-stretch"
+)
+TAILWIND_CLASSES.push(
+  "justify-start",
+  "justify-end",
+  "justify-center",
+  "justify-between",
+  "justify-around",
+  "justify-evenly"
+)
+TAILWIND_CLASSES.push(
+  "grid-cols-1",
+  "grid-cols-2",
+  "grid-cols-3",
+  "grid-cols-4",
+  "grid-cols-5",
+  "grid-cols-6"
+)
 TAILWIND_CLASSES.push("sm:grid-cols-2", "md:grid-cols-3", "lg:grid-cols-4")
 
 // overflow, position
-TAILWIND_CLASSES.push("overflow-auto", "overflow-hidden", "overflow-clip", "overflow-visible", "overflow-scroll")
+TAILWIND_CLASSES.push(
+  "overflow-auto",
+  "overflow-hidden",
+  "overflow-clip",
+  "overflow-visible",
+  "overflow-scroll"
+)
 TAILWIND_CLASSES.push("relative", "absolute", "fixed", "sticky")
 
 // common single
@@ -216,7 +300,9 @@ export const TAILWIND_DEFAULTS: Record<string, string> = {
 export function filterTailwindSuggestions(query: string, limit = 40): string[] {
   const q = query.trim().toLowerCase()
   if (!q) return TAILWIND_SUGGESTIONS.slice(0, limit)
-  return TAILWIND_SUGGESTIONS.filter((c) => c.toLowerCase().startsWith(q)).slice(0, limit)
+  return TAILWIND_SUGGESTIONS.filter((c) =>
+    c.toLowerCase().startsWith(q)
+  ).slice(0, limit)
 }
 
 /** Get current token (last word) in a multi-class string. */
@@ -226,7 +312,10 @@ export function getCurrentToken(value: string): string {
 }
 
 /** Replace last token with suggestion (or append if no token yet). */
-export function applySuggestion(currentValue: string, suggestion: string): string {
+export function applySuggestion(
+  currentValue: string,
+  suggestion: string
+): string {
   const trimmed = currentValue.trim()
   const parts = trimmed.split(/\s+/).filter(Boolean)
   if (parts.length === 0) return suggestion

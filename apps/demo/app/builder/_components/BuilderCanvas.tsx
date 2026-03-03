@@ -1,7 +1,11 @@
 "use client"
 
 import React, { useState, useCallback, useEffect, useRef } from "react"
-import type { LandingConfig, LandingSection, SeoConfig } from "@duytran7/landing-core"
+import type {
+  LandingConfig,
+  LandingSection,
+  SeoConfig,
+} from "@duytran7/landing-core"
 import { SectionRenderer, cn } from "@duytran7/landing-components"
 import {
   createDefaultSection,
@@ -80,12 +84,18 @@ export function BuilderCanvas(): React.ReactElement {
   const [isDropTarget, setIsDropTarget] = useState(false)
   const [showAddPage, setShowAddPage] = useState(false)
   const [showCustomPageForm, setShowCustomPageForm] = useState(false)
-  const [addInnerForParentId, setAddInnerForParentId] = useState<string | null>(null)
+  const [addInnerForParentId, setAddInnerForParentId] = useState<string | null>(
+    null
+  )
   const [newPageName, setNewPageName] = useState("")
   const [newPageSlug, setNewPageSlug] = useState("")
-  const [selectedSectionIndex, setSelectedSectionIndex] = useState<number | null>(null)
+  const [selectedSectionIndex, setSelectedSectionIndex] = useState<
+    number | null
+  >(null)
   const [showPageSettings, setShowPageSettings] = useState(false)
-  const [previewViewport, setPreviewViewport] = useState<"desktop" | "tablet" | "mobile">("desktop")
+  const [previewViewport, setPreviewViewport] = useState<
+    "desktop" | "tablet" | "mobile"
+  >("desktop")
   const previewIframeRef = useRef<HTMLIFrameElement>(null)
 
   const activePage = pages.find((p) => p.id === activePageId) ?? pages[0]
@@ -111,7 +121,13 @@ export function BuilderCanvas(): React.ReactElement {
   )
 
   const updatePageSettings = useCallback(
-    (pageId: string, updates: { seo?: Partial<SeoConfig>; theme?: { primaryColor?: string; fontFamily?: string } }) => {
+    (
+      pageId: string,
+      updates: {
+        seo?: Partial<SeoConfig>
+        theme?: { primaryColor?: string; fontFamily?: string }
+      }
+    ) => {
       setPages((prev) =>
         prev.map((p) =>
           p.id !== pageId
@@ -129,9 +145,7 @@ export function BuilderCanvas(): React.ReactElement {
 
   const updateSectionAt = useCallback(
     (index: number, updated: LandingSection) => {
-      setPageSections((prev) =>
-        prev.map((s, i) => (i === index ? updated : s))
-      )
+      setPageSections((prev) => prev.map((s, i) => (i === index ? updated : s)))
     },
     [setPageSections]
   )
@@ -175,7 +189,8 @@ export function BuilderCanvas(): React.ReactElement {
 
   const addPageBlank = useCallback(() => {
     const name = newPageName.trim() || "New Page"
-    const slug = newPageSlug.trim() || `/${name.toLowerCase().replace(/\s+/g, "-")}`
+    const slug =
+      newPageSlug.trim() || `/${name.toLowerCase().replace(/\s+/g, "-")}`
     const id = uid()
     setPages((prev) => [
       ...prev,
@@ -395,8 +410,7 @@ export function BuilderCanvas(): React.ReactElement {
 
   const handleOpenPreviewInNewTab = useCallback(() => {
     const rawSlug = activePage.slug || pages[0]?.slug || "default"
-    const urlSlug =
-      rawSlug === "/" || rawSlug === "" ? "home" : rawSlug
+    const urlSlug = rawSlug === "/" || rawSlug === "" ? "home" : rawSlug
     const payload = {
       pages: pages.map((p) => ({
         slug: p.slug,
@@ -409,22 +423,28 @@ export function BuilderCanvas(): React.ReactElement {
         `${PREVIEW_STORAGE_KEY_PREFIX}${urlSlug}`,
         JSON.stringify(payload)
       )
-      window.open(`/builder/preview/${encodeURIComponent(urlSlug)}?v=desktop`, "_blank", "noopener")
+      window.open(
+        `/builder/preview/${encodeURIComponent(urlSlug)}?v=desktop`,
+        "_blank",
+        "noopener"
+      )
     } catch {
       // localStorage full or popup blocked
     }
   }, [activePage.slug, pages, buildConfigForPage])
 
   return (
-    <div className="flex min-h-screen flex-col bg-background">
-      <header className="sticky top-0 z-20 border-b border-border bg-background/95 px-4 py-3 backdrop-blur">
+    <div className="bg-background flex min-h-screen flex-col">
+      <header className="border-border bg-background/95 sticky top-0 z-20 border-b px-4 py-3 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between">
-          <h1 className="text-lg font-semibold text-foreground">Page Builder</h1>
+          <h1 className="text-foreground text-lg font-semibold">
+            Page Builder
+          </h1>
           <div className="flex items-center gap-2">
             <button
               type="button"
               onClick={() => setShowPageSettings(true)}
-              className="rounded-md border border-border bg-background px-3 py-1.5 text-sm font-medium text-foreground hover:bg-muted"
+              className="border-border bg-background text-foreground hover:bg-muted rounded-md border px-3 py-1.5 text-sm font-medium"
               aria-label="Page settings: metadata, theme, SEO"
             >
               Page settings
@@ -432,7 +452,7 @@ export function BuilderCanvas(): React.ReactElement {
             <button
               type="button"
               onClick={() => setShowPreview(true)}
-              className="rounded-md border border-border bg-background px-3 py-1.5 text-sm font-medium text-foreground hover:bg-muted"
+              className="border-border bg-background text-foreground hover:bg-muted rounded-md border px-3 py-1.5 text-sm font-medium"
               aria-label="Preview page"
             >
               Preview
@@ -440,7 +460,7 @@ export function BuilderCanvas(): React.ReactElement {
             <button
               type="button"
               onClick={handleOpenPreviewInNewTab}
-              className="rounded-md border border-border bg-background px-3 py-1.5 text-sm font-medium text-foreground hover:bg-muted"
+              className="border-border bg-background text-foreground hover:bg-muted rounded-md border px-3 py-1.5 text-sm font-medium"
               aria-label="Open preview in new tab"
             >
               Open in new tab
@@ -448,7 +468,7 @@ export function BuilderCanvas(): React.ReactElement {
             <button
               type="button"
               onClick={handleCopyJson}
-              className="rounded-md border border-border bg-background px-3 py-1.5 text-sm font-medium text-foreground hover:bg-muted"
+              className="border-border bg-background text-foreground hover:bg-muted rounded-md border px-3 py-1.5 text-sm font-medium"
               aria-label="Copy page JSON to clipboard"
             >
               Copy JSON
@@ -456,7 +476,7 @@ export function BuilderCanvas(): React.ReactElement {
             <button
               type="button"
               onClick={handleExportJson}
-              className="rounded-md bg-primary px-3 py-1.5 text-sm font-medium text-primary-foreground hover:bg-primary/90"
+              className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-md px-3 py-1.5 text-sm font-medium"
               aria-label="Export landing pages JSON file"
             >
               Export JSON
@@ -467,362 +487,382 @@ export function BuilderCanvas(): React.ReactElement {
 
       <div className="flex flex-1 overflow-hidden">
         <div className="mx-auto flex w-full max-w-6xl flex-1 gap-4 overflow-auto p-4">
-        <aside className="flex w-56 shrink-0 flex-col gap-6">
-          <section>
-            <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-              Pages
-            </p>
-            <div className="flex flex-col gap-1">
-              {rootPages.map((root) => (
-                <div key={root.id} className="flex flex-col gap-0.5">
-                  <div
-                    className={cn(
-                      "flex items-center justify-between gap-1 rounded-md border px-3 py-2 text-sm",
-                      root.id === activePageId
-                        ? "border-primary bg-primary/10 font-medium text-foreground"
-                        : "border-border bg-card text-muted-foreground hover:bg-muted/60"
-                    )}
-                  >
-                    <button
-                      type="button"
-                      onClick={() => setActivePageId(root.id)}
-                      className="min-w-0 flex-1 truncate text-left"
-                      aria-label={`Select page ${root.name}`}
-                      aria-current={root.id === activePageId ? "true" : undefined}
-                    >
-                      {root.name}
-                    </button>
-                    <div className="flex shrink-0 items-center gap-0.5">
-                      <button
-                        type="button"
-                        onClick={() => setAddInnerForParentId(root.id)}
-                        className="rounded p-1 text-muted-foreground hover:bg-primary/10 hover:text-primary"
-                        title="Add inner page"
-                        aria-label={`Add inner page under ${root.name}`}
-                      >
-                        +
-                      </button>
-                      {pages.length > 1 && (
-                        <button
-                          type="button"
-                          onClick={() => removePage(root.id)}
-                          className="rounded p-1 text-muted-foreground hover:bg-destructive/10 hover:text-destructive"
-                          title="Remove page"
-                          aria-label={`Remove page ${root.name}`}
-                        >
-                          ×
-                        </button>
-                      )}
-                    </div>
-                  </div>
-                  {getChildPages(root.id).map((child) => (
+          <aside className="flex w-56 shrink-0 flex-col gap-6">
+            <section>
+              <p className="text-muted-foreground mb-2 text-xs font-semibold uppercase tracking-wider">
+                Pages
+              </p>
+              <div className="flex flex-col gap-1">
+                {rootPages.map((root) => (
+                  <div key={root.id} className="flex flex-col gap-0.5">
                     <div
-                      key={child.id}
                       className={cn(
-                        "ml-4 flex items-center justify-between gap-1 rounded-md border border-l-2 border-border border-l-primary/50 px-3 py-1.5 text-sm",
-                        child.id === activePageId
-                          ? "border-primary bg-primary/10 font-medium text-foreground"
-                          : "bg-muted/30 text-muted-foreground hover:bg-muted/60"
+                        "flex items-center justify-between gap-1 rounded-md border px-3 py-2 text-sm",
+                        root.id === activePageId
+                          ? "border-primary bg-primary/10 text-foreground font-medium"
+                          : "border-border bg-card text-muted-foreground hover:bg-muted/60"
                       )}
                     >
                       <button
                         type="button"
-                        onClick={() => setActivePageId(child.id)}
+                        onClick={() => setActivePageId(root.id)}
                         className="min-w-0 flex-1 truncate text-left"
-                        aria-label={`Select page ${child.name}`}
-                        aria-current={child.id === activePageId ? "true" : undefined}
+                        aria-label={`Select page ${root.name}`}
+                        aria-current={
+                          root.id === activePageId ? "true" : undefined
+                        }
                       >
-                        {child.name}
+                        {root.name}
                       </button>
-                      {pages.length > 1 && (
+                      <div className="flex shrink-0 items-center gap-0.5">
                         <button
                           type="button"
-                          onClick={() => removePage(child.id)}
-                          className="rounded p-1 hover:bg-destructive/10 hover:text-destructive"
-                          title="Remove page"
-                          aria-label={`Remove page ${child.name}`}
+                          onClick={() => setAddInnerForParentId(root.id)}
+                          className="text-muted-foreground hover:bg-primary/10 hover:text-primary rounded p-1"
+                          title="Add inner page"
+                          aria-label={`Add inner page under ${root.name}`}
                         >
-                          ×
+                          +
                         </button>
-                      )}
+                        {pages.length > 1 && (
+                          <button
+                            type="button"
+                            onClick={() => removePage(root.id)}
+                            className="text-muted-foreground hover:bg-destructive/10 hover:text-destructive rounded p-1"
+                            title="Remove page"
+                            aria-label={`Remove page ${root.name}`}
+                          >
+                            ×
+                          </button>
+                        )}
+                      </div>
                     </div>
-                  ))}
-                </div>
-              ))}
-            </div>
-            {!showAddPage && addInnerForParentId === null ? (
-              <button
-                type="button"
-                onClick={() => setShowAddPage(true)}
-                className="mt-2 w-full rounded-md border border-dashed border-border py-2 text-sm text-muted-foreground hover:bg-muted/60"
-              >
-                + Add page
-              </button>
-            ) : addInnerForParentId ? (
-              <div className="mt-2 space-y-1 rounded-md border border-border bg-muted/20 p-2">
-                <p className="text-xs font-medium text-muted-foreground">
-                  Inner page (trang con)
-                </p>
-                <div className="flex flex-wrap gap-1">
-                  {INNER_PAGE_TEMPLATES.filter((t) => t.id !== "blank").map(
-                    (t) => (
-                      <button
-                        key={t.id}
-                        type="button"
-                        onClick={() =>
-                          addPageFromTemplate(t.id, addInnerForParentId)
-                        }
-                        className="rounded border border-border bg-background px-2 py-1 text-xs hover:bg-muted/80"
-                        title={t.description}
+                    {getChildPages(root.id).map((child) => (
+                      <div
+                        key={child.id}
+                        className={cn(
+                          "border-border border-l-primary/50 ml-4 flex items-center justify-between gap-1 rounded-md border border-l-2 px-3 py-1.5 text-sm",
+                          child.id === activePageId
+                            ? "border-primary bg-primary/10 text-foreground font-medium"
+                            : "bg-muted/30 text-muted-foreground hover:bg-muted/60"
+                        )}
                       >
-                        {t.name}
-                      </button>
-                    )
-                  )}
-                </div>
+                        <button
+                          type="button"
+                          onClick={() => setActivePageId(child.id)}
+                          className="min-w-0 flex-1 truncate text-left"
+                          aria-label={`Select page ${child.name}`}
+                          aria-current={
+                            child.id === activePageId ? "true" : undefined
+                          }
+                        >
+                          {child.name}
+                        </button>
+                        {pages.length > 1 && (
+                          <button
+                            type="button"
+                            onClick={() => removePage(child.id)}
+                            className="hover:bg-destructive/10 hover:text-destructive rounded p-1"
+                            title="Remove page"
+                            aria-label={`Remove page ${child.name}`}
+                          >
+                            ×
+                          </button>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                ))}
+              </div>
+              {!showAddPage && addInnerForParentId === null ? (
                 <button
                   type="button"
-                  onClick={() => setAddInnerForParentId(null)}
-                  className="text-xs text-muted-foreground underline"
+                  onClick={() => setShowAddPage(true)}
+                  className="border-border text-muted-foreground hover:bg-muted/60 mt-2 w-full rounded-md border border-dashed py-2 text-sm"
                 >
-                  Cancel
+                  + Add page
                 </button>
-              </div>
-            ) : showCustomPageForm ? (
-              <div className="mt-2 space-y-2 rounded-md border border-border bg-muted/20 p-2">
-                <input
-                  type="text"
-                  placeholder="Page name"
-                  value={newPageName}
-                  onChange={(e) => setNewPageName(e.target.value)}
-                  className="w-full rounded border border-border bg-background px-2 py-1.5 text-sm"
-                />
-                <input
-                  type="text"
-                  placeholder="Slug (e.g. /pricing)"
-                  value={newPageSlug}
-                  onChange={(e) => setNewPageSlug(e.target.value)}
-                  className="w-full rounded border border-border bg-background px-2 py-1.5 text-sm"
-                />
-                <div className="flex gap-1">
+              ) : addInnerForParentId ? (
+                <div className="border-border bg-muted/20 mt-2 space-y-1 rounded-md border p-2">
+                  <p className="text-muted-foreground text-xs font-medium">
+                    Inner page (trang con)
+                  </p>
+                  <div className="flex flex-wrap gap-1">
+                    {INNER_PAGE_TEMPLATES.filter((t) => t.id !== "blank").map(
+                      (t) => (
+                        <button
+                          key={t.id}
+                          type="button"
+                          onClick={() =>
+                            addPageFromTemplate(t.id, addInnerForParentId)
+                          }
+                          className="border-border bg-background hover:bg-muted/80 rounded border px-2 py-1 text-xs"
+                          title={t.description}
+                        >
+                          {t.name}
+                        </button>
+                      )
+                    )}
+                  </div>
                   <button
                     type="button"
-                    onClick={addPageBlank}
-                    className="rounded bg-primary px-2 py-1 text-sm text-primary-foreground"
-                  >
-                    Add
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setShowCustomPageForm(false)
-                      setShowAddPage(false)
-                    }}
-                    className="rounded border border-border px-2 py-1 text-sm"
+                    onClick={() => setAddInnerForParentId(null)}
+                    className="text-muted-foreground text-xs underline"
                   >
                     Cancel
                   </button>
                 </div>
-              </div>
-            ) : (
-              <div className="mt-2 space-y-2 rounded-md border border-border bg-muted/20 p-2">
-                <p className="text-xs font-medium text-muted-foreground">
-                  Choose page type
-                </p>
-                <div className="max-h-48 space-y-1 overflow-y-auto">
-                  {ROOT_PAGE_TEMPLATES.map((t) => (
+              ) : showCustomPageForm ? (
+                <div className="border-border bg-muted/20 mt-2 space-y-2 rounded-md border p-2">
+                  <input
+                    type="text"
+                    placeholder="Page name"
+                    value={newPageName}
+                    onChange={(e) => setNewPageName(e.target.value)}
+                    className="border-border bg-background w-full rounded border px-2 py-1.5 text-sm"
+                  />
+                  <input
+                    type="text"
+                    placeholder="Slug (e.g. /pricing)"
+                    value={newPageSlug}
+                    onChange={(e) => setNewPageSlug(e.target.value)}
+                    className="border-border bg-background w-full rounded border px-2 py-1.5 text-sm"
+                  />
+                  <div className="flex gap-1">
                     <button
-                      key={t.id}
                       type="button"
-                      onClick={() => addPageFromTemplate(t.id)}
-                      className="w-full rounded border border-border bg-background px-2 py-1.5 text-left text-sm hover:bg-muted/80"
-                      title={t.description}
+                      onClick={addPageBlank}
+                      className="bg-primary text-primary-foreground rounded px-2 py-1 text-sm"
                     >
-                      <span className="font-medium">{t.name}</span>
-                      <span className="ml-1 text-xs text-muted-foreground">
-                        {t.slug}
-                      </span>
+                      Add
                     </button>
-                  ))}
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setShowCustomPageForm(false)
+                        setShowAddPage(false)
+                      }}
+                      className="border-border rounded border px-2 py-1 text-sm"
+                    >
+                      Cancel
+                    </button>
+                  </div>
                 </div>
-                <button
-                  type="button"
-                  onClick={() => setShowCustomPageForm(true)}
-                  className="w-full rounded border border-dashed border-border py-1.5 text-sm text-muted-foreground hover:bg-muted/60"
-                >
-                  Blank page (custom)
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setShowAddPage(false)}
-                  className="w-full text-center text-xs text-muted-foreground underline"
-                >
-                  Cancel
-                </button>
-              </div>
-            )}
-          </section>
-
-          <section>
-            <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-              Sections — drag into canvas
-            </p>
-            <ul className="flex flex-col gap-1">
-              {SECTION_TYPE_IDS.map((type) => (
-                <li key={type}>
+              ) : (
+                <div className="border-border bg-muted/20 mt-2 space-y-2 rounded-md border p-2">
+                  <p className="text-muted-foreground text-xs font-medium">
+                    Choose page type
+                  </p>
+                  <div className="max-h-48 space-y-1 overflow-y-auto">
+                    {ROOT_PAGE_TEMPLATES.map((t) => (
+                      <button
+                        key={t.id}
+                        type="button"
+                        onClick={() => addPageFromTemplate(t.id)}
+                        className="border-border bg-background hover:bg-muted/80 w-full rounded border px-2 py-1.5 text-left text-sm"
+                        title={t.description}
+                      >
+                        <span className="font-medium">{t.name}</span>
+                        <span className="text-muted-foreground ml-1 text-xs">
+                          {t.slug}
+                        </span>
+                      </button>
+                    ))}
+                  </div>
                   <button
                     type="button"
-                    draggable
-                    onDragStart={(e) => handlePaletteDragStart(e, type)}
-                    onClick={() => addSection(type)}
-                    className="w-full cursor-grab rounded-md border border-border bg-card px-3 py-2 text-left text-sm font-medium text-foreground active:cursor-grabbing hover:bg-muted/80"
+                    onClick={() => setShowCustomPageForm(true)}
+                    className="border-border text-muted-foreground hover:bg-muted/60 w-full rounded border border-dashed py-1.5 text-sm"
                   >
-                    {SECTION_NAMES[type] ?? type}
+                    Blank page (custom)
                   </button>
-                </li>
-              ))}
-            </ul>
-            <p className="mt-2 text-xs text-muted-foreground">
-              Drag into canvas or click to add to current page.
-            </p>
-          </section>
-        </aside>
-
-        <div className="min-w-0 flex-1">
-          <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-            {activePage.name} — drop sections here, drag to reorder
-          </p>
-          {sections.length === 0 ? (
-            <div
-              onDragOver={(e) => {
-                e.preventDefault()
-                setIsDropTarget(true)
-              }}
-              onDragLeave={handleCanvasDragLeave}
-              onDrop={handleDropZoneDrop}
-              className={cn(
-                "rounded-lg border-2 border-dashed py-16 text-center text-sm text-muted-foreground transition-colors",
-                isDropTarget ? "border-primary bg-primary/5" : "border-border bg-muted/20"
+                  <button
+                    type="button"
+                    onClick={() => setShowAddPage(false)}
+                    className="text-muted-foreground w-full text-center text-xs underline"
+                  >
+                    Cancel
+                  </button>
+                </div>
               )}
-            >
-              Drop sections here or drag from the left.
-            </div>
-          ) : (
-            <ul className="flex flex-col gap-4">
-              {sections.map((section, index) => (
-                <li
-                  key={section.id}
-                  draggable
-                  onDragStart={(e) => handleCanvasDragStart(e, index)}
-                  onDragOver={(e) => handleCanvasDragOver(e, index)}
-                  onDragLeave={handleCanvasDragLeave}
-                  onDrop={(e) => handleCanvasDrop(e, index)}
-                  onDragEnd={() => setDragIndex(null)}
-                  className={cn(
-                    "rounded-lg border border-border bg-card transition-opacity",
-                    dragIndex === index && "opacity-50"
-                  )}
-                >
-                  <div className="flex items-center justify-between border-b border-border bg-muted/30 px-3 py-2">
-                    <span className="text-xs font-medium text-muted-foreground">
-                      {SECTION_NAMES[section.type] ?? section.type} — {section.id}
-                    </span>
-                    <div className="flex items-center gap-1">
-                      <span className="cursor-grab text-muted-foreground" title="Drag to reorder">
-                        ⋮⋮
-                      </span>
-                      <button
-                        type="button"
-                        onClick={(e) => {
-                          e.stopPropagation()
-                          setShowPageSettings(false)
-                          setSelectedSectionIndex(index)
-                        }}
-                        className="rounded px-2 py-0.5 text-xs text-muted-foreground hover:bg-primary/10 hover:text-primary"
-                        title="Edit content & styles"
-                      >
-                        Edit
-                      </button>
-                      <button
-                        type="button"
-                        onClick={() => removeSection(index)}
-                        className="rounded p-1 text-muted-foreground hover:bg-destructive/10 hover:text-destructive"
-                        title="Remove"
-                      >
-                        ×
-                      </button>
-                    </div>
-                  </div>
-                  <div className="rounded-b-lg border border-t-0 border-border bg-transparent p-2">
-                    <SectionRenderer
-                      section={currentConfig.sections[index] ?? section}
-                      className={(currentConfig.sections[index] ?? section).className}
-                    />
-                  </div>
-                </li>
-              ))}
-              <li
+            </section>
+
+            <section>
+              <p className="text-muted-foreground mb-2 text-xs font-semibold uppercase tracking-wider">
+                Sections — drag into canvas
+              </p>
+              <ul className="flex flex-col gap-1">
+                {SECTION_TYPE_IDS.map((type) => (
+                  <li key={type}>
+                    <button
+                      type="button"
+                      draggable
+                      onDragStart={(e) => handlePaletteDragStart(e, type)}
+                      onClick={() => addSection(type)}
+                      className="border-border bg-card text-foreground hover:bg-muted/80 w-full cursor-grab rounded-md border px-3 py-2 text-left text-sm font-medium active:cursor-grabbing"
+                    >
+                      {SECTION_NAMES[type] ?? type}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+              <p className="text-muted-foreground mt-2 text-xs">
+                Drag into canvas or click to add to current page.
+              </p>
+            </section>
+          </aside>
+
+          <div className="min-w-0 flex-1">
+            <p className="text-muted-foreground mb-2 text-xs font-semibold uppercase tracking-wider">
+              {activePage.name} — drop sections here, drag to reorder
+            </p>
+            {sections.length === 0 ? (
+              <div
                 onDragOver={(e) => {
                   e.preventDefault()
                   setIsDropTarget(true)
                 }}
                 onDragLeave={handleCanvasDragLeave}
-                onDrop={(e) => {
-                  e.preventDefault()
-                  setIsDropTarget(false)
-                  const sectionType = e.dataTransfer.getData(DATA_SECTION_TYPE)
-                  if (sectionType) {
-                    const section = createDefaultSection(sectionType)
-                    if (section) setPageSections((prev) => [...prev, section])
-                  }
-                }}
+                onDrop={handleDropZoneDrop}
                 className={cn(
-                  "rounded-lg border-2 border-dashed py-6 text-center text-xs text-muted-foreground",
-                  isDropTarget ? "border-primary bg-primary/5" : "border-border bg-muted/10"
+                  "text-muted-foreground rounded-lg border-2 border-dashed py-16 text-center text-sm transition-colors",
+                  isDropTarget
+                    ? "border-primary bg-primary/5"
+                    : "border-border bg-muted/20"
                 )}
               >
-                Drop to add at end
-              </li>
-            </ul>
+                Drop sections here or drag from the left.
+              </div>
+            ) : (
+              <ul className="flex flex-col gap-4">
+                {sections.map((section, index) => (
+                  <li
+                    key={section.id}
+                    draggable
+                    onDragStart={(e) => handleCanvasDragStart(e, index)}
+                    onDragOver={(e) => handleCanvasDragOver(e, index)}
+                    onDragLeave={handleCanvasDragLeave}
+                    onDrop={(e) => handleCanvasDrop(e, index)}
+                    onDragEnd={() => setDragIndex(null)}
+                    className={cn(
+                      "border-border bg-card rounded-lg border transition-opacity",
+                      dragIndex === index && "opacity-50"
+                    )}
+                  >
+                    <div className="border-border bg-muted/30 flex items-center justify-between border-b px-3 py-2">
+                      <span className="text-muted-foreground text-xs font-medium">
+                        {SECTION_NAMES[section.type] ?? section.type} —{" "}
+                        {section.id}
+                      </span>
+                      <div className="flex items-center gap-1">
+                        <span
+                          className="text-muted-foreground cursor-grab"
+                          title="Drag to reorder"
+                        >
+                          ⋮⋮
+                        </span>
+                        <button
+                          type="button"
+                          onClick={(e) => {
+                            e.stopPropagation()
+                            setShowPageSettings(false)
+                            setSelectedSectionIndex(index)
+                          }}
+                          className="text-muted-foreground hover:bg-primary/10 hover:text-primary rounded px-2 py-0.5 text-xs"
+                          title="Edit content & styles"
+                        >
+                          Edit
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => removeSection(index)}
+                          className="text-muted-foreground hover:bg-destructive/10 hover:text-destructive rounded p-1"
+                          title="Remove"
+                        >
+                          ×
+                        </button>
+                      </div>
+                    </div>
+                    <div className="border-border rounded-b-lg border border-t-0 bg-transparent p-2">
+                      <SectionRenderer
+                        section={currentConfig.sections[index] ?? section}
+                        className={
+                          (currentConfig.sections[index] ?? section).className
+                        }
+                      />
+                    </div>
+                  </li>
+                ))}
+                <li
+                  onDragOver={(e) => {
+                    e.preventDefault()
+                    setIsDropTarget(true)
+                  }}
+                  onDragLeave={handleCanvasDragLeave}
+                  onDrop={(e) => {
+                    e.preventDefault()
+                    setIsDropTarget(false)
+                    const sectionType =
+                      e.dataTransfer.getData(DATA_SECTION_TYPE)
+                    if (sectionType) {
+                      const section = createDefaultSection(sectionType)
+                      if (section) setPageSections((prev) => [...prev, section])
+                    }
+                  }}
+                  className={cn(
+                    "text-muted-foreground rounded-lg border-2 border-dashed py-6 text-center text-xs",
+                    isDropTarget
+                      ? "border-primary bg-primary/5"
+                      : "border-border bg-muted/10"
+                  )}
+                >
+                  Drop to add at end
+                </li>
+              </ul>
+            )}
+          </div>
+
+          {(showPageSettings ||
+            (selectedSectionIndex !== null &&
+              sections[selectedSectionIndex])) && (
+            <div className="border-border bg-muted/20 flex h-full w-80 shrink-0 flex-col border-l">
+              <div className="min-h-0 flex-1 overflow-y-auto">
+                {showPageSettings ? (
+                  <PageSettingsEditor
+                    pageName={activePage.name}
+                    seo={activePage.seo ?? {}}
+                    theme={activePage.theme ?? {}}
+                    onChange={(updates) =>
+                      updatePageSettings(activePageId, updates)
+                    }
+                    onClose={() => setShowPageSettings(false)}
+                  />
+                ) : selectedSectionIndex !== null &&
+                  sections[selectedSectionIndex] ? (
+                  <SectionEditor
+                    section={sections[selectedSectionIndex]!}
+                    onChange={(updated) =>
+                      updateSectionAt(selectedSectionIndex, updated)
+                    }
+                    onClose={() => setSelectedSectionIndex(null)}
+                  />
+                ) : null}
+              </div>
+            </div>
           )}
         </div>
-
-        {(showPageSettings || (selectedSectionIndex !== null && sections[selectedSectionIndex])) && (
-          <div className="flex h-full w-80 shrink-0 flex-col border-l border-border bg-muted/20">
-            <div className="min-h-0 flex-1 overflow-y-auto">
-              {showPageSettings ? (
-                <PageSettingsEditor
-                  pageName={activePage.name}
-                  seo={activePage.seo ?? {}}
-                  theme={activePage.theme ?? {}}
-                  onChange={(updates) =>
-                    updatePageSettings(activePageId, updates)
-                  }
-                  onClose={() => setShowPageSettings(false)}
-                />
-              ) : selectedSectionIndex !== null && sections[selectedSectionIndex] ? (
-                <SectionEditor
-                  section={sections[selectedSectionIndex]!}
-                  onChange={(updated) =>
-                    updateSectionAt(selectedSectionIndex, updated)
-                  }
-                  onClose={() => setSelectedSectionIndex(null)}
-                />
-              ) : null}
-            </div>
-          </div>
-        )}
-      </div>
       </div>
 
       {showPreview && (
-        <div className="fixed inset-0 z-50 flex flex-col bg-muted/50">
-          <div className="flex flex-wrap items-center justify-between gap-2 border-b border-border bg-background px-4 py-2">
-            <span className="text-sm font-medium text-foreground">
+        <div className="bg-muted/50 fixed inset-0 z-50 flex flex-col">
+          <div className="border-border bg-background flex flex-wrap items-center justify-between gap-2 border-b px-4 py-2">
+            <span className="text-foreground text-sm font-medium">
               Preview — {activePage.name}
             </span>
             <div className="flex items-center gap-1">
-              <span className="mr-2 text-xs text-muted-foreground">Viewport:</span>
+              <span className="text-muted-foreground mr-2 text-xs">
+                Viewport:
+              </span>
               {(["desktop", "tablet", "mobile"] as const).map((v) => (
                 <button
                   key={v}
@@ -837,14 +877,18 @@ export function BuilderCanvas(): React.ReactElement {
                   aria-label={`Preview ${v} viewport`}
                   aria-pressed={previewViewport === v}
                 >
-                  {v === "desktop" ? "Desktop (1280px)" : v === "tablet" ? "Tablet (768px)" : "Mobile (375px)"}
+                  {v === "desktop"
+                    ? "Desktop (1280px)"
+                    : v === "tablet"
+                      ? "Tablet (768px)"
+                      : "Mobile (375px)"}
                 </button>
               ))}
             </div>
             <button
               type="button"
               onClick={() => setShowPreview(false)}
-              className="rounded-md border border-border bg-background px-3 py-1.5 text-sm hover:bg-muted"
+              className="border-border bg-background hover:bg-muted rounded-md border px-3 py-1.5 text-sm"
               aria-label="Close preview"
             >
               Close
@@ -852,12 +896,12 @@ export function BuilderCanvas(): React.ReactElement {
           </div>
           <div className="flex flex-1 items-start justify-center overflow-auto p-4">
             {currentConfig.sections.length === 0 ? (
-              <div className="rounded-lg border border-border bg-background p-8 text-muted-foreground">
+              <div className="border-border bg-background text-muted-foreground rounded-lg border p-8">
                 No sections on this page.
               </div>
             ) : (
               <div
-                className="flex shrink-0 flex-col overflow-hidden rounded-lg border-2 border-border bg-background shadow-lg"
+                className="border-border bg-background flex shrink-0 flex-col overflow-hidden rounded-lg border-2 shadow-lg"
                 style={{
                   width:
                     previewViewport === "desktop"

@@ -9,10 +9,10 @@ export function ShowcaseSidebar(): React.ReactElement {
   const pathname = usePathname()
 
   return (
-    <aside className="w-56 shrink-0 border-r border-border">
+    <aside className="border-border w-56 shrink-0 border-r">
       <nav className="sticky top-14 flex flex-col gap-6 overflow-y-auto py-6 pl-4 pr-2">
         <div className="flex flex-col gap-1">
-          <p className="mb-1 px-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+          <p className="text-muted-foreground mb-1 px-2 text-xs font-semibold uppercase tracking-wider">
             Getting started
           </p>
           <Link
@@ -28,7 +28,7 @@ export function ShowcaseSidebar(): React.ReactElement {
           </Link>
         </div>
         <div className="flex flex-col gap-1">
-          <p className="mb-1 px-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+          <p className="text-muted-foreground mb-1 px-2 text-xs font-semibold uppercase tracking-wider">
             Sections
           </p>
           {SECTION_LIST.map(({ id, name }) => {

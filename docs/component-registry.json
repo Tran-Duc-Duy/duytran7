@@ -66,18 +66,8 @@
       "floating",
       "compact"
     ],
-    "configFields": [
-      "id",
-      "type",
-      "logo",
-      "links",
-      "cta",
-      "variant"
-    ],
-    "classesKeys": [
-      "root",
-      "container"
-    ],
+    "configFields": ["id", "type", "logo", "links", "cta", "variant"],
+    "classesKeys": ["root", "container"],
     "exampleConfig": {
       "id": "nav-1",
       "type": "nav",
@@ -167,19 +157,8 @@
       "compact",
       "split"
     ],
-    "configFields": [
-      "id",
-      "type",
-      "title",
-      "items",
-      "columns",
-      "variant"
-    ],
-    "classesKeys": [
-      "root",
-      "container",
-      "title"
-    ],
+    "configFields": ["id", "type", "title", "items", "columns", "variant"],
+    "classesKeys": ["root", "container", "title"],
     "exampleConfig": {
       "id": "stats-1",
       "type": "stats",
@@ -214,18 +193,8 @@
       "title-bottom",
       "opacity"
     ],
-    "configFields": [
-      "id",
-      "type",
-      "title",
-      "items",
-      "variant"
-    ],
-    "classesKeys": [
-      "root",
-      "container",
-      "title"
-    ],
+    "configFields": ["id", "type", "title", "items", "variant"],
+    "classesKeys": ["root", "container", "title"],
     "exampleConfig": {
       "id": "logo-cloud-1",
       "type": "logo-cloud",
@@ -259,19 +228,8 @@
       "horizontal",
       "compact"
     ],
-    "configFields": [
-      "id",
-      "type",
-      "title",
-      "members",
-      "columns",
-      "variant"
-    ],
-    "classesKeys": [
-      "root",
-      "container",
-      "title"
-    ],
+    "configFields": ["id", "type", "title", "members", "columns", "variant"],
+    "classesKeys": ["root", "container", "title"],
     "exampleConfig": {
       "id": "team-1",
       "type": "team",
@@ -306,18 +264,8 @@
       "masonry",
       "compact"
     ],
-    "configFields": [
-      "id",
-      "type",
-      "title",
-      "items",
-      "variant"
-    ],
-    "classesKeys": [
-      "root",
-      "container",
-      "title"
-    ],
+    "configFields": ["id", "type", "title", "items", "variant"],
+    "classesKeys": ["root", "container", "title"],
     "exampleConfig": {
       "id": "testimonials-1",
       "type": "testimonials",
@@ -348,18 +296,8 @@
       "compact",
       "bordered"
     ],
-    "configFields": [
-      "id",
-      "type",
-      "title",
-      "tiers",
-      "variant"
-    ],
-    "classesKeys": [
-      "root",
-      "container",
-      "title"
-    ],
+    "configFields": ["id", "type", "title", "tiers", "variant"],
+    "classesKeys": ["root", "container", "title"],
     "exampleConfig": {
       "id": "pricing-1",
       "type": "pricing",
@@ -369,9 +307,7 @@
           "name": "Free",
           "price": "$0",
           "period": "mo",
-          "features": [
-            "Feature 1"
-          ],
+          "features": ["Feature 1"],
           "cta": {
             "label": "Start",
             "href": "#"
@@ -381,10 +317,7 @@
           "name": "Pro",
           "price": "$29",
           "period": "mo",
-          "features": [
-            "Feature 1",
-            "Feature 2"
-          ],
+          "features": ["Feature 1", "Feature 2"],
           "cta": {
             "label": "Buy",
             "href": "#"
@@ -411,18 +344,8 @@
       "expanded",
       "cards"
     ],
-    "configFields": [
-      "id",
-      "type",
-      "title",
-      "items",
-      "variant"
-    ],
-    "classesKeys": [
-      "root",
-      "container",
-      "title"
-    ],
+    "configFields": ["id", "type", "title", "items", "variant"],
+    "classesKeys": ["root", "container", "title"],
     "exampleConfig": {
       "id": "faq-1",
       "type": "faq",
@@ -510,11 +433,7 @@
       "actionUrl",
       "variant"
     ],
-    "classesKeys": [
-      "root",
-      "container",
-      "title"
-    ],
+    "classesKeys": ["root", "container", "title"],
     "exampleConfig": {
       "id": "newsletter-1",
       "type": "newsletter",
@@ -552,11 +471,7 @@
       "actionUrl",
       "variant"
     ],
-    "classesKeys": [
-      "root",
-      "container",
-      "title"
-    ],
+    "classesKeys": ["root", "container", "title"],
     "exampleConfig": {
       "id": "contact-1",
       "type": "contact",
@@ -588,19 +503,8 @@
       "overlay",
       "list"
     ],
-    "configFields": [
-      "id",
-      "type",
-      "title",
-      "images",
-      "columns",
-      "variant"
-    ],
-    "classesKeys": [
-      "root",
-      "container",
-      "title"
-    ],
+    "configFields": ["id", "type", "title", "images", "columns", "variant"],
+    "classesKeys": ["root", "container", "title"],
     "exampleConfig": {
       "id": "gallery-1",
       "type": "gallery",
@@ -635,20 +539,8 @@
       "dark",
       "compact"
     ],
-    "configFields": [
-      "id",
-      "type",
-      "message",
-      "cta",
-      "variant",
-      "dismissible"
-    ],
-    "classesKeys": [
-      "root",
-      "container",
-      "message",
-      "cta"
-    ],
+    "configFields": ["id", "type", "message", "cta", "variant", "dismissible"],
+    "classesKeys": ["root", "container", "message", "cta"],
     "exampleConfig": {
       "id": "banner-1",
       "type": "banner",
@@ -685,33 +577,20 @@
       "highlightColumn",
       "variant"
     ],
-    "classesKeys": [
-      "root",
-      "container",
-      "title"
-    ],
+    "classesKeys": ["root", "container", "title"],
     "exampleConfig": {
       "id": "comparison-1",
       "type": "comparison",
       "title": "Compare plans",
-      "planNames": [
-        "Free",
-        "Pro"
-      ],
+      "planNames": ["Free", "Pro"],
       "rows": [
         {
           "feature": "Feature A",
-          "values": [
-            "Yes",
-            "Yes"
-          ]
+          "values": ["Yes", "Yes"]
         },
         {
           "feature": "Feature B",
-          "values": [
-            false,
-            true
-          ]
+          "values": [false, true]
         }
       ],
       "highlightColumn": 1
@@ -734,18 +613,8 @@
       "dark",
       "numbered"
     ],
-    "configFields": [
-      "id",
-      "type",
-      "title",
-      "items",
-      "variant"
-    ],
-    "classesKeys": [
-      "root",
-      "container",
-      "title"
-    ],
+    "configFields": ["id", "type", "title", "items", "variant"],
+    "classesKeys": ["root", "container", "title"],
     "exampleConfig": {
       "id": "timeline-1",
       "type": "timeline",
@@ -777,18 +646,8 @@
       "compact",
       "simple"
     ],
-    "configFields": [
-      "id",
-      "type",
-      "brand",
-      "linkGroups",
-      "bottom",
-      "variant"
-    ],
-    "classesKeys": [
-      "root",
-      "container"
-    ],
+    "configFields": ["id", "type", "brand", "linkGroups", "bottom", "variant"],
+    "classesKeys": ["root", "container"],
     "exampleConfig": {
       "id": "footer-1",
       "type": "footer",

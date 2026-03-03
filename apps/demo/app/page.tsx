@@ -1,7 +1,11 @@
 import React from "react"
 import { readFileSync } from "fs"
 import { join } from "path"
-import { LandingPage, buildMetadata, parseLandingConfigStrict } from "@duytran7/landing-next"
+import {
+  LandingPage,
+  buildMetadata,
+  parseLandingConfigStrict,
+} from "@duytran7/landing-next"
 
 const examplesDir = join(process.cwd(), "..", "..", "examples")
 const config = parseLandingConfigStrict(

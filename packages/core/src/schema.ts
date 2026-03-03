@@ -37,7 +37,18 @@ const sectionBaseSchema = z.object({
   classes: z.record(z.string(), z.string().optional()).optional(),
 })
 
-const heroVariants = ["default", "centered", "split", "minimal", "gradient", "badge", "left", "right-image", "dark", "floating"] as const
+const heroVariants = [
+  "default",
+  "centered",
+  "split",
+  "minimal",
+  "gradient",
+  "badge",
+  "left",
+  "right-image",
+  "dark",
+  "floating",
+] as const
 const heroBackgroundSchema = z.object({
   type: z.enum(["color", "image", "gradient", "lottie", "video"]),
   url: z.string().optional(),
@@ -71,7 +82,18 @@ const dataSourceSchema = z.object({
   envKey: z.string().optional(),
   dataPath: z.string().optional(),
 })
-const featuresVariants = ["default", "cards", "list", "alternating", "icon-top", "icon-left", "numbered", "bordered", "zigzag", "grid-images"] as const
+const featuresVariants = [
+  "default",
+  "cards",
+  "list",
+  "alternating",
+  "icon-top",
+  "icon-left",
+  "numbered",
+  "bordered",
+  "zigzag",
+  "grid-images",
+] as const
 const featuresSectionSchema = sectionBaseSchema.extend({
   type: z.literal("features"),
   title: z.string().optional(),
@@ -82,7 +104,18 @@ const featuresSectionSchema = sectionBaseSchema.extend({
   dataSource: dataSourceSchema.optional(),
 })
 
-const ctaVariants = ["default", "banner", "card", "split-image", "minimal", "gradient", "two-column", "floating", "dark", "bordered"] as const
+const ctaVariants = [
+  "default",
+  "banner",
+  "card",
+  "split-image",
+  "minimal",
+  "gradient",
+  "two-column",
+  "floating",
+  "dark",
+  "bordered",
+] as const
 const ctaSectionSchema = sectionBaseSchema.extend({
   type: z.literal("cta"),
   title: z.string(),
@@ -98,7 +131,18 @@ const footerLinkGroupSchema = z.object({
   links: z.array(z.object({ label: z.string(), href: z.string() })),
 })
 
-const footerVariants = ["default", "minimal", "newsletter", "multi-column", "centered", "social", "dark", "bordered", "compact", "simple"] as const
+const footerVariants = [
+  "default",
+  "minimal",
+  "newsletter",
+  "multi-column",
+  "centered",
+  "social",
+  "dark",
+  "bordered",
+  "compact",
+  "simple",
+] as const
 const footerSectionSchema = sectionBaseSchema.extend({
   type: z.literal("footer"),
   brand: z
@@ -120,7 +164,18 @@ const footerSectionSchema = sectionBaseSchema.extend({
   variant: z.enum(footerVariants).optional(),
 })
 
-const navVariants = ["default", "centered", "minimal", "transparent", "sticky", "two-row", "dark", "bordered", "floating", "compact"] as const
+const navVariants = [
+  "default",
+  "centered",
+  "minimal",
+  "transparent",
+  "sticky",
+  "two-row",
+  "dark",
+  "bordered",
+  "floating",
+  "compact",
+] as const
 const navSectionSchema = sectionBaseSchema.extend({
   type: z.literal("nav"),
   logo: z
@@ -145,7 +200,18 @@ const testimonialItemSchema = z.object({
   avatar: z.string().optional(),
 })
 
-const testimonialsVariants = ["default", "carousel", "grid", "featured", "rating", "minimal", "bordered", "alternating", "masonry", "compact"] as const
+const testimonialsVariants = [
+  "default",
+  "carousel",
+  "grid",
+  "featured",
+  "rating",
+  "minimal",
+  "bordered",
+  "alternating",
+  "masonry",
+  "compact",
+] as const
 const testimonialsSectionSchema = sectionBaseSchema.extend({
   type: z.literal("testimonials"),
   title: z.string().optional(),
@@ -165,7 +231,18 @@ const pricingTierSchema = z.object({
   highlighted: z.boolean().optional(),
 })
 
-const pricingVariants = ["default", "cards", "table", "toggle", "minimal", "badge", "featured-center", "horizontal", "compact", "bordered"] as const
+const pricingVariants = [
+  "default",
+  "cards",
+  "table",
+  "toggle",
+  "minimal",
+  "badge",
+  "featured-center",
+  "horizontal",
+  "compact",
+  "bordered",
+] as const
 const pricingSectionSchema = sectionBaseSchema.extend({
   type: z.literal("pricing"),
   title: z.string().optional(),
@@ -179,7 +256,18 @@ const faqItemSchema = z.object({
   answer: z.string(),
 })
 
-const faqVariants = ["default", "accordion", "two-column", "bordered", "minimal", "category", "grid", "compact", "expanded", "cards"] as const
+const faqVariants = [
+  "default",
+  "accordion",
+  "two-column",
+  "bordered",
+  "minimal",
+  "category",
+  "grid",
+  "compact",
+  "expanded",
+  "cards",
+] as const
 const faqSectionSchema = sectionBaseSchema.extend({
   type: z.literal("faq"),
   title: z.string().optional(),
@@ -194,7 +282,18 @@ const statItemSchema = z.object({
   suffix: z.string().optional(),
 })
 
-const statsVariants = ["default", "bordered", "minimal", "icons", "gradient", "vertical", "divider", "large", "compact", "split"] as const
+const statsVariants = [
+  "default",
+  "bordered",
+  "minimal",
+  "icons",
+  "gradient",
+  "vertical",
+  "divider",
+  "large",
+  "compact",
+  "split",
+] as const
 const statsSectionSchema = sectionBaseSchema.extend({
   type: z.literal("stats"),
   title: z.string().optional(),
@@ -210,7 +309,18 @@ const logoCloudItemSchema = z.object({
   href: z.string().optional(),
 })
 
-const logoCloudVariants = ["default", "grayscale", "grid", "carousel", "bordered", "dark", "small", "large", "title-bottom", "opacity"] as const
+const logoCloudVariants = [
+  "default",
+  "grayscale",
+  "grid",
+  "carousel",
+  "bordered",
+  "dark",
+  "small",
+  "large",
+  "title-bottom",
+  "opacity",
+] as const
 const logoCloudSectionSchema = sectionBaseSchema.extend({
   type: z.literal("logo-cloud"),
   title: z.string().optional(),
@@ -223,12 +333,21 @@ const teamMemberSchema = z.object({
   role: z.string().optional(),
   avatar: z.string().optional(),
   bio: z.string().optional(),
-  social: z
-    .array(z.object({ type: z.string(), url: z.string() }))
-    .optional(),
+  social: z.array(z.object({ type: z.string(), url: z.string() })).optional(),
 })
 
-const teamVariants = ["default", "cards", "list", "social-only", "overlay", "minimal", "alternating", "grid-large", "horizontal", "compact"] as const
+const teamVariants = [
+  "default",
+  "cards",
+  "list",
+  "social-only",
+  "overlay",
+  "minimal",
+  "alternating",
+  "grid-large",
+  "horizontal",
+  "compact",
+] as const
 const teamSectionSchema = sectionBaseSchema.extend({
   type: z.literal("team"),
   title: z.string().optional(),
@@ -239,7 +358,18 @@ const teamSectionSchema = sectionBaseSchema.extend({
   dataSource: dataSourceSchema.optional(),
 })
 
-const newsletterVariants = ["default", "inline", "minimal", "card", "benefits", "split", "bordered", "dark", "compact", "floating"] as const
+const newsletterVariants = [
+  "default",
+  "inline",
+  "minimal",
+  "card",
+  "benefits",
+  "split",
+  "bordered",
+  "dark",
+  "compact",
+  "floating",
+] as const
 const newsletterSectionSchema = sectionBaseSchema.extend({
   type: z.literal("newsletter"),
   title: z.string().optional(),
@@ -250,7 +380,18 @@ const newsletterSectionSchema = sectionBaseSchema.extend({
   variant: z.enum(newsletterVariants).optional(),
 })
 
-const contactVariants = ["default", "split", "minimal", "map-side", "centered", "two-column", "cards", "dark", "compact", "inline"] as const
+const contactVariants = [
+  "default",
+  "split",
+  "minimal",
+  "map-side",
+  "centered",
+  "two-column",
+  "cards",
+  "dark",
+  "compact",
+  "inline",
+] as const
 const contactSectionSchema = sectionBaseSchema.extend({
   type: z.literal("contact"),
   title: z.string().optional(),
@@ -277,7 +418,18 @@ const galleryImageSchema = z.object({
   href: z.string().optional(),
 })
 
-const galleryVariants = ["default", "masonry", "carousel", "grid-bordered", "staggered", "full-width", "compact", "dark", "overlay", "list"] as const
+const galleryVariants = [
+  "default",
+  "masonry",
+  "carousel",
+  "grid-bordered",
+  "staggered",
+  "full-width",
+  "compact",
+  "dark",
+  "overlay",
+  "list",
+] as const
 const gallerySectionSchema = sectionBaseSchema.extend({
   type: z.literal("gallery"),
   title: z.string().optional(),
@@ -287,7 +439,18 @@ const gallerySectionSchema = sectionBaseSchema.extend({
   variant: z.enum(galleryVariants).optional(),
 })
 
-const bannerVariants = ["default", "warning", "success", "info", "gradient", "icon", "minimal", "bordered", "dark", "compact"] as const
+const bannerVariants = [
+  "default",
+  "warning",
+  "success",
+  "info",
+  "gradient",
+  "icon",
+  "minimal",
+  "bordered",
+  "dark",
+  "compact",
+] as const
 const bannerSectionSchema = sectionBaseSchema.extend({
   type: z.literal("banner"),
   message: z.string(),
@@ -301,7 +464,18 @@ const comparisonRowSchema = z.object({
   values: z.array(z.union([z.string(), z.boolean()])),
 })
 
-const comparisonVariants = ["default", "table", "cards", "highlighted-row", "checkmarks", "minimal", "compact", "bordered", "striped", "inline"] as const
+const comparisonVariants = [
+  "default",
+  "table",
+  "cards",
+  "highlighted-row",
+  "checkmarks",
+  "minimal",
+  "compact",
+  "bordered",
+  "striped",
+  "inline",
+] as const
 const comparisonSectionSchema = sectionBaseSchema.extend({
   type: z.literal("comparison"),
   title: z.string().optional(),
@@ -319,7 +493,18 @@ const timelineItemSchema = z.object({
   icon: z.string().optional(),
 })
 
-const timelineVariants = ["default", "vertical", "horizontal", "alternate", "minimal", "connectors", "cards", "compact", "dark", "numbered"] as const
+const timelineVariants = [
+  "default",
+  "vertical",
+  "horizontal",
+  "alternate",
+  "minimal",
+  "connectors",
+  "cards",
+  "compact",
+  "dark",
+  "numbered",
+] as const
 const timelineSectionSchema = sectionBaseSchema.extend({
   type: z.literal("timeline"),
   title: z.string().optional(),
@@ -328,7 +513,13 @@ const timelineSectionSchema = sectionBaseSchema.extend({
   variant: z.enum(timelineVariants).optional(),
 })
 
-const mapVariants = ["default", "split", "minimal", "full-width", "card"] as const
+const mapVariants = [
+  "default",
+  "split",
+  "minimal",
+  "full-width",
+  "card",
+] as const
 const mapSectionSchema = sectionBaseSchema.extend({
   type: z.literal("map"),
   title: z.string().optional(),
@@ -347,7 +538,16 @@ const blogGridItemSchema = z.object({
   image: z.object({ src: z.string(), alt: z.string() }).optional(),
   date: z.string().optional(),
 })
-const blogGridVariants = ["default", "cards", "list", "masonry", "featured", "minimal", "bordered", "compact"] as const
+const blogGridVariants = [
+  "default",
+  "cards",
+  "list",
+  "masonry",
+  "featured",
+  "minimal",
+  "bordered",
+  "compact",
+] as const
 const blogGridSectionSchema = sectionBaseSchema.extend({
   type: z.literal("blog-grid"),
   title: z.string().optional(),

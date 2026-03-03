@@ -40,9 +40,21 @@
       "type": "timeline",
       "title": "Our journey",
       "items": [
-        { "date": "2020", "title": "Founded", "description": "Started in a small office with a big idea." },
-        { "date": "2022", "title": "Series A", "description": "Raised funding to scale the product." },
-        { "date": "2024", "title": "10k customers", "description": "Reached a major milestone." }
+        {
+          "date": "2020",
+          "title": "Founded",
+          "description": "Started in a small office with a big idea."
+        },
+        {
+          "date": "2022",
+          "title": "Series A",
+          "description": "Raised funding to scale the product."
+        },
+        {
+          "date": "2024",
+          "title": "10k customers",
+          "description": "Reached a major milestone."
+        }
       ],
       "variant": "vertical"
     },
@@ -52,9 +64,24 @@
       "title": "Meet the team",
       "subtitle": "The people building Acme.",
       "members": [
-        { "name": "Jane Doe", "role": "CEO", "avatar": "/team/jane.jpg", "bio": "Former founder. Loves product." },
-        { "name": "John Smith", "role": "CTO", "avatar": "/team/john.jpg", "bio": "Engineer. Scaling systems." },
-        { "name": "Alex Lee", "role": "Head of Design", "avatar": "/team/alex.jpg", "bio": "Design systems and UX." }
+        {
+          "name": "Jane Doe",
+          "role": "CEO",
+          "avatar": "/team/jane.jpg",
+          "bio": "Former founder. Loves product."
+        },
+        {
+          "name": "John Smith",
+          "role": "CTO",
+          "avatar": "/team/john.jpg",
+          "bio": "Engineer. Scaling systems."
+        },
+        {
+          "name": "Alex Lee",
+          "role": "Head of Design",
+          "avatar": "/team/alex.jpg",
+          "bio": "Design systems and UX."
+        }
       ],
       "columns": 3,
       "variant": "cards"

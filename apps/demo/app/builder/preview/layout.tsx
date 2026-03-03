@@ -7,9 +7,15 @@ import { Suspense } from "react"
 
 export default function BuilderPreviewLayout({
   children,
-}: { children: React.ReactNode }) {
+}: {
+  children: React.ReactNode
+}) {
   return (
-    <Suspense fallback={<div className="p-8 text-center text-muted-foreground">Loading…</div>}>
+    <Suspense
+      fallback={
+        <div className="text-muted-foreground p-8 text-center">Loading…</div>
+      }
+    >
       {children}
     </Suspense>
   )

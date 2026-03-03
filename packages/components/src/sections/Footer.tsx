@@ -29,7 +29,12 @@ export function Footer({ config, className }: FooterProps) {
     <Section
       as="footer"
       id={id}
-      className={cn("bg-muted/30 border-t py-12", configClass, classes.root, className)}
+      className={cn(
+        "bg-muted/30 border-t py-12",
+        configClass,
+        classes.root,
+        className
+      )}
       role="contentinfo"
     >
       <Container size="lg" className={classes.container}>

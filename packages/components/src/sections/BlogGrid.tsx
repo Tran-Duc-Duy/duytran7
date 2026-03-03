@@ -30,13 +30,14 @@ export function BlogGrid({ config, className }: BlogGridProps) {
     classes = {},
   } = config
 
-  const useCards = variant === "cards" || variant === "default" || variant === "bordered"
+  const useCards =
+    variant === "cards" || variant === "default" || variant === "bordered"
 
   return (
     <Section
       id={id}
       className={cn(
-        "py-16 sm:py-24 bg-muted/30",
+        "bg-muted/30 py-16 sm:py-24",
         configClass,
         classes.root,
         className
@@ -47,14 +48,15 @@ export function BlogGrid({ config, className }: BlogGridProps) {
         {(title || subtitle) && (
           <div
             className={cn(
-              "mx-auto mb-12 max-w-2xl text-center", classes.header
+              "mx-auto mb-12 max-w-2xl text-center",
+              classes.header
             )}
           >
             {title && (
               <h2
                 id={`${id}-title`}
                 className={cn(
-                  "text-3xl font-bold tracking-tight text-foreground sm:text-4xl",
+                  "text-foreground text-3xl font-bold tracking-tight sm:text-4xl",
                   classes.title
                 )}
               >
@@ -64,7 +66,7 @@ export function BlogGrid({ config, className }: BlogGridProps) {
             {subtitle && (
               <p
                 className={cn(
-                  "mt-4 text-lg text-muted-foreground",
+                  "text-muted-foreground mt-4 text-lg",
                   classes.subtitle
                 )}
               >
@@ -75,9 +77,9 @@ export function BlogGrid({ config, className }: BlogGridProps) {
         )}
         <ul
           className={cn(
-            "grid gap-6 list-none p-0 m-0",
+            "m-0 grid list-none gap-6 p-0",
             colClasses[columns],
-            variant === "list" && "grid-cols-1 max-w-3xl",
+            variant === "list" && "max-w-3xl grid-cols-1",
             classes.grid
           )}
         >
@@ -88,11 +90,11 @@ export function BlogGrid({ config, className }: BlogGridProps) {
                 className={cn(
                   "block h-full transition hover:opacity-90",
                   useCards &&
-                    "rounded-lg border border-border bg-card overflow-hidden shadow-sm"
+                    "border-border bg-card overflow-hidden rounded-lg border shadow-sm"
                 )}
               >
                 {item.image && (
-                  <div className="aspect-video w-full overflow-hidden bg-muted">
+                  <div className="bg-muted aspect-video w-full overflow-hidden">
                     <img
                       src={item.image.src}
                       alt={item.image.alt}
@@ -103,22 +105,23 @@ export function BlogGrid({ config, className }: BlogGridProps) {
                 <div
                   className={cn(
                     useCards && "p-5",
-                    variant === "list" && "py-4 border-b border-border last:border-0"
+                    variant === "list" &&
+                      "border-border border-b py-4 last:border-0"
                   )}
                 >
                   {item.date && (
                     <time
-                      className="text-sm text-muted-foreground"
+                      className="text-muted-foreground text-sm"
                       dateTime={item.date}
                     >
                       {item.date}
                     </time>
                   )}
-                  <h3 className="mt-1 font-semibold text-foreground line-clamp-2">
+                  <h3 className="text-foreground mt-1 line-clamp-2 font-semibold">
                     {item.title}
                   </h3>
                   {item.excerpt && (
-                    <p className="mt-2 text-sm text-muted-foreground line-clamp-2">
+                    <p className="text-muted-foreground mt-2 line-clamp-2 text-sm">
                       {item.excerpt}
                     </p>
                   )}

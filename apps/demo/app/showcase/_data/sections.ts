@@ -348,7 +348,12 @@ const SHOWCASE_ITEMS: ShowcaseItem[] = [
       title: "Contact",
       email: "hello@example.com",
       phone: "+1 234 567 890",
-      formLabels: { name: "Name", email: "Email", message: "Message", submit: "Send" },
+      formLabels: {
+        name: "Name",
+        email: "Email",
+        message: "Message",
+        submit: "Send",
+      },
       actionUrl: "#",
     },
   },

@@ -17,7 +17,7 @@ export function LandingPage({ config, className }: LandingPageProps) {
     <>
       <a
         href="#main-content"
-        className="absolute left-[-9999px] top-4 z-[100] rounded-md border border-border bg-background px-4 py-2 text-sm font-medium text-foreground shadow focus:left-4 focus:outline focus:outline-2 focus:outline-ring"
+        className="border-border bg-background text-foreground focus:outline-ring absolute left-[-9999px] top-4 z-[100] rounded-md border px-4 py-2 text-sm font-medium shadow focus:left-4 focus:outline focus:outline-2"
       >
         Skip to main content
       </a>

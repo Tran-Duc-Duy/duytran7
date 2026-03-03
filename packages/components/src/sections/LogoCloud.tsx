@@ -13,19 +13,25 @@ export interface LogoCloudProps {
 }
 
 export function LogoCloud({ config, className }: LogoCloudProps) {
-  const { id, title, items, variant = "default", className: configClass } = config
+  const {
+    id,
+    title,
+    items,
+    variant = "default",
+    className: configClass,
+  } = config
 
   return (
     <Section
       id={id}
-      className={cn("py-12 sm:py-16 bg-muted/30", configClass, className)}
+      className={cn("bg-muted/30 py-12 sm:py-16", configClass, className)}
       aria-labelledby={title ? `${id}-title` : undefined}
     >
       <Container size="lg">
         {title && (
           <p
             id={`${id}-title`}
-            className="mb-8 text-center text-sm font-semibold uppercase tracking-wider text-muted-foreground"
+            className="text-muted-foreground mb-8 text-center text-sm font-semibold uppercase tracking-wider"
           >
             {title}
           </p>
@@ -40,7 +46,11 @@ export function LogoCloud({ config, className }: LogoCloudProps) {
                 variant === "grayscale" && "grayscale hover:grayscale-0"
               )}
             >
-              <img src={item.src} alt={item.alt} className="max-h-12 w-auto object-contain" />
+              <img
+                src={item.src}
+                alt={item.alt}
+                className="max-h-12 w-auto object-contain"
+              />
             </a>
           ))}
         </div>
