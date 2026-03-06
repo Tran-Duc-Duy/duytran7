@@ -16,6 +16,8 @@ Minimize landing page build time: **JSON config + drop into Next.js** and you ge
 - [Quick start](#quick-start)
 - [Schema sections](#schema-sections)
 - [Customization](#customization)
+- [Documentation](#documentation)
+- [MCP server](#mcp-server)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -178,6 +180,17 @@ pnpm build
 - **TypeScript** + **tsup** (ESM + CJS, dts, sourcemap).
 - Components do **not** bundle React (peerDependencies); styling is **Tailwind** (consumer configures).
 - **SEO**: Next.js metadata + JSON-LD via `JsonLd` component.
+
+## Documentation
+
+- **[docs/SCHEMA.md](docs/SCHEMA.md)** — Root config, SEO, and all section types with main fields.
+- **[docs/COMPONENTS.md](docs/COMPONENTS.md)** — Component registry, section → component mapping, use-case coverage.
+- **[docs/AI-CONTRIBUTING.md](docs/AI-CONTRIBUTING.md)** — Guide for AI and developers: generating config, adding sections, MCP usage.
+- **[docs/STATE-AND-RICH-UI.md](docs/STATE-AND-RICH-UI.md)** — State management (local vs context), rich UI (Lottie, video, effects, responsive nav, theme/font).
+
+## MCP server
+
+An **MCP server** is provided for Cursor, Claude Desktop, and other MCP clients. It exposes tools: **list_sections**, **get_section_info**, **get_registry**. Use them to discover section types and get example JSON when building or editing landing config. See **[mcp/README.md](mcp/README.md)** for build and setup (stdio transport).
 
 ## Publishing to npm
 
