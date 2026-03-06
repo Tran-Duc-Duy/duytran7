@@ -1,0 +1,29 @@
+{
+  "name": "@duytran7/landing-mcp",
+  "version": "0.1.0",
+  "description": "MCP server for landing page config: list sections, get schema and examples.",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "landing-mcp": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --dts --no-splitting",
+    "start": "node dist/index.js",
+    "dev": "node --import tsx src/index.ts"
+  },
+  "dependencies": {
+    "@duytran7/landing-core": "workspace:*",
+    "@modelcontextprotocol/sdk": "^1.27.1",
+    "zod": "^3.25.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "tsup": "^8.5.1",
+    "tsx": "^4.19.2",
+    "typescript": "~5.7.2"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
