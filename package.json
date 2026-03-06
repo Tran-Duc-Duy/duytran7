@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "pnpm -r run build",
-    "build:ci": "pnpm --filter @duytran7/landing-core --filter @duytran7/landing-components --filter @duytran7/landing-next",
+    "build:ci": "pnpm --filter @duytran7/landing-core run build && pnpm --filter @duytran7/landing-components run build && pnpm --filter @duytran7/landing-next run build && pnpm --filter landing-demo run build",
     "dev": "pnpm -r run dev",
     "demo": "pnpm --filter landing-demo dev",
     "clean": "pnpm -r run clean; rm -rf node_modules",
