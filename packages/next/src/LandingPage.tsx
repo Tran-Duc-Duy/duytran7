@@ -1,5 +1,6 @@
 /**
  * LandingPage — renders all sections from config (Server Component). Use in Next.js page/layout.
+ * For scroll-in animation + effects use LandingPageWithAnimations from @duytran7/landing-next/client.
  */
 
 import type { LandingConfig } from "@duytran7/landing-core"
@@ -8,7 +9,7 @@ import { JsonLd } from "./JsonLd"
 
 export interface LandingPageProps {
   config: LandingConfig
-  /** Optional wrapper className cho main */
+  /** Optional wrapper className for main */
   className?: string
 }
 
