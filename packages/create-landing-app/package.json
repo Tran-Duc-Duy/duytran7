@@ -1,0 +1,27 @@
+{
+  "name": "create-landing-app",
+  "version": "0.1.0",
+  "description": "Scaffold a minimal Next.js landing app with builder and JSON-per-page config",
+  "type": "module",
+  "bin": {
+    "create-landing-app": "./bin/create-landing-app.mjs"
+  },
+  "files": [
+    "bin",
+    "template"
+  ],
+  "scripts": {},
+  "keywords": [
+    "landing",
+    "next.js",
+    "builder",
+    "scaffold",
+    "create-app"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Tran-Duc-Duy/duytran7.git",
+    "directory": "packages/create-landing-app"
+  }
+}

@@ -14,6 +14,7 @@ Minimize landing page build time: **JSON config + drop into Next.js** and you ge
 - [Monorepo structure](#monorepo-structure)
 - [Installation](#installation)
 - [Quick start](#quick-start)
+- [Template (create-landing-app)](#template-create-landing-app)
 - [Schema sections](#schema-sections)
 - [Customization](#customization)
 - [Documentation](#documentation)
@@ -119,6 +120,21 @@ export default function Home() {
 
 Done. You get all sections, SEO (title, description, OG, Twitter, JSON-LD), and semantic HTML.
 
+## Template (create-landing-app)
+
+Scaffold a minimal Next.js app with a **Builder** and **JSON-per-page** config. Khai báo **tên dự án** (thư mục) và **loại dự án** (preset nội dung):
+
+```bash
+npx create-landing-app my-landing
+npx create-landing-app my-saas --type saas
+npx create-landing-app agency-site -t agency --name my-agency
+cd my-landing && npm run dev
+```
+
+**Options:** `--type` / `-t` = `landing` | `saas` | `agency` | `blog` (preset cho `content/pages/home.json`); `--name` / `-n` = tên package; `--no-install` = bỏ qua npm install (test trong monorepo).
+
+You get: Home (reads `content/pages/home.json`), **/builder** (drag-and-drop, Import/Export JSON), and Preview. See [packages/create-landing-app/README.md](packages/create-landing-app/README.md) and [docs/TEMPLATE-CLI-PLAN.md](docs/TEMPLATE-CLI-PLAN.md).
+
 ## Schema sections & widgets
 
 All sections are config-driven; add them to `sections` in your JSON in any order.
@@ -190,7 +206,7 @@ pnpm build
 
 ## MCP server
 
-An **MCP server** is provided for Cursor, Claude Desktop, and other MCP clients. It exposes tools: **list_sections**, **get_section_info**, **get_registry**. Use them to discover section types and get example JSON when building or editing landing config. See **[mcp/README.md](mcp/README.md)** for build and setup (stdio transport).
+An **MCP server** is provided for Cursor, Claude Desktop, and other MCP clients. It exposes tools: **list_sections**, **get_section_info**, **get_registry**, **list_presets**. Use them to discover section types, get example JSON, and get create-landing-app preset/CLI usage when building or editing landing config. See **[mcp/README.md](mcp/README.md)** for build and setup (stdio transport).
 
 ## Publishing to npm
 

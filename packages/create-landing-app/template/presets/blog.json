@@ -1,0 +1,71 @@
+{
+  "seo": {
+    "title": "Blog — Articles and updates",
+    "description": "Latest posts, tutorials, and company updates."
+  },
+  "sections": [
+    {
+      "id": "nav-1",
+      "type": "nav",
+      "variant": "default",
+      "links": [
+        { "label": "Home", "href": "/" },
+        { "label": "About", "href": "#" }
+      ],
+      "cta": { "label": "Subscribe", "href": "#newsletter" }
+    },
+    {
+      "id": "hero-1",
+      "type": "hero",
+      "variant": "centered",
+      "headline": "Blog",
+      "subheadline": "Articles, tutorials, and updates.",
+      "primaryCta": { "label": "Latest posts", "href": "#posts" }
+    },
+    {
+      "id": "blog-grid-1",
+      "type": "blog-grid",
+      "variant": "default",
+      "title": "Latest posts",
+      "subtitle": "Read our latest articles.",
+      "items": [
+        {
+          "title": "Getting started",
+          "excerpt": "A short guide to get you up and running.",
+          "href": "/blog/1",
+          "date": "2025-01-15"
+        },
+        {
+          "title": "Best practices",
+          "excerpt": "Tips and patterns we use every day.",
+          "href": "/blog/2",
+          "date": "2025-01-10"
+        },
+        {
+          "title": "Case study",
+          "excerpt": "How we built a thing.",
+          "href": "/blog/3",
+          "date": "2025-01-05"
+        }
+      ],
+      "columns": 3
+    },
+    {
+      "id": "newsletter-1",
+      "type": "newsletter",
+      "variant": "default",
+      "title": "Subscribe",
+      "subtitle": "Get new posts in your inbox.",
+      "placeholder": "you@example.com",
+      "submitLabel": "Subscribe",
+      "actionUrl": "#"
+    },
+    {
+      "id": "footer-1",
+      "type": "footer",
+      "variant": "minimal",
+      "brand": { "name": "Blog", "href": "/" },
+      "bottom": { "text": "© 2025. All rights reserved." }
+    }
+  ]
+}

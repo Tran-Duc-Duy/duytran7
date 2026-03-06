@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import { LottieInjectorClient } from "./LottieInjectorClient"
+import { LottieInjectorDynamic } from "./LottieInjectorDynamic"
 import "./globals.css"
 
 export const metadata: Metadata = {
@@ -47,7 +47,7 @@ export default function RootLayout({
           </div>
         </header>
         {children}
-        <LottieInjectorClient />
+        <LottieInjectorDynamic />
       </body>
     </html>
   )

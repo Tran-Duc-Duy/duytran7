@@ -6,6 +6,7 @@ import type {
   LandingSection,
   SeoConfig,
 } from "@duytran7/landing-core"
+import { parseLandingConfig } from "@duytran7/landing-core"
 import { SectionRenderer, cn } from "@duytran7/landing-components"
 import {
   createDefaultSection,
@@ -97,6 +98,7 @@ export function BuilderCanvas(): React.ReactElement {
     "desktop" | "tablet" | "mobile"
   >("desktop")
   const previewIframeRef = useRef<HTMLIFrameElement>(null)
+  const importFileInputRef = useRef<HTMLInputElement>(null)
 
   const activePage = pages.find((p) => p.id === activePageId) ?? pages[0]
   const sections = activePage.sections
@@ -383,6 +385,76 @@ export function BuilderCanvas(): React.ReactElement {
     await navigator.clipboard.writeText(JSON.stringify(payload, null, 2))
   }
 
+  const handleImportJson = useCallback(
+    (raw: string) => {
+      let data: unknown
+      try {
+        data = JSON.parse(raw) as unknown
+      } catch {
+        alert("Invalid JSON")
+        return
+      }
+      const asConfig = parseLandingConfig(data)
+      if (asConfig.success) {
+        const config = asConfig.data
+        const page: BuilderPage = {
+          id: "imported-1",
+          name: config.seo?.title ?? "Home",
+          slug: "/",
+          sections: config.sections ?? [],
+          seo: config.seo,
+          theme: config.theme,
+        }
+        setPages([page])
+        setActivePageId(page.id)
+        return
+      }
+      const asPages = data as { pages?: Array<{ slug?: string; name?: string; config?: unknown }> }
+      if (Array.isArray(asPages.pages) && asPages.pages.length > 0) {
+        const nextPages: BuilderPage[] = []
+        for (let i = 0; i < asPages.pages.length; i++) {
+          const item = asPages.pages[i]
+          const parsed = parseLandingConfig(item?.config ?? {})
+          if (!parsed.success) continue
+          const c = parsed.data
+          const slug = item?.slug ?? (i === 0 ? "/" : `/page-${i}`)
+          nextPages.push({
+            id: slug === "/" ? "home" : `page-${Date.now()}-${i}`,
+            name: item?.name ?? c.seo?.title ?? slug,
+            slug,
+            sections: c.sections ?? [],
+            seo: c.seo,
+            theme: c.theme,
+          })
+        }
+        if (nextPages.length > 0) {
+          setPages(nextPages)
+          setActivePageId(nextPages[0].id)
+        } else {
+          alert("No valid page config in JSON")
+        }
+        return
+      }
+      alert("JSON must be a LandingConfig or { pages: [{ slug, config }] }")
+    },
+    []
+  )
+
+  const handleImportFileChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      const file = e.target.files?.[0]
+      if (!file) return
+      const reader = new FileReader()
+      reader.onload = () => {
+        const text = reader.result as string
+        if (text) handleImportJson(text)
+      }
+      reader.readAsText(file)
+      e.target.value = ""
+    },
+    [handleImportJson]
+  )
+
   const currentConfig = buildConfigForPage(activePage, true)
 
   const sendConfigToPreview = useCallback(() => {
@@ -475,6 +547,22 @@ export function BuilderCanvas(): React.ReactElement {
               aria-label="Open preview in new tab"
             >
               Open in new tab
+            </button>
+            <input
+              ref={importFileInputRef}
+              type="file"
+              accept=".json,application/json"
+              className="hidden"
+              aria-hidden
+              onChange={handleImportFileChange}
+            />
+            <button
+              type="button"
+              onClick={() => importFileInputRef.current?.click()}
+              className="border-border bg-background text-foreground hover:bg-muted rounded-md border px-3 py-1.5 text-sm font-medium"
+              aria-label="Import JSON from file"
+            >
+              Import JSON
             </button>
             <button
               type="button"

@@ -1,0 +1,35 @@
+{
+  "seo": {
+    "title": "Home",
+    "description": "Landing page from JSON — edit in Builder and export here."
+  },
+  "sections": [
+    {
+      "id": "hero-1",
+      "type": "hero",
+      "variant": "default",
+      "headline": "Welcome",
+      "subheadline": "Edit this in Builder, then export JSON to content/pages.",
+      "primaryCta": { "label": "Get started", "href": "#" },
+      "secondaryCta": { "label": "Builder", "href": "/builder" }
+    },
+    {
+      "id": "features-1",
+      "type": "features",
+      "variant": "default",
+      "title": "Features",
+      "items": [
+        { "title": "Feature 1", "description": "Description." },
+        { "title": "Feature 2", "description": "Description." }
+      ],
+      "columns": 3
+    },
+    {
+      "id": "cta-1",
+      "type": "cta",
+      "variant": "default",
+      "title": "Call to action",
+      "primaryCta": { "label": "Submit", "href": "#" }
+    }
+  ]
+}

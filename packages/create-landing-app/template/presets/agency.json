@@ -1,0 +1,75 @@
+{
+  "seo": {
+    "title": "Agency — We build digital experiences",
+    "description": "Design and development agency. Websites, apps, and brand."
+  },
+  "sections": [
+    {
+      "id": "nav-1",
+      "type": "nav",
+      "variant": "default",
+      "links": [
+        { "label": "Work", "href": "#work" },
+        { "label": "Services", "href": "#services" },
+        { "label": "Contact", "href": "#contact" }
+      ],
+      "cta": { "label": "Let's talk", "href": "#contact" }
+    },
+    {
+      "id": "hero-1",
+      "type": "hero",
+      "variant": "minimal",
+      "headline": "We design and build digital experiences",
+      "subheadline": "Strategy, design, and development for brands and products.",
+      "primaryCta": { "label": "View our work", "href": "#work" }
+    },
+    {
+      "id": "stats-1",
+      "type": "stats",
+      "variant": "default",
+      "title": "Results",
+      "items": [
+        { "value": "150+", "label": "Projects" },
+        { "value": "12", "label": "Years" },
+        { "value": "98%", "label": "Client retention" }
+      ],
+      "columns": 3
+    },
+    {
+      "id": "features-1",
+      "type": "features",
+      "variant": "cards",
+      "title": "What we do",
+      "items": [
+        { "title": "Brand & identity", "description": "Visual identity and guidelines." },
+        { "title": "Web & app design", "description": "UI/UX and prototypes." },
+        { "title": "Development", "description": "Web and mobile development." }
+      ],
+      "columns": 3
+    },
+    {
+      "id": "testimonials-1",
+      "type": "testimonials",
+      "variant": "default",
+      "title": "What clients say",
+      "items": [
+        { "quote": "Professional team, on time and on budget.", "author": "Client", "role": "CEO" }
+      ]
+    },
+    {
+      "id": "cta-1",
+      "type": "cta",
+      "variant": "default",
+      "title": "Start a project",
+      "subtitle": "Tell us about your idea.",
+      "primaryCta": { "label": "Get in touch", "href": "#contact" }
+    },
+    {
+      "id": "footer-1",
+      "type": "footer",
+      "variant": "minimal",
+      "brand": { "name": "Agency", "href": "/" },
+      "bottom": { "text": "© 2025 Agency." }
+    }
+  ]
+}

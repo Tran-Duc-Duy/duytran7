@@ -1233,6 +1233,102 @@ const SHOWCASE_ITEMS: ShowcaseItem[] = [
       items: [{ date: "2024", title: "Launch", description: "We launched." }],
     },
   },
+  // ——— Map (3 variants) ———
+  {
+    label: "default",
+    section: {
+      id: "map-default",
+      type: "map",
+      title: "Find us",
+      address: "123 Street, City",
+      mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.095383211816!2d105.853982!3d21.022738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjHCsDAxJzIxLjkiTiAxMDXCsDUxJzE0LjQiRQ!5e0!3m2!1sen!2s!4v1234567890",
+      variant: "default",
+    },
+  },
+  {
+    label: "split",
+    section: {
+      id: "map-split",
+      type: "map",
+      title: "Location",
+      subtitle: "Visit our office.",
+      address: "456 Avenue",
+      mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.095383211816!2d105.853982!3d21.022738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjHCsDAxJzIxLjkiTiAxMDXCsDUxJzE0LjQiRQ!5e0!3m2!1sen!2s!4v1234567890",
+      variant: "split",
+    },
+  },
+  {
+    label: "minimal",
+    section: {
+      id: "map-minimal",
+      type: "map",
+      title: "Map",
+      mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.095383211816!2d105.853982!3d21.022738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjHCsDAxJzIxLjkiTiAxMDXCsDUxJzE0LjQiRQ!5e0!3m2!1sen!2s!4v1234567890",
+      variant: "minimal",
+    },
+  },
+  // ——— Blog Grid (3 variants) ———
+  {
+    label: "default",
+    section: {
+      id: "blog-default",
+      type: "blog-grid",
+      title: "Latest posts",
+      subtitle: "Read our articles.",
+      items: [
+        {
+          title: "First post",
+          excerpt: "Short excerpt for the first post.",
+          href: "/blog/1",
+          date: "2025-01-15",
+        },
+        {
+          title: "Second post",
+          excerpt: "Another excerpt.",
+          href: "/blog/2",
+          date: "2025-01-10",
+        },
+        {
+          title: "Third post",
+          excerpt: "Third excerpt.",
+          href: "/blog/3",
+          date: "2025-01-05",
+        },
+      ],
+      variant: "default",
+    },
+  },
+  {
+    label: "cards",
+    section: {
+      id: "blog-cards",
+      type: "blog-grid",
+      title: "Blog",
+      items: [
+        {
+          title: "Card style",
+          excerpt: "With image and date.",
+          href: "/blog/a",
+          image: { src: "https://placehold.co/400x240", alt: "Post" },
+          date: "2025-01-12",
+        },
+      ],
+      variant: "cards",
+    },
+  },
+  {
+    label: "minimal",
+    section: {
+      id: "blog-minimal",
+      type: "blog-grid",
+      title: "Articles",
+      items: [
+        { title: "Minimal list item", href: "/blog/m1" },
+        { title: "Another item", href: "/blog/m2" },
+      ],
+      variant: "minimal",
+    },
+  },
   // ——— Footer (6 variants) ———
   {
     label: "default",

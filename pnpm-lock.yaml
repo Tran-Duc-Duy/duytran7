@@ -127,6 +127,8 @@ importers:
         specifier: ~5.7.2
         version: 5.7.3
 
+  packages/create-landing-app: {}
+
   packages/next:
     dependencies:
       '@duytran7/landing-components':
@@ -160,6 +162,46 @@ importers:
       tsup:
         specifier: ^8.4.0
         version: 8.5.1(jiti@1.21.7)(postcss@8.5.6)(tsx@4.21.0)(typescript@5.7.3)
+      typescript:
+        specifier: ~5.7.2
+        version: 5.7.3
+
+  templates/next-landing:
+    dependencies:
+      '@duytran7/landing-components':
+        specifier: workspace:*
+        version: link:../../packages/components
+      '@duytran7/landing-core':
+        specifier: workspace:*
+        version: link:../../packages/core
+      '@duytran7/landing-next':
+        specifier: workspace:*
+        version: link:../../packages/next
+      next:
+        specifier: ^16.0.0
+        version: 16.1.6(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      react:
+        specifier: ^19.0.0
+        version: 19.2.4
+      react-dom:
+        specifier: ^19.0.0
+        version: 19.2.4(react@19.2.4)
+    devDependencies:
+      '@types/node':
+        specifier: ^22.10.2
+        version: 22.19.13
+      '@types/react':
+        specifier: ^19.0.6
+        version: 19.2.14
+      '@types/react-dom':
+        specifier: ^19.0.2
+        version: 19.2.3(@types/react@19.2.14)
+      postcss:
+        specifier: ^8.4.49
+        version: 8.5.6
+      tailwindcss:
+        specifier: ^3.4.16
+        version: 3.4.19(tsx@4.21.0)
       typescript:
         specifier: ~5.7.2
         version: 5.7.3

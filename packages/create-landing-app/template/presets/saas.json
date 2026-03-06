@@ -1,0 +1,81 @@
+{
+  "seo": {
+    "title": "Product — SaaS",
+    "description": "Ship faster with our platform. Start free, scale as you grow."
+  },
+  "sections": [
+    {
+      "id": "nav-1",
+      "type": "nav",
+      "variant": "default",
+      "links": [
+        { "label": "Features", "href": "#features" },
+        { "label": "Pricing", "href": "#pricing" }
+      ],
+      "cta": { "label": "Sign in", "href": "#" }
+    },
+    {
+      "id": "hero-1",
+      "type": "hero",
+      "variant": "centered",
+      "headline": "Ship faster, together",
+      "subheadline": "One platform for your team. Start free, no credit card.",
+      "primaryCta": { "label": "Start free trial", "href": "#" },
+      "secondaryCta": { "label": "Book a demo", "href": "#" }
+    },
+    {
+      "id": "features-1",
+      "type": "features",
+      "variant": "default",
+      "title": "Everything you need",
+      "items": [
+        { "title": "Integrations", "description": "Connect your tools in one place." },
+        { "title": "Analytics", "description": "Real-time dashboards and reports." },
+        { "title": "API", "description": "Build and automate with our API." }
+      ],
+      "columns": 3
+    },
+    {
+      "id": "pricing-1",
+      "type": "pricing",
+      "variant": "default",
+      "title": "Pricing",
+      "tiers": [
+        {
+          "name": "Starter",
+          "price": "$0",
+          "period": "mo",
+          "features": ["Up to 3 users", "Basic support"],
+          "cta": { "label": "Get started", "href": "#" }
+        },
+        {
+          "name": "Pro",
+          "price": "$29",
+          "period": "mo",
+          "features": ["Unlimited users", "Priority support", "API access"],
+          "cta": { "label": "Start trial", "href": "#" },
+          "highlighted": true
+        }
+      ]
+    },
+    {
+      "id": "cta-1",
+      "type": "cta",
+      "variant": "default",
+      "title": "Ready to get started?",
+      "subtitle": "Join thousands of teams already using us.",
+      "primaryCta": { "label": "Create account", "href": "#" }
+    },
+    {
+      "id": "footer-1",
+      "type": "footer",
+      "variant": "default",
+      "brand": { "name": "Product", "href": "/" },
+      "linkGroups": [
+        { "title": "Product", "links": [{ "label": "Features", "href": "#" }] },
+        { "title": "Company", "links": [{ "label": "About", "href": "#" }] }
+      ],
+      "bottom": { "text": "© 2025 Product." }
+    }
+  ]
+}

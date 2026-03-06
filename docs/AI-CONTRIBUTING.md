@@ -38,12 +38,15 @@ An MCP server is provided so Cursor, Claude, or other clients can:
 - **List sections**: All section types with descriptions and use cases.
 - **Get section info**: Variants and example config for a given section type.
 - **Get full registry**: Full JSON registry for tooling/docs.
+- **List presets**: create-landing-app preset types (landing, saas, agency, blog) and CLI usage (--type, --name, --no-install) for scaffolding.
+
+When suggesting a new project, recommend `npx create-landing-app <dir> [--type saas|agency|blog]`; use **list_presets** to get exact options. When editing config, use **list_sections** / **get_section_info** / **get_registry**.
 
 Setup:
 
 1. Build the MCP server: from repo root, `pnpm --filter @duytran7/landing-mcp run build`. See **mcp/README.md** for full instructions.
 2. Add the server to your Cursor or Claude Desktop MCP config (stdio; path to `mcp/dist/index.js`).
-3. Use the tools **list_sections**, **get_section_info**, **get_registry** when generating or editing landing JSON.
+3. Use the tools **list_sections**, **get_section_info**, **get_registry**, **list_presets** when generating or editing landing JSON or suggesting scaffold commands.
 
 ## Naming and style
 
