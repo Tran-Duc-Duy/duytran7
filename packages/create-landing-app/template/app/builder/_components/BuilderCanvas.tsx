@@ -385,60 +385,59 @@ export function BuilderCanvas(): React.ReactElement {
     await navigator.clipboard.writeText(JSON.stringify(payload, null, 2))
   }
 
-  const handleImportJson = useCallback(
-    (raw: string) => {
-      let data: unknown
-      try {
-        data = JSON.parse(raw) as unknown
-      } catch {
-        alert("Invalid JSON")
-        return
+  const handleImportJson = useCallback((raw: string) => {
+    let data: unknown
+    try {
+      data = JSON.parse(raw) as unknown
+    } catch {
+      alert("Invalid JSON")
+      return
+    }
+    const asConfig = parseLandingConfig(data)
+    if (asConfig.success) {
+      const config = asConfig.data
+      const page: BuilderPage = {
+        id: "imported-1",
+        name: config.seo?.title ?? "Home",
+        slug: "/",
+        sections: config.sections ?? [],
+        seo: config.seo,
+        theme: config.theme,
       }
-      const asConfig = parseLandingConfig(data)
-      if (asConfig.success) {
-        const config = asConfig.data
-        const page: BuilderPage = {
-          id: "imported-1",
-          name: config.seo?.title ?? "Home",
-          slug: "/",
-          sections: config.sections ?? [],
-          seo: config.seo,
-          theme: config.theme,
-        }
-        setPages([page])
-        setActivePageId(page.id)
-        return
+      setPages([page])
+      setActivePageId(page.id)
+      return
+    }
+    const asPages = data as {
+      pages?: Array<{ slug?: string; name?: string; config?: unknown }>
+    }
+    if (Array.isArray(asPages.pages) && asPages.pages.length > 0) {
+      const nextPages: BuilderPage[] = []
+      for (let i = 0; i < asPages.pages.length; i++) {
+        const item = asPages.pages[i]
+        const parsed = parseLandingConfig(item?.config ?? {})
+        if (!parsed.success) continue
+        const c = parsed.data
+        const slug = item?.slug ?? (i === 0 ? "/" : `/page-${i}`)
+        nextPages.push({
+          id: slug === "/" ? "home" : `page-${Date.now()}-${i}`,
+          name: item?.name ?? c.seo?.title ?? slug,
+          slug,
+          sections: c.sections ?? [],
+          seo: c.seo,
+          theme: c.theme,
+        })
       }
-      const asPages = data as { pages?: Array<{ slug?: string; name?: string; config?: unknown }> }
-      if (Array.isArray(asPages.pages) && asPages.pages.length > 0) {
-        const nextPages: BuilderPage[] = []
-        for (let i = 0; i < asPages.pages.length; i++) {
-          const item = asPages.pages[i]
-          const parsed = parseLandingConfig(item?.config ?? {})
-          if (!parsed.success) continue
-          const c = parsed.data
-          const slug = item?.slug ?? (i === 0 ? "/" : `/page-${i}`)
-          nextPages.push({
-            id: slug === "/" ? "home" : `page-${Date.now()}-${i}`,
-            name: item?.name ?? c.seo?.title ?? slug,
-            slug,
-            sections: c.sections ?? [],
-            seo: c.seo,
-            theme: c.theme,
-          })
-        }
-        if (nextPages.length > 0) {
-          setPages(nextPages)
-          setActivePageId(nextPages[0].id)
-        } else {
-          alert("No valid page config in JSON")
-        }
-        return
+      if (nextPages.length > 0) {
+        setPages(nextPages)
+        setActivePageId(nextPages[0].id)
+      } else {
+        alert("No valid page config in JSON")
       }
-      alert("JSON must be a LandingConfig or { pages: [{ slug, config }] }")
-    },
-    []
-  )
+      return
+    }
+    alert("JSON must be a LandingConfig or { pages: [{ slug, config }] }")
+  }, [])
 
   const handleImportFileChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {

@@ -29,8 +29,14 @@
       "variant": "default",
       "title": "Everything you need",
       "items": [
-        { "title": "Integrations", "description": "Connect your tools in one place." },
-        { "title": "Analytics", "description": "Real-time dashboards and reports." },
+        {
+          "title": "Integrations",
+          "description": "Connect your tools in one place."
+        },
+        {
+          "title": "Analytics",
+          "description": "Real-time dashboards and reports."
+        },
         { "title": "API", "description": "Build and automate with our API." }
       ],
       "columns": 3

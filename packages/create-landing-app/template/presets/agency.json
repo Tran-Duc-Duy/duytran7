@@ -41,7 +41,10 @@
       "variant": "cards",
       "title": "What we do",
       "items": [
-        { "title": "Brand & identity", "description": "Visual identity and guidelines." },
+        {
+          "title": "Brand & identity",
+          "description": "Visual identity and guidelines."
+        },
         { "title": "Web & app design", "description": "UI/UX and prototypes." },
         { "title": "Development", "description": "Web and mobile development." }
       ],
@@ -53,7 +56,11 @@
       "variant": "default",
       "title": "What clients say",
       "items": [
-        { "quote": "Professional team, on time and on budget.", "author": "Client", "role": "CEO" }
+        {
+          "quote": "Professional team, on time and on budget.",
+          "author": "Client",
+          "role": "CEO"
+        }
       ]
     },
     {

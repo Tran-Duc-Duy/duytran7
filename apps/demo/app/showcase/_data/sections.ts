@@ -1241,7 +1241,8 @@ const SHOWCASE_ITEMS: ShowcaseItem[] = [
       type: "map",
       title: "Find us",
       address: "123 Street, City",
-      mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.095383211816!2d105.853982!3d21.022738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjHCsDAxJzIxLjkiTiAxMDXCsDUxJzE0LjQiRQ!5e0!3m2!1sen!2s!4v1234567890",
+      mapEmbedUrl:
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.095383211816!2d105.853982!3d21.022738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjHCsDAxJzIxLjkiTiAxMDXCsDUxJzE0LjQiRQ!5e0!3m2!1sen!2s!4v1234567890",
       variant: "default",
     },
   },
@@ -1253,7 +1254,8 @@ const SHOWCASE_ITEMS: ShowcaseItem[] = [
       title: "Location",
       subtitle: "Visit our office.",
       address: "456 Avenue",
-      mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.095383211816!2d105.853982!3d21.022738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjHCsDAxJzIxLjkiTiAxMDXCsDUxJzE0LjQiRQ!5e0!3m2!1sen!2s!4v1234567890",
+      mapEmbedUrl:
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.095383211816!2d105.853982!3d21.022738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjHCsDAxJzIxLjkiTiAxMDXCsDUxJzE0LjQiRQ!5e0!3m2!1sen!2s!4v1234567890",
       variant: "split",
     },
   },
@@ -1263,7 +1265,8 @@ const SHOWCASE_ITEMS: ShowcaseItem[] = [
       id: "map-minimal",
       type: "map",
       title: "Map",
-      mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.095383211816!2d105.853982!3d21.022738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjHCsDAxJzIxLjkiTiAxMDXCsDUxJzE0LjQiRQ!5e0!3m2!1sen!2s!4v1234567890",
+      mapEmbedUrl:
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.095383211816!2d105.853982!3d21.022738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjHCsDAxJzIxLjkiTiAxMDXCsDUxJzE0LjQiRQ!5e0!3m2!1sen!2s!4v1234567890",
       variant: "minimal",
     },
   },

@@ -33,10 +33,10 @@ Mục tiêu: cho phép user chạy lệnh (vd. `npx create-landing-app my-app`) 
 
 Hai hướng:
 
-| Cách | Mô tả | Dùng khi |
-|------|--------|----------|
-| **A. File-based** | Mỗi page = 1 file JSON (vd. `content/pages/home.json`, `pricing.json`). App đọc khi build (getStaticProps) hoặc server component. | Site tĩnh, JSON do dev/CI tạo ra hoặc export từ builder rồi copy vào repo. |
-| **B. Builder-first** | Builder là nguồn chính: user chỉnh trong UI, export JSON. App có thể (1) dùng JSON mặc định nhúng trong code, hoặc (2) đọc từ API/file do builder lưu. | Prototype nhanh, landing không cần CMS. |
+| Cách                 | Mô tả                                                                                                                                                  | Dùng khi                                                                   |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------- |
+| **A. File-based**    | Mỗi page = 1 file JSON (vd. `content/pages/home.json`, `pricing.json`). App đọc khi build (getStaticProps) hoặc server component.                      | Site tĩnh, JSON do dev/CI tạo ra hoặc export từ builder rồi copy vào repo. |
+| **B. Builder-first** | Builder là nguồn chính: user chỉnh trong UI, export JSON. App có thể (1) dùng JSON mặc định nhúng trong code, hoặc (2) đọc từ API/file do builder lưu. | Prototype nhanh, landing không cần CMS.                                    |
 
 Template nên hỗ trợ **cả hai**: cấu hình mặc định đọc từ `content/pages/*.json` (nếu có), nếu không thì dùng JSON mặc định (hoặc từ builder export).
 
@@ -51,7 +51,7 @@ Template nên hỗ trợ **cả hai**: cấu hình mặc định đọc từ `co
 - Tạo thư mục `templates/next-landing/` (hoặc `packages/template-next/`).
 - Copy từ `apps/demo` sang template chỉ những thứ cần:
   - `app/layout.tsx`, `app/globals.css`, `app/page.tsx` (redirect hoặc đọc JSON)
-  - `app/builder/` (toàn bộ: page, preview, _components, _data)
+  - `app/builder/` (toàn bộ: page, preview, \_components, \_data)
   - Cấu hình: `package.json`, `tsconfig.json`, `next.config.ts`, `tailwind.config.ts`, `postcss.config.mjs`
 - **Không** copy: `app/showcase`, `app/demos`, `app/about`, `app/pricing`, `app/contact`, `app/custom-classes`, `app/api` (hoặc chỉ giữ `api` nếu cần registry).
 - Trong template, `app/page.tsx` có thể: đọc `content/pages/home.json` (nếu có) và render `<LandingPage config={config} />`, fallback redirect `/builder`.

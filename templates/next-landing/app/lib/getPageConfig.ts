@@ -27,7 +27,10 @@ export function getPageSlugs(): string[] {
     const { readdirSync } = require("fs")
     const files = readdirSync(CONTENT_DIR, { withFileTypes: true })
     return files
-      .filter((f: { isFile: () => boolean; name: string }) => f.isFile() && f.name.endsWith(".json"))
+      .filter(
+        (f: { isFile: () => boolean; name: string }) =>
+          f.isFile() && f.name.endsWith(".json")
+      )
       .map((f: { name: string }) => f.name.replace(/\.json$/, ""))
   } catch {
     return []

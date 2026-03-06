@@ -27,9 +27,15 @@ if (!target) {
   console.error("Usage: npx create-landing-app <project-directory> [options]")
   console.error("Example: npx create-landing-app my-app --type saas")
   console.error("Options:")
-  console.error("  --type, -t <landing|saas|agency|blog>  preset content for home.json (default: landing)")
-  console.error("  --name, -n <string>                    package name (default: from directory name)")
-  console.error("  --no-install                           skip npm install (for monorepo test)")
+  console.error(
+    "  --type, -t <landing|saas|agency|blog>  preset content for home.json (default: landing)"
+  )
+  console.error(
+    "  --name, -n <string>                    package name (default: from directory name)"
+  )
+  console.error(
+    "  --no-install                           skip npm install (for monorepo test)"
+  )
   process.exit(1)
 }
 
@@ -67,11 +73,15 @@ if (!noInstall) {
     console.log("Run manually: cd " + target + " && npm install")
   }
 } else {
-  console.log("Skipped install (--no-install). Add this folder to pnpm-workspace.yaml, set landing deps to workspace:*, then run pnpm install from repo root.")
+  console.log(
+    "Skipped install (--no-install). Add this folder to pnpm-workspace.yaml, set landing deps to workspace:*, then run pnpm install from repo root."
+  )
 }
 
 console.log("Done. Next steps:")
 console.log("  cd " + target)
 if (!noInstall) console.log("  npm run dev")
 else console.log("  pnpm install (from repo root) then pnpm run dev here")
-console.log("  Open http://localhost:3000 and go to /builder to edit, or edit content/pages/*.json")
+console.log(
+  "  Open http://localhost:3000 and go to /builder to edit, or edit content/pages/*.json"
+)

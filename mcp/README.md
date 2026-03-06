@@ -30,7 +30,7 @@ MCP (Model Context Protocol) server for the [landing monorepo](https://github.co
 | **list_sections**    | List all section types with id, name, description, use case, and variants.                                                           |
 | **get_section_info** | Get one section’s full entry (including `exampleConfig`) by `sectionType` (e.g. `hero`, `video-embed`, `countdown`, `trust-badges`). |
 | **get_registry**     | Return the full component registry as JSON.                                                                                          |
-| **list_presets**     | List create-landing-app preset types (landing, saas, agency, blog) and CLI usage (--type, --name, --no-install) for scaffolding.    |
+| **list_presets**     | List create-landing-app preset types (landing, saas, agency, blog) and CLI usage (--type, --name, --no-install) for scaffolding.     |
 
 ## Build and run
 

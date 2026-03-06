@@ -14,11 +14,11 @@ npm run dev
 
 **Options:**
 
-| Option | Mô tả |
-|--------|--------|
+| Option         | Mô tả                                                                                                              |
+| -------------- | ------------------------------------------------------------------------------------------------------------------ |
 | `--type`, `-t` | Loại dự án = preset nội dung cho `content/pages/home.json`: **landing** (mặc định), **saas**, **agency**, **blog** |
-| `--name`, `-n` | Tên package (mặc định: tên thư mục, đã chuẩn hóa) |
-| `--no-install` | Bỏ qua `npm install` (khi test trong monorepo với workspace) |
+| `--name`, `-n` | Tên package (mặc định: tên thư mục, đã chuẩn hóa)                                                                  |
+| `--no-install` | Bỏ qua `npm install` (khi test trong monorepo với workspace)                                                       |
 
 **Ví dụ:**
 
@@ -33,12 +33,12 @@ Sau khi tạo, mở http://localhost:3000 — Home đọc `content/pages/home.js
 
 ## Presets (--type)
 
-| Type | Nội dung mẫu `home.json` |
-|------|---------------------------|
-| **landing** | Hero, Features, CTA (mặc định) |
-| **saas** | Nav, Hero centered, Features, Pricing, CTA, Footer |
-| **agency** | Nav, Hero minimal, Stats, Features cards, Testimonials, CTA, Footer |
-| **blog** | Nav, Hero, Blog grid, Newsletter, Footer |
+| Type        | Nội dung mẫu `home.json`                                            |
+| ----------- | ------------------------------------------------------------------- |
+| **landing** | Hero, Features, CTA (mặc định)                                      |
+| **saas**    | Nav, Hero centered, Features, Pricing, CTA, Footer                  |
+| **agency**  | Nav, Hero minimal, Stats, Features cards, Testimonials, CTA, Footer |
+| **blog**    | Nav, Hero, Blog grid, Newsletter, Footer                            |
 
 Preset nằm trong package tại `template/presets/<type>.json`; CLI ghi đè `content/pages/home.json` theo type. User vẫn chỉnh thoải mái trong Builder hoặc sửa file sau khi tạo.
 

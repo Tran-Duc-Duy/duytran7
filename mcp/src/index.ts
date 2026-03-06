@@ -89,17 +89,44 @@ mcp.registerTool(
 
 const PRESETS_INFO = {
   presets: [
-    { id: "landing", name: "Landing", description: "Hero, Features, CTA (default)" },
-    { id: "saas", name: "SaaS", description: "Nav, Hero centered, Features, Pricing, CTA, Footer" },
-    { id: "agency", name: "Agency", description: "Nav, Hero minimal, Stats, Features cards, Testimonials, CTA, Footer" },
-    { id: "blog", name: "Blog", description: "Nav, Hero, Blog grid, Newsletter, Footer" },
+    {
+      id: "landing",
+      name: "Landing",
+      description: "Hero, Features, CTA (default)",
+    },
+    {
+      id: "saas",
+      name: "SaaS",
+      description: "Nav, Hero centered, Features, Pricing, CTA, Footer",
+    },
+    {
+      id: "agency",
+      name: "Agency",
+      description:
+        "Nav, Hero minimal, Stats, Features cards, Testimonials, CTA, Footer",
+    },
+    {
+      id: "blog",
+      name: "Blog",
+      description: "Nav, Hero, Blog grid, Newsletter, Footer",
+    },
   ],
   cliUsage:
     "npx create-landing-app <project-directory> [--type landing|saas|agency|blog] [--name pkg-name] [--no-install]",
   options: [
-    { flag: "--type, -t", description: "Preset for content/pages/home.json (default: landing)" },
-    { flag: "--name, -n", description: "Package name in package.json (default: sanitized directory name)" },
-    { flag: "--no-install", description: "Skip npm install (e.g. when adding to pnpm workspace)" },
+    {
+      flag: "--type, -t",
+      description: "Preset for content/pages/home.json (default: landing)",
+    },
+    {
+      flag: "--name, -n",
+      description:
+        "Package name in package.json (default: sanitized directory name)",
+    },
+    {
+      flag: "--no-install",
+      description: "Skip npm install (e.g. when adding to pnpm workspace)",
+    },
   ],
 }
 
@@ -112,7 +139,9 @@ mcp.registerTool(
   },
   async () => {
     return {
-      content: [{ type: "text" as const, text: JSON.stringify(PRESETS_INFO, null, 2) }],
+      content: [
+        { type: "text" as const, text: JSON.stringify(PRESETS_INFO, null, 2) },
+      ],
     }
   }
 )
