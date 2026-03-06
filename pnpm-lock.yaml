@@ -24,14 +24,14 @@ importers:
   apps/demo:
     dependencies:
       '@duytran7/landing-components':
-        specifier: workspace:*
-        version: link:../../packages/components
+        specifier: ^0.1.0
+        version: 0.1.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@duytran7/landing-core':
-        specifier: workspace:*
-        version: link:../../packages/core
+        specifier: ^0.1.0
+        version: 0.1.0
       '@duytran7/landing-next':
-        specifier: workspace:*
-        version: link:../../packages/next
+        specifier: ^0.1.0
+        version: 0.1.0(next@16.1.6(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       next:
         specifier: ^16.0.0
         version: 16.1.6(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
@@ -211,6 +211,22 @@ packages:
   '@alloc/quick-lru@5.2.0':
     resolution: {integrity: sha512-UrcABB+4bUrFABwbluTIBErXwvbsU/V7TZWfmbgJfbkwiBuziS9gxdODUyuiecfdGQ85jglMW6juS3+z5TsKLw==}
     engines: {node: '>=10'}
+
+  '@duytran7/landing-components@0.1.0':
+    resolution: {integrity: sha512-ONwHDP1lG233OSrk+scOZ0TLg0HVedPBdVkhADMENmNcg7IeW+3kWTZX7EMI06Qt9cE+R+AWqHFnEneURL6Ejw==}
+    peerDependencies:
+      react: '>=18'
+      react-dom: '>=18'
+
+  '@duytran7/landing-core@0.1.0':
+    resolution: {integrity: sha512-A1jEDF5VOBA3agGuzB6avTc0DJQtAfa/qlRZH6i2wwM0dsuVRcGUe4fvSEPSESJwt9ol+2AQGwRLbZGhZPaKAg==}
+
+  '@duytran7/landing-next@0.1.0':
+    resolution: {integrity: sha512-OhsxrpatPUpxPVxzER1Z8/GXpAZe39XEqe8BycwPr1CrCbhnqnB/OPBkW61Zkzyhl2wP6S4m/Kn4EnbOIzF2Tg==}
+    peerDependencies:
+      next: '>=16'
+      react: '>=18'
+      react-dom: '>=18'
 
   '@emnapi/runtime@1.8.1':
     resolution: {integrity: sha512-mehfKSMWjjNol8659Z8KxEMrdSJDDot5SXMq00dM8BN4o+CLNXQ0xH2V7EchNHV4RmbZLmmPdEaXZc5H2FXmDg==}
@@ -1823,6 +1839,24 @@ packages:
 snapshots:
 
   '@alloc/quick-lru@5.2.0': {}
+
+  '@duytran7/landing-components@0.1.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+    dependencies:
+      '@duytran7/landing-core': 0.1.0
+      react: 19.2.4
+      react-dom: 19.2.4(react@19.2.4)
+
+  '@duytran7/landing-core@0.1.0':
+    dependencies:
+      zod: 3.25.76
+
+  '@duytran7/landing-next@0.1.0(next@16.1.6(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+    dependencies:
+      '@duytran7/landing-components': 0.1.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@duytran7/landing-core': 0.1.0
+      next: 16.1.6(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      react: 19.2.4
+      react-dom: 19.2.4(react@19.2.4)
 
   '@emnapi/runtime@1.8.1':
     dependencies:
