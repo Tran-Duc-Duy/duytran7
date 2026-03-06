@@ -685,6 +685,78 @@ export const componentRegistry: ComponentRegistryEntry[] = [
       bottom: { text: "© 2025", links: [{ label: "Privacy", href: "#" }] },
     },
   },
+  {
+    id: "video-embed",
+    name: "Video Embed",
+    description:
+      "Embedded video: YouTube, Vimeo, or self-hosted. Optional title, subtitle, poster image.",
+    useCase: "Product demo; explainer; webinar replay; hero video.",
+    variants: ["default", "centered", "bordered", "floating", "minimal"],
+    configFields: [
+      "id",
+      "type",
+      "title",
+      "subtitle",
+      "embedUrl",
+      "posterUrl",
+      "aspectRatio",
+      "variant",
+    ],
+    classesKeys: ["root", "container", "title", "subtitle"],
+    exampleConfig: {
+      id: "video-1",
+      type: "video-embed",
+      title: "See it in action",
+      embedUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      variant: "centered",
+    },
+  },
+  {
+    id: "countdown",
+    name: "Countdown",
+    description:
+      "Countdown to a target date/time (ISO 8601). For launch, sale end, event.",
+    useCase: "Launch countdown; flash sale; event start; urgency.",
+    variants: ["default", "compact", "minimal", "banner", "dark"],
+    configFields: [
+      "id",
+      "type",
+      "targetDate",
+      "title",
+      "subtitle",
+      "cta",
+      "expiredLabel",
+      "variant",
+    ],
+    classesKeys: ["root", "container", "title", "subtitle"],
+    exampleConfig: {
+      id: "countdown-1",
+      type: "countdown",
+      targetDate: "2025-12-31T23:59:59Z",
+      title: "Launch in",
+      expiredLabel: "Ended",
+    },
+  },
+  {
+    id: "trust-badges",
+    name: "Trust Badges",
+    description:
+      "Trust signals: payment icons, SSL, guarantees. Icon (URL/emoji) + label per item.",
+    useCase: "Payment methods; security badges; guarantees; certifications.",
+    variants: ["default", "inline", "grid", "minimal", "bordered", "dark"],
+    configFields: ["id", "type", "title", "subtitle", "items", "variant"],
+    classesKeys: ["root", "container", "title", "subtitle"],
+    exampleConfig: {
+      id: "trust-1",
+      type: "trust-badges",
+      title: "Secure payment",
+      items: [
+        { icon: "🔒", label: "SSL Secured" },
+        { icon: "✓", label: "Money-back guarantee" },
+      ],
+      variant: "default",
+    },
+  },
 ]
 
 /** Return registry as JSON string (for API or static export). */

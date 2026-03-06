@@ -29,12 +29,39 @@ const seoConfigSchema = z.object({
     .optional(),
 })
 
+const sectionAnimationSchema = z
+  .object({
+    enter: z
+      .enum([
+        "none",
+        "fade",
+        "fade-up",
+        "fade-down",
+        "slide-left",
+        "slide-right",
+      ])
+      .optional(),
+    duration: z.number().optional(),
+    delay: z.number().optional(),
+  })
+  .optional()
+
+const sectionEffectsSchema = z
+  .object({
+    parallax: z.boolean().optional(),
+    float: z.boolean().optional(),
+    mouseAware: z.boolean().optional(),
+  })
+  .optional()
+
 const sectionBaseSchema = z.object({
   id: z.string().min(1),
   type: z.string(),
   className: z.string().optional(),
   /** Multi-layer Tailwind: override per element (root, title, subtitle, primaryButton, ...). */
   classes: z.record(z.string(), z.string().optional()).optional(),
+  animation: sectionAnimationSchema,
+  effects: sectionEffectsSchema,
 })
 
 const heroVariants = [
@@ -55,6 +82,17 @@ const heroBackgroundSchema = z.object({
   color: z.string().optional(),
   gradientCss: z.string().optional(),
   overlay: z.string().optional(),
+  lottieOptions: z
+    .object({ loop: z.boolean().optional(), autoplay: z.boolean().optional() })
+    .optional(),
+  videoOptions: z
+    .object({
+      poster: z.string().optional(),
+      muted: z.boolean().optional(),
+      loop: z.boolean().optional(),
+      autoplay: z.boolean().optional(),
+    })
+    .optional(),
 })
 const heroSectionSchema = sectionBaseSchema.extend({
   type: z.literal("hero"),
@@ -176,6 +214,13 @@ const navVariants = [
   "floating",
   "compact",
 ] as const
+const navMobileSchema = z
+  .object({
+    menu: z.enum(["hamburger", "dropdown", "inline"]),
+    sheetPosition: z.enum(["left", "right"]).optional(),
+  })
+  .optional()
+
 const navSectionSchema = sectionBaseSchema.extend({
   type: z.literal("nav"),
   logo: z
@@ -189,6 +234,7 @@ const navSectionSchema = sectionBaseSchema.extend({
   extraLinks: z
     .array(z.object({ label: z.string(), href: z.string() }))
     .optional(),
+  mobile: navMobileSchema,
   cta: z.object({ label: z.string(), href: z.string() }).optional(),
   variant: z.enum(navVariants).optional(),
 })
@@ -558,6 +604,61 @@ const blogGridSectionSchema = sectionBaseSchema.extend({
   dataSource: dataSourceSchema.optional(),
 })
 
+const videoEmbedVariants = [
+  "default",
+  "centered",
+  "bordered",
+  "floating",
+  "minimal",
+] as const
+const videoEmbedSectionSchema = sectionBaseSchema.extend({
+  type: z.literal("video-embed"),
+  title: z.string().optional(),
+  subtitle: z.string().optional(),
+  embedUrl: z.string().url(),
+  posterUrl: z.string().url().optional(),
+  aspectRatio: z.string().optional(),
+  variant: z.enum(videoEmbedVariants).optional(),
+})
+
+const countdownVariants = [
+  "default",
+  "compact",
+  "minimal",
+  "banner",
+  "dark",
+] as const
+const countdownSectionSchema = sectionBaseSchema.extend({
+  type: z.literal("countdown"),
+  targetDate: z.string().min(1),
+  title: z.string().optional(),
+  subtitle: z.string().optional(),
+  cta: z.object({ label: z.string(), href: z.string() }).optional(),
+  expiredLabel: z.string().optional(),
+  variant: z.enum(countdownVariants).optional(),
+})
+
+const trustBadgeItemSchema = z.object({
+  icon: z.string().optional(),
+  label: z.string(),
+  href: z.string().optional(),
+})
+const trustBadgesVariants = [
+  "default",
+  "inline",
+  "grid",
+  "minimal",
+  "bordered",
+  "dark",
+] as const
+const trustBadgesSectionSchema = sectionBaseSchema.extend({
+  type: z.literal("trust-badges"),
+  title: z.string().optional(),
+  subtitle: z.string().optional(),
+  items: z.array(trustBadgeItemSchema),
+  variant: z.enum(trustBadgesVariants).optional(),
+})
+
 const landingSectionSchema = z.discriminatedUnion("type", [
   heroSectionSchema,
   featuresSectionSchema,
@@ -578,6 +679,9 @@ const landingSectionSchema = z.discriminatedUnion("type", [
   timelineSectionSchema,
   mapSectionSchema,
   blogGridSectionSchema,
+  videoEmbedSectionSchema,
+  countdownSectionSchema,
+  trustBadgesSectionSchema,
 ])
 
 export const landingConfigSchema = z.object({
@@ -585,6 +689,8 @@ export const landingConfigSchema = z.object({
   sections: z.array(landingSectionSchema),
   theme: z
     .object({
+      themeId: z.string().optional(),
+      fontId: z.string().optional(),
       primaryColor: z.string().optional(),
       fontFamily: z.string().optional(),
     })

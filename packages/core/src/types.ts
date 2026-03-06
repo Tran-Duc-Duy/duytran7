@@ -44,7 +44,35 @@ export interface SectionClasses {
   [key: string]: string | undefined
 }
 
-/** Base section: id + type + optional className + optional multi-layer classes */
+/** Section enter animation (scroll-in). App or wrapper can use framer-motion. */
+export type SectionEnterAnimation =
+  | "none"
+  | "fade"
+  | "fade-up"
+  | "fade-down"
+  | "slide-left"
+  | "slide-right"
+
+export interface SectionAnimation {
+  /** How section appears on scroll. Default none. */
+  enter?: SectionEnterAnimation
+  /** Duration in ms. */
+  duration?: number
+  /** Delay in ms. */
+  delay?: number
+}
+
+/** Section effects: parallax, float, mouse-aware. Implemented in component or app wrapper. */
+export interface SectionEffects {
+  /** Scroll-based parallax. */
+  parallax?: boolean
+  /** Subtle floating animation (e.g. CSS or framer-motion). */
+  float?: boolean
+  /** React to mouse (tilt, follow). Requires client component. */
+  mouseAware?: boolean
+}
+
+/** Base section: id + type + optional className + optional multi-layer classes + effects/animation */
 export interface SectionBase {
   id: string
   type: string
@@ -52,6 +80,10 @@ export interface SectionBase {
   className?: string
   /** Multi-layer Tailwind: override per element (title, subtitle, button, ...). AI/config can send extra keys. */
   classes?: SectionClasses
+  /** Optional scroll-in animation. Host app can use framer-motion. */
+  animation?: SectionAnimation
+  /** Optional effects: parallax, float, mouseAware. */
+  effects?: SectionEffects
 }
 
 /** Data source for sections with repeat list: static (default) or from API. */
@@ -73,6 +105,21 @@ export type HeroBackgroundType =
   | "lottie"
   | "video"
 
+/** Options for Lottie background. App injects player targeting data-lottie-url. */
+export interface HeroLottieOptions {
+  loop?: boolean
+  autoplay?: boolean
+}
+
+/** Options for video background. */
+export interface HeroVideoOptions {
+  /** Poster image URL before play. */
+  poster?: string
+  muted?: boolean
+  loop?: boolean
+  autoplay?: boolean
+}
+
 export interface HeroBackground {
   type: HeroBackgroundType
   /** Image / Lottie JSON / video URL. */
@@ -83,6 +130,10 @@ export interface HeroBackground {
   gradientCss?: string
   /** Overlay class (e.g. bg-black/40) to darken background image. */
   overlay?: string
+  /** When type = lottie: loop, autoplay. App uses this when injecting Lottie player. */
+  lottieOptions?: HeroLottieOptions
+  /** When type = video: poster, muted, loop, autoplay. Defaults: muted/loop/autoplay true. */
+  videoOptions?: HeroVideoOptions
 }
 
 /** Hero variants: ~10 UI options */
@@ -212,6 +263,16 @@ export type NavVariant =
   | "floating"
   | "compact"
 
+/** Mobile nav behavior: hamburger + sheet, dropdown, or inline. */
+export type NavMobileMenu = "hamburger" | "dropdown" | "inline"
+
+export interface NavMobileConfig {
+  /** How to show nav on small viewports. */
+  menu: NavMobileMenu
+  /** For hamburger: sheet from left or right. Default left. */
+  sheetPosition?: "left" | "right"
+}
+
 /** Nav section (header) */
 export interface NavSection extends SectionBase {
   type: "nav"
@@ -221,6 +282,8 @@ export interface NavSection extends SectionBase {
   extraLinks?: { label: string; href: string }[]
   cta?: { label: string; href: string }
   variant?: NavVariant
+  /** Mobile: hamburger + sheet, dropdown, or inline. When hamburger, Nav is client and toggles sheet. */
+  mobile?: NavMobileConfig
 }
 
 /** Testimonial item */
@@ -621,6 +684,73 @@ export interface BlogGridSection extends SectionBase {
   dataSource?: DataSource
 }
 
+/** Video embed section: YouTube, Vimeo, or self-hosted video with optional title/description. */
+export type VideoEmbedVariant =
+  | "default"
+  | "centered"
+  | "bordered"
+  | "floating"
+  | "minimal"
+
+export interface VideoEmbedSection extends SectionBase {
+  type: "video-embed"
+  title?: string
+  subtitle?: string
+  /** Embed URL (YouTube embed, Vimeo, or direct video URL). */
+  embedUrl: string
+  /** Optional poster/thumbnail image URL. */
+  posterUrl?: string
+  /** Optional aspect ratio (e.g. "16/9", "4/3"). Default 16/9. */
+  aspectRatio?: string
+  variant?: VideoEmbedVariant
+}
+
+/** Countdown section: target date/time for launch, sale end, event. */
+export type CountdownVariant =
+  | "default"
+  | "compact"
+  | "minimal"
+  | "banner"
+  | "dark"
+
+export interface CountdownSection extends SectionBase {
+  type: "countdown"
+  /** ISO 8601 date or datetime (e.g. "2025-12-31T23:59:59Z"). */
+  targetDate: string
+  title?: string
+  subtitle?: string
+  /** Optional CTA when countdown ends or for early action. */
+  cta?: { label: string; href: string }
+  /** Label for expired state (e.g. "Ended", "Sale over"). */
+  expiredLabel?: string
+  variant?: CountdownVariant
+}
+
+/** Trust badge item: icon URL or emoji + label (e.g. "SSL Secure", "Payment icons"). */
+export interface TrustBadgeItem {
+  /** Icon image URL, emoji, or empty for text-only. */
+  icon?: string
+  label: string
+  href?: string
+}
+
+/** Trust badges section: payment methods, security, guarantees. */
+export type TrustBadgesVariant =
+  | "default"
+  | "inline"
+  | "grid"
+  | "minimal"
+  | "bordered"
+  | "dark"
+
+export interface TrustBadgesSection extends SectionBase {
+  type: "trust-badges"
+  title?: string
+  subtitle?: string
+  items: TrustBadgeItem[]
+  variant?: TrustBadgesVariant
+}
+
 /** Union of all section types */
 export type LandingSection =
   | HeroSection
@@ -642,6 +772,21 @@ export type LandingSection =
   | TimelineSection
   | MapSection
   | BlogGridSection
+  | VideoEmbedSection
+  | CountdownSection
+  | TrustBadgesSection
+
+/** Root theme config. App provides actual themes/fonts; themeId/fontId are symbolic. */
+export interface LandingThemeConfig {
+  /** Symbolic theme id (e.g. light, dark, brand). App maps to data-theme or CSS vars. */
+  themeId?: string
+  /** Symbolic font id (e.g. inter, geist). App loads font and sets font-family. */
+  fontId?: string
+  /** Legacy: direct primary color (CSS value). */
+  primaryColor?: string
+  /** Legacy: direct font-family (CSS value). */
+  fontFamily?: string
+}
 
 /** Root config for a landing page */
 export interface LandingConfig {
@@ -649,9 +794,6 @@ export interface LandingConfig {
   seo: SeoConfig
   /** Sections in render order */
   sections: LandingSection[]
-  /** Theme / global (optional, for adapter to map to CSS vars or theme) */
-  theme?: {
-    primaryColor?: string
-    fontFamily?: string
-  }
+  /** Theme / global. Use themeId + fontId for app-driven theme; or primaryColor/fontFamily for simple override. */
+  theme?: LandingThemeConfig
 }
