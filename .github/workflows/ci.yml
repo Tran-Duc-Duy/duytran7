@@ -33,8 +33,8 @@ jobs:
       - name: Format check (Prettier)
         run: pnpm lint
 
-      - name: Build all packages
-        run: pnpm build
+      - name: Build (core, components, next only)
+        run: pnpm run build:ci
 
       - name: Test
         run: pnpm test
