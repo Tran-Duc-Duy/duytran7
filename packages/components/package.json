@@ -11,6 +11,16 @@
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
+    "./nav-mobile": {
+      "types": "./dist/nav-mobile.d.ts",
+      "import": "./dist/nav-mobile.js",
+      "require": "./dist/nav-mobile.cjs"
+    },
+    "./lottie": {
+      "types": "./dist/lottie.d.ts",
+      "import": "./dist/lottie.js",
+      "require": "./dist/lottie.cjs"
+    },
     "./package.json": "./package.json"
   },
   "files": [
@@ -25,7 +35,8 @@
     "prepublishOnly": "pnpm run build"
   },
   "dependencies": {
-    "@duytran7/landing-core": "workspace:*"
+    "@duytran7/landing-core": "workspace:*",
+    "@lottiefiles/react-lottie-player": "^3.6.0"
   },
   "peerDependencies": {
     "react": ">=18",

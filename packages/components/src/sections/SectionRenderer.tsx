@@ -23,6 +23,9 @@ import { Comparison } from "./Comparison"
 import { Timeline } from "./Timeline"
 import { Map } from "./Map"
 import { BlogGrid } from "./BlogGrid"
+import { VideoEmbed } from "./VideoEmbed"
+import { Countdown } from "./Countdown"
+import { TrustBadges } from "./TrustBadges"
 
 function assertNever(section: never): never {
   throw new Error(
@@ -78,6 +81,12 @@ export function SectionRenderer({
       return <Map config={section} className={className} />
     case "blog-grid":
       return <BlogGrid config={section} className={className} />
+    case "video-embed":
+      return <VideoEmbed config={section} className={className} />
+    case "countdown":
+      return <Countdown config={section} className={className} />
+    case "trust-badges":
+      return <TrustBadges config={section} className={className} />
     default:
       return assertNever(section)
   }

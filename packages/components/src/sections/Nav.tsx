@@ -1,5 +1,6 @@
 /**
  * Nav (header) section — semantic nav, accessible, SEO.
+ * For mobile hamburger + sheet, use NavWithMobile (client) from a client boundary or pass as section override.
  */
 
 import type { NavSection as NavSectionConfig } from "@duytran7/landing-core"
@@ -18,6 +19,7 @@ export function Nav({ config, className }: NavProps) {
     id,
     logo,
     links,
+    extraLinks = [],
     cta,
     variant = "default",
     className: configClass,
@@ -25,6 +27,7 @@ export function Nav({ config, className }: NavProps) {
 
   const isCentered = variant === "centered"
   const isMinimal = variant === "minimal"
+  const allLinks = [...links, ...extraLinks]
 
   return (
     <Section
@@ -60,7 +63,7 @@ export function Nav({ config, className }: NavProps) {
               isCentered && "justify-center"
             )}
           >
-            {links.map((link, i) => (
+            {allLinks.map((link, i) => (
               <li key={i}>
                 <a
                   href={link.href}

@@ -138,18 +138,21 @@ export function Hero({ config, className }: HeroProps) {
           )}
           data-landing-bg="lottie"
           data-lottie-url={background.url}
+          data-lottie-loop={background.lottieOptions?.loop ?? true}
+          data-lottie-autoplay={background.lottieOptions?.autoplay ?? true}
           aria-hidden
         >
-          {/* App can inject Lottie player here via data-lottie-url */}
+          {/* App injects Lottie player targeting this element; options in data-lottie-* */}
         </div>
       )}
       {background?.type === "video" && background.url && (
         <div className={cn("absolute inset-0 -z-10", background.overlay)}>
           <video
             src={background.url}
-            autoPlay
-            muted
-            loop
+            poster={background.videoOptions?.poster}
+            autoPlay={background.videoOptions?.autoplay ?? true}
+            muted={background.videoOptions?.muted ?? true}
+            loop={background.videoOptions?.loop ?? true}
             playsInline
             className="h-full w-full object-cover"
             aria-hidden

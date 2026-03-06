@@ -1,7 +1,11 @@
 import { defineConfig } from "tsup"
 
 export default defineConfig({
-  entry: ["src/index.ts"],
+  entry: {
+    index: "src/index.ts",
+    "nav-mobile": "src/nav-mobile.ts",
+    lottie: "src/lottie/index.ts",
+  },
   format: ["cjs", "esm"],
   dts: true,
   sourcemap: true,
