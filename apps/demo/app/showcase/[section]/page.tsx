@@ -1,6 +1,6 @@
 import React from "react"
 import { notFound } from "next/navigation"
-import { SectionRenderer } from "@duytran7/landing-components"
+import { ShowcaseSectionRenderer } from "../_components/ShowcaseSectionRenderer"
 import { SECTION_LIST, getShowcaseItemsByType } from "../_data/sections"
 
 export function generateStaticParams(): { section: string }[] {
@@ -49,7 +49,7 @@ export default async function SectionDetailPage({
               {label}
             </h2>
             <div className="border-border bg-muted/10 rounded-lg border border-dashed p-4">
-              <SectionRenderer section={sectionConfig} />
+              <ShowcaseSectionRenderer section={sectionConfig} />
             </div>
           </div>
         ))}

@@ -1,5 +1,5 @@
 import React from "react"
-import { SectionRenderer } from "@duytran7/landing-components"
+import { ShowcaseSectionRenderer } from "../_components/ShowcaseSectionRenderer"
 import { getAllShowcaseItems } from "../_data/sections"
 
 export const metadata = {
@@ -28,7 +28,7 @@ export default function SectionGalleryPage(): React.ReactElement {
               {label}
             </h2>
             <div className="border-border bg-muted/10 rounded-lg border border-dashed p-4">
-              <SectionRenderer section={section} />
+              <ShowcaseSectionRenderer section={section} />
             </div>
           </div>
         ))}

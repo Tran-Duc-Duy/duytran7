@@ -27,6 +27,11 @@ export const SECTION_LIST: SectionMeta[] = [
   { id: "banner", name: "Banner" },
   { id: "comparison", name: "Comparison" },
   { id: "timeline", name: "Timeline" },
+  { id: "map", name: "Map" },
+  { id: "blog-grid", name: "Blog Grid" },
+  { id: "video-embed", name: "Video Embed" },
+  { id: "countdown", name: "Countdown" },
+  { id: "trust-badges", name: "Trust Badges" },
   { id: "footer", name: "Footer" },
 ]
 
@@ -1310,6 +1315,101 @@ const SHOWCASE_ITEMS: ShowcaseItem[] = [
         },
       ],
       bottom: { text: "© 2025" },
+    },
+  },
+  // ——— Video Embed (3 variants) ———
+  {
+    label: "default",
+    section: {
+      id: "video-default",
+      type: "video-embed",
+      title: "See it in action",
+      embedUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      variant: "default",
+    },
+  },
+  {
+    label: "centered",
+    section: {
+      id: "video-centered",
+      type: "video-embed",
+      title: "Product demo",
+      subtitle: "Watch how it works.",
+      embedUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      variant: "centered",
+    },
+  },
+  {
+    label: "minimal",
+    section: {
+      id: "video-minimal",
+      type: "video-embed",
+      embedUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      variant: "minimal",
+    },
+  },
+  // ——— Countdown (3 variants) ———
+  {
+    label: "default",
+    section: {
+      id: "countdown-default",
+      type: "countdown",
+      targetDate: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString(),
+      title: "Launch in",
+      variant: "default",
+    },
+  },
+  {
+    label: "compact",
+    section: {
+      id: "countdown-compact",
+      type: "countdown",
+      targetDate: new Date(Date.now() + 2 * 24 * 60 * 60 * 1000).toISOString(),
+      title: "Sale ends in",
+      variant: "compact",
+    },
+  },
+  {
+    label: "banner",
+    section: {
+      id: "countdown-banner",
+      type: "countdown",
+      targetDate: new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString(),
+      title: "Event starts in",
+      variant: "banner",
+    },
+  },
+  // ——— Trust Badges (3 variants) ———
+  {
+    label: "default",
+    section: {
+      id: "trust-default",
+      type: "trust-badges",
+      title: "Secure payment",
+      items: [
+        { icon: "🔒", label: "SSL Secured" },
+        { icon: "✓", label: "Money-back guarantee" },
+        { icon: "🛡️", label: "PCI compliant" },
+      ],
+      variant: "default",
+    },
+  },
+  {
+    label: "inline",
+    section: {
+      id: "trust-inline",
+      type: "trust-badges",
+      items: [{ label: "Visa" }, { label: "Mastercard" }, { label: "PayPal" }],
+      variant: "inline",
+    },
+  },
+  {
+    label: "minimal",
+    section: {
+      id: "trust-minimal",
+      type: "trust-badges",
+      items: [{ icon: "✓", label: "Trusted by 10k+ teams" }],
+      variant: "minimal",
     },
   },
 ]
