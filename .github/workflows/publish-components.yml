@@ -1,12 +1,9 @@
-# Publish packages to npm when pushing a tag (e.g. v0.1.0 or landing-v0.1.0).
-# Configure NPM_TOKEN in repo Secrets.
-name: Publish
+name: Publish Components
 
 on:
   push:
     tags:
-      - "v*"
-      - "landing-*"
+      - "components-v*"
 
 jobs:
   build-test:
@@ -63,7 +60,7 @@ jobs:
       - name: Build
         run: pnpm build
 
-      - name: Publish packages
+      - name: Publish @duytran7/landing-components
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: pnpm publish-packages
+        run: pnpm --filter @duytran7/landing-components run ci:publish
